@@ -23,7 +23,6 @@ public class Weapon_pistol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
@@ -41,18 +40,14 @@ public class Weapon_pistol : MonoBehaviour
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.SetDirection(fpsCam.transform.forward);
 
-
-
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-
             Debug.Log(hit.transform.name);
 
             // Damage destructible objects
             if (hit.transform.tag == "Destructible")
             {
-
                 Destructible target = hit.transform.GetComponent<Destructible>();
 
                 if (target != null)
