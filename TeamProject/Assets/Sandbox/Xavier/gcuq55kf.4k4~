@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody))]
+public class FlyRelativeMovmement : MonoBehaviour
+{
+    private Rigidbody rb;
+    [SerializeField]
+    private float thrustForce;
+    private Transform navigatorTransform;
+
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        navigatorTransform = GetComponentInParent<Transform>();
+    }
+
+    void Update()
+    {
+        print(navigatorTransform.up);
+        rb.AddRelativeForce(navigatorTransform.up * thrustForce);
+    }
+}
