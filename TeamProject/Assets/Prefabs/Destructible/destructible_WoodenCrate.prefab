@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 8472324656147637654}
   - component: {fileID: 3418171637383669479}
   - component: {fileID: 4668564672449611580}
-  - component: {fileID: 6940768326645341845}
+  - component: {fileID: 8522558290849726365}
   m_Layer: 0
   m_Name: destructible_WoodenCrate
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6940768326645341845
+--- !u!114 &8522558290849726365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,4 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 50
   destroyedVersion: {fileID: 3612022730665424032, guid: b0d20269e753c1448ae62f0eb935640f, type: 3}

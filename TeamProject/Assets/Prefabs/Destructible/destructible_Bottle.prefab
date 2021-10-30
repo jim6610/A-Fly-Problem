@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1803102841085907502}
   m_Layer: 0
   m_Name: destructible_Bottle
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
   destroyedVersion: {fileID: 4791224381286764539, guid: 5c90cd94fe8e10b468f9d1926fd57671, type: 3}
 --- !u!54 &1283463629310174526
 Rigidbody:
