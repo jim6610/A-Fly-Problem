@@ -110,8 +110,8 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator CrouchStand()
     {
         // If the player crouches under something that should stop them from getting back up
-        if (isCrouching && Physics.Raycast(playerCam.transform.position, Vector3.up, 1f))
-            yield break;
+        //if (isCrouching && Physics.Raycast(playerCam.transform.position, Vector3.up, 1f))
+        //    yield break;
         
         duringCrouchAnimation = true;
 
