@@ -3430,6 +3430,10 @@ PrefabInstance:
       propertyPath: destinationsContainer
       value: 
       objectReference: {fileID: 1489801845}
+    - target: {fileID: 1223799788972486245, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
+      propertyPath: wallAwarenessDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1223799788972486246, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: m_Name
       value: Fly
