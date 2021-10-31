@@ -1509,7 +1509,7 @@ MonoBehaviour:
   impactForce: 30
   fireRate: 1.5
   range: 3
-  impactEffectParticle: {fileID: 8513659319318470114, guid: 5499830e123f2fe438dda654abf3fdbd, type: 3}
+  impactEffectParticle: {fileID: 5664843490233245664, guid: 56e770bd298d3bb479274a83c09669ed, type: 3}
   animator: {fileID: 1101324643}
   attackDelay: 2
 --- !u!95 &1101324643
