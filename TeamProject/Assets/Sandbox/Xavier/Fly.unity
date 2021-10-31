@@ -445,6 +445,7 @@ MonoBehaviour:
   hand: {fileID: 1799746092}
   fpsCam: {fileID: 1294224409}
   heldObjectRef: {fileID: 0}
+  weaponManager: {fileID: 0}
   throwForce: 20
 --- !u!4 &345087728
 Transform:
@@ -2286,10 +2287,6 @@ PrefabInstance:
     - target: {fileID: 1223799788972486246, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: m_Name
       value: Fly
-      objectReference: {fileID: 0}
-    - target: {fileID: 1223799789528521386, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
-      propertyPath: playerAwarenessDistance
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}

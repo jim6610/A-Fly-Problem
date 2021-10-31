@@ -52,7 +52,7 @@ public class FlyRelativeMovmement : MonoBehaviour
         collider = GetComponent<BoxCollider>();
         waitTimer = 0.0f;
         takeOffTime = 0.5f;
-        targetHeightTime = 2.0f;
+        targetHeightTime = 1.0f;
         targetHeight = Random.Range(targetHeightMin, targetHeightRange);
         player = ((PlayerMovement)(GameObject.FindObjectOfType<PlayerMovement>())).gameObject.transform;
 
