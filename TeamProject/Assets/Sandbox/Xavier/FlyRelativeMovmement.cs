@@ -17,75 +17,86 @@ public class FlyRelativeMovmement : MonoBehaviour
     [SerializeField]
     private float thrustForce;
     [SerializeField]
-    private float targetHeight;
+    private float targetHeightRange;
     [SerializeField]
     private float ceilingAwareness;
     [SerializeField]
     private float maxSpeed;
     [SerializeField]
     private float stationaryWaitTime;
+    [SerializeField]
+    private float playerAwarenessDistance;
 
     private Transform navigatorTransform;
     private FlyNavigator flyNavigator;
-    private bool travellingUp;
     private FlyMode flyMode;
     private BoxCollider collider;
     private float waitTimer;
     private float takeOffTime;
 
+    private float targetHeight;
+    private float targetHeightMin = 5.0f;
+    private float targetHeightTimer;
+    private float targetHeightTime;
+
+    private Transform player;
+
 
     void Start()
     {
+        Random.InitState(System.DateTime.Now.Millisecond);
         rb = GetComponent<Rigidbody>();
         flyNavigator = GetComponentInParent<FlyNavigator>();
         navigatorTransform = flyNavigator.gameObject.transform;
-        travellingUp = true;
         flyMode = FlyMode.TRAVELLING;
         collider = GetComponent<BoxCollider>();
         waitTimer = 0.0f;
         takeOffTime = 0.5f;
+        targetHeightTime = 2.0f;
+        targetHeight = Random.Range(targetHeightMin, targetHeightRange);
+        player = ((PlayerMovement)(GameObject.FindObjectOfType<PlayerMovement>())).gameObject.transform;
 
     }
 
 
 
-    private void SwerveRoutine()
+    private void FlyRoutine()
     {
-        bool normalTrajectory = true;
-        if (travellingUp)
+        targetHeightTimer += Time.deltaTime;
+        if(targetHeightTimer>targetHeightTime)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, Vector3.up, out hit))
-            {
-                if (hit.distance < ceilingAwareness)
-                {
-                    rb.AddRelativeForce(Vector3.down * thrustForce);
-                    normalTrajectory = false;
-                }
-                else
-                    normalTrajectory = true;
-            }
-
-            if (normalTrajectory)
-            {
-                if (transform.position.y < navigatorTransform.position.y+ targetHeight)
-                    rb.AddRelativeForce(Vector3.up * thrustForce);
-                else
-                    travellingUp = false;
-            }
-
+            targetHeight = Random.Range(targetHeightMin, targetHeightRange);
+            targetHeightTimer = 0.0f;
         }
-        else
+        bool normalTrajectory = true;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.up, out hit))
         {
-            if (transform.position.y > navigatorTransform.position.y + targetHeight)
+            if (hit.distance < ceilingAwareness)
+            {
                 rb.AddRelativeForce(Vector3.down * thrustForce);
+                normalTrajectory = false;
+            }
             else
-                travellingUp = true;
+                normalTrajectory = true;
+        }
+
+        if (normalTrajectory)
+        {
+            if (Mathf.Abs(targetHeight - transform.position.y) > 0.5f)
+                rb.AddRelativeForce(Vector3.up * thrustForce * (targetHeight - transform.position.y));
+            else
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
         }
     }
 
     void LandingRoutine()
     {
+        if((player.position-transform.position).magnitude<playerAwarenessDistance)
+        {
+            flyNavigator.GetTargetAimlessly();
+            flyMode = FlyMode.TRAVELLING;
+        }
         if (rb.velocity.y > 0)
             rb.AddRelativeForce(Vector3.down * thrustForce);
         else
@@ -93,7 +104,7 @@ public class FlyRelativeMovmement : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, Vector3.down, out hit))
             {
-                if (hit.distance > collider.extents.z+0.05f )
+                if (hit.distance > collider.extents.z + 0.05f)
                     rb.AddRelativeForce((Vector3.up * -rb.velocity.y) + (hit.distance * Vector3.down));
                 else
                     flyMode = FlyMode.STATIONARY;
@@ -106,7 +117,7 @@ public class FlyRelativeMovmement : MonoBehaviour
     void StationaryRoutine()
     {
         waitTimer += Time.deltaTime;
-        if(waitTimer>stationaryWaitTime)
+        if (waitTimer > stationaryWaitTime)
         {
             rb.AddRelativeForce(Vector3.up * thrustForce);
             if (waitTimer > stationaryWaitTime + takeOffTime)
@@ -122,10 +133,10 @@ public class FlyRelativeMovmement : MonoBehaviour
 
     void Update()
     {
-        switch(flyMode)
+        switch (flyMode)
         {
             case FlyMode.TRAVELLING:
-                SwerveRoutine();
+                FlyRoutine();
                 break;
             case FlyMode.FLOOR_LANDING:
                 LandingRoutine();
@@ -137,7 +148,7 @@ public class FlyRelativeMovmement : MonoBehaviour
                 break;
 
         }
-        
+
     }
 
     public void SetFlyMode(FlyMode flyMode)
