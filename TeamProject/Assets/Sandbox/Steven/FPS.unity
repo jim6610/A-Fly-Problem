@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 384886772}
   m_Layer: 0
   m_Name: Wall (2)
-  m_TagString: Untagged
+  m_TagString: Solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -600,7 +600,7 @@ GameObject:
   - component: {fileID: 386406808}
   m_Layer: 6
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 460711235}
   m_Layer: 0
   m_Name: Wall (1)
-  m_TagString: Untagged
+  m_TagString: Solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -950,6 +950,7 @@ MonoBehaviour:
   walkSpeed: 12
   sprintSpeed: 14
   crouchSpeed: 6
+  canSprint: 1
   crouchingHeight: 0.5
   standingHeight: 3
   timeToCrouch: 0.1
@@ -1145,6 +1146,7 @@ GameObject:
   - component: {fileID: 1167985367}
   - component: {fileID: 1167985366}
   - component: {fileID: 1167985365}
+  - component: {fileID: 1167985370}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Throwable
@@ -1244,6 +1246,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1167985370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167985364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997a174a670d36647a12f9c1fd97537b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakForce: 8
+  brokenModel: {fileID: 0}
 --- !u!1 &1693010930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,7 +1507,7 @@ GameObject:
   - component: {fileID: 2080996267}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1586,7 +1602,7 @@ GameObject:
   - component: {fileID: 2146637945}
   m_Layer: 0
   m_Name: Wall (3)
-  m_TagString: Untagged
+  m_TagString: Solid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

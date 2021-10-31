@@ -14,7 +14,7 @@ public class SelectionManager : MonoBehaviour
     public Transform hand;
     public Camera fpsCam;
     public Transform heldObjectRef;
-
+    public WeaponSwitching weaponManager;
 
     public float throwForce = 1f;
 
@@ -56,21 +56,7 @@ public class SelectionManager : MonoBehaviour
 
                     _selection = selection;
 
-
-                    if (!isHolding && Input.GetKeyDown("e"))
-                    {
-                        selection.GetComponent<Rigidbody>().useGravity = false;
-                        selection.GetComponent<Rigidbody>().freezeRotation = true;
-                        selection.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-                        selection.position = hand.transform.position;
-                        selection.parent = hand.transform;
-
-                        heldObjectRef = selection;
-
-                        selection.GetComponent<Collider>().enabled = false;
-
-                        isHolding = true;
-                    }
+                    Pickup(selection);
                 }
             }
         }
@@ -78,7 +64,7 @@ public class SelectionManager : MonoBehaviour
 
     void Throw()
     {
-        if (isHolding && Input.GetKeyDown("e"))
+        if (isHolding && Input.GetKeyDown(KeyCode.E))
         {
             heldObjectRef.GetComponent<Rigidbody>().useGravity = true;
             heldObjectRef.GetComponent<Collider>().enabled = true;
@@ -90,6 +76,28 @@ public class SelectionManager : MonoBehaviour
             heldObjectRef = null;
 
             throwTimer = 0;
+
+            weaponManager.EquipPreviousWeapon();
+        }
+    }
+
+    void Pickup(Transform selection)
+    {
+        if (!isHolding && Input.GetKeyDown(KeyCode.E))
+        {
+            selection.GetComponent<Rigidbody>().useGravity = false;
+            selection.GetComponent<Rigidbody>().freezeRotation = true;
+            selection.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            selection.position = hand.transform.position;
+            selection.parent = hand.transform;
+
+            heldObjectRef = selection;
+
+            selection.GetComponent<Collider>().enabled = false;
+
+            isHolding = true;
+
+            weaponManager.PutAwayCurrentWeapon();
         }
     }
 }

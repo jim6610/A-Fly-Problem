@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Throwable
+  - Solid
+  - Enemy
+  - Bullet
+  - Fire
+  - Destructible
   layers:
   - Default
   - TransparentFX
@@ -13,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - FlyNavigator
   - 
   - 
   - 
