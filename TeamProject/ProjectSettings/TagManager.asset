@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Throwable
   - Solid
+  - Enemy
+  - Bullet
+  - Fire
+  - Destructible
   layers:
   - Default
   - TransparentFX

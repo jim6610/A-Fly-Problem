@@ -22,10 +22,9 @@ public class Breakable : MonoBehaviour
         {
             Vector3 impactForce = other.relativeVelocity;
             
-            Debug.Log("Force = " + other.relativeVelocity);
-            
             if (impactForce.x >= breakForce || impactForce.y >= breakForce || impactForce.z >= breakForce)
                 Break();
         }
     }
+
 }
