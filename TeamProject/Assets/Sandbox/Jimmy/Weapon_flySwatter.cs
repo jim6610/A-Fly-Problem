@@ -9,13 +9,20 @@ public class Weapon_flySwatter : MonoBehaviour
     [SerializeField] private float fireRate = 2f;
     [SerializeField] private float range = 4f;
     [SerializeField] private GameObject impactEffectParticle;
+    [SerializeField] private Animator animator;
 
     private Camera fpsCam;
     private float nextTimeToFire;
+    private bool isAttacking;
+    private float timer;
+
+    public float attackDelay;
 
     private void Start()
     {
         fpsCam = Camera.main;
+        isAttacking = false;
+        timer = 0;
     }
 
     // Update is called once per frame
@@ -24,16 +31,23 @@ public class Weapon_flySwatter : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
-            Shoot();
+            Swat();
         }
+
     }
 
-    void Shoot()
+    void Swat()
     {
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
+
+            if (Time.time >= timer) // Check if current game time is at or past the time we last set
+            {
+                animator.SetTrigger("Attack"); //trigger our animation
+                timer = Time.time + attackDelay; //Set timer to current game time plus our delay
+            }
 
             // Damage destructible objects
             if (hit.transform.tag == "Destructible")
@@ -57,6 +71,5 @@ public class Weapon_flySwatter : MonoBehaviour
             GameObject impactEffect = Instantiate(impactEffectParticle, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactEffect, 1);
         }
-
     }
 }
