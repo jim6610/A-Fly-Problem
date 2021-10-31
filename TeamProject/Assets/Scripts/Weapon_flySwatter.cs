@@ -38,16 +38,12 @@ public class Weapon_flySwatter : MonoBehaviour
 
     void Swat()
     {
+        animator.SetTrigger("Attack"); //trigger our animation
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);
-
-            if (Time.time >= timer) // Check if current game time is at or past the time we last set
-            {
-                animator.SetTrigger("Attack"); //trigger our animation
-                timer = Time.time + attackDelay; //Set timer to current game time plus our delay
-            }
 
             // Damage destructible objects
             if (hit.transform.tag == "Destructible")
