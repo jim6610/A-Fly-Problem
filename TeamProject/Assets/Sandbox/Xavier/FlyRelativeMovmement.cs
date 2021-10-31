@@ -112,7 +112,7 @@ public class FlyRelativeMovmement : MonoBehaviour
             if (waitTimer > stationaryWaitTime + takeOffTime)
             {
                 waitTimer = 0.0f;
-                flyNavigator.GetNewDestination();
+                flyNavigator.GetTargetAimlessly();
                 flyMode = FlyMode.TRAVELLING;
             }
         }

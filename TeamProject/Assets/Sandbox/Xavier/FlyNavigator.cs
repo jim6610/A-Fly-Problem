@@ -15,6 +15,8 @@ public class FlyNavigator : MonoBehaviour
 {
     [SerializeField]
     private float wallAwarenessDistance;
+    [Range(1.0f, 99.0f)]
+    public float landChance;
 
     private NavMeshAgent agent;
     public GameObject destinationsContainer;
@@ -66,69 +68,62 @@ public class FlyNavigator : MonoBehaviour
         targetDestination = dest;
         agent.destination = dest;
         newDestinationAssigned = true;
-        
+
     }
 
-    private void MoveAimlesssly()
+    public void GetTargetAimlessly()
     {
-
+        RaycastHit hit, hitRight, hitLeft, hitDown, hitBack;
+        bool lookBack = false;
+        Physics.Raycast(flyRelativeMovement.transform.position, transform.right, out hitRight);
+        Physics.Raycast(flyRelativeMovement.transform.position, -transform.right, out hitLeft);
+        Physics.Raycast(flyRelativeMovement.transform.position, transform.forward, out hit);
+        Physics.Raycast(flyRelativeMovement.transform.position, transform.forward, out hitBack);
+        RaycastHit hitMax = hit;
+        float distMax = hit.distance;
+        if(hitRight.distance> distMax)
+        {
+            hitMax = hitRight;
+            distMax = hitRight.distance;
+        }
+        if (hitLeft.distance > distMax)
+        {
+            hitMax = hitLeft;
+            distMax = hitLeft.distance;
+        }
+        if (hitLeft.distance < wallAwarenessDistance && hitRight.distance < wallAwarenessDistance && hit.distance < wallAwarenessDistance)
+        {
+            if (hitBack.distance > distMax)
+            {
+                hitMax = hitBack;
+                distMax = hitBack.distance;
+            }
+        }
+        Vector3 xzCoord = transform.forward + transform.position;
+        xzCoord = (hitMax.point - transform.position).normalized * Random.Range(1.0f, distMax);
+        Physics.Raycast(xzCoord, Vector3.down, out hitDown);
+        agent.destination = hitDown.point;
+        newDestinationAssigned = true;
     }
 
     void Update()
     {
-        switch(mode)
+
+        if (agent.remainingDistance < agent.stoppingDistance && !newDestinationAssigned)
         {
-            //case AgentMode.TARGET:
-            //    aimlessTargetTimer += Time.deltaTime;
-            //    if(aimlessTargetTimer>aimlessTargetCooldown)
-            //    {
-            //        aimlessTargetTimer = 0.0f;
-            //        mode = AgentMode.AIMLESS;
-            //        return;
-            //    }
-            //    if (!newDestinationAssigned)
-            //    {
-            //        if (flyRelativeMovement.GetFlyMode() == FlyMode.TRAVELLING)
-            //            if (agent.remainingDistance < 0.1f)
-            //            {
-            //                flyRelativeMovement.SetFlyMode(FlyMode.FLOOR_LANDING);
-            //            }
-            //    }
-            //    else
-            //        newDestinationAssigned = false;
-            //    break;
-            case AgentMode.AIMLESS:
-                if (!aimlessTargetSet)
+            if (flyRelativeMovement.GetFlyMode() == FlyMode.TRAVELLING)
+            {
+                float landDraw = Random.Range(0.0f, 100.0f);
+                if (landDraw <= landChance)
                 {
-                    RaycastHit hit, hitRight, hitLeft;
-                    Physics.Raycast(transform.position, transform.right, out hitRight);
-                    Physics.Raycast(transform.position, -transform.right, out hitLeft);
-                    Physics.Raycast(transform.position, transform.forward, out hit);
-                    if(hit.distance>hitRight.distance && hit.distance>hitLeft.distance)
-                    {
-                        agent.destination = hit.point - transform.forward * wallAwarenessDistance;
-                        aimlessTargetSet = true;
-                    }
-                    else if(hitLeft.distance>hitRight.distance)
-                    {
-                        agent.destination = hitLeft.point + transform.right * wallAwarenessDistance;
-                        aimlessTargetSet = true;
-                    }
-                    else
-                    {
-                        agent.destination = hitRight.point - transform.right * wallAwarenessDistance;
-                        aimlessTargetSet = true;
-                    }
-                       // mode = AgentMode.TARGET;
+                    flyRelativeMovement.SetFlyMode(FlyMode.FLOOR_LANDING);
                 }
-                if (agent.remainingDistance < agent.stoppingDistance)
-                {
-                    //agent.destination = targetDestination;
-                    //mode = AgentMode.TARGET;
-                    aimlessTargetSet = false;
-                }
-                break;
+                else
+                    GetTargetAimlessly();
+            }
         }
+        else
+            newDestinationAssigned = false;
 
     }
 }
