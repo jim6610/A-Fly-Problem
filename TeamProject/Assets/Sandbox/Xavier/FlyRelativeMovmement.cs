@@ -24,8 +24,6 @@ public class FlyRelativeMovmement : MonoBehaviour
     private float maxSpeed;
     [SerializeField]
     private float stationaryWaitTime;
-    [SerializeField]
-    private float playerAwarenessDistance;
 
     private Transform navigatorTransform;
     private FlyNavigator flyNavigator;
@@ -39,9 +37,6 @@ public class FlyRelativeMovmement : MonoBehaviour
     private float targetHeightTimer;
     private float targetHeightTime;
 
-    private Transform player;
-
-
     void Start()
     {
         Random.InitState(System.DateTime.Now.Millisecond);
@@ -54,11 +49,7 @@ public class FlyRelativeMovmement : MonoBehaviour
         takeOffTime = 0.5f;
         targetHeightTime = 1.0f;
         targetHeight = Random.Range(targetHeightMin, targetHeightRange);
-        player = ((PlayerMovement)(GameObject.FindObjectOfType<PlayerMovement>())).gameObject.transform;
-
     }
-
-
 
     private void FlyRoutine()
     {
@@ -92,7 +83,7 @@ public class FlyRelativeMovmement : MonoBehaviour
 
     void LandingRoutine()
     {
-        if((player.position-transform.position).magnitude<playerAwarenessDistance)
+        if(flyNavigator.PlayerInRange())
         {
             flyNavigator.GetTargetAimlessly();
             flyMode = FlyMode.TRAVELLING;
@@ -117,10 +108,14 @@ public class FlyRelativeMovmement : MonoBehaviour
     void StationaryRoutine()
     {
         waitTimer += Time.deltaTime;
-        if (waitTimer > stationaryWaitTime)
+
+        bool playerWasInRange = flyNavigator.PlayerInRange();
+        if (waitTimer > stationaryWaitTime || playerWasInRange)
         {
+            
             rb.AddRelativeForce(Vector3.up * thrustForce);
-            if (waitTimer > stationaryWaitTime + takeOffTime)
+            
+            if (waitTimer > stationaryWaitTime + takeOffTime || playerWasInRange)
             {
                 waitTimer = 0.0f;
                 flyNavigator.GetTargetAimlessly();
