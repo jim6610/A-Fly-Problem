@@ -15,9 +15,13 @@ public class FlyNavigator : MonoBehaviour
     [SerializeField]
     private float landCoolDown;
     [SerializeField]
-    private float playerAwarenessDistance = 10.0f;
-    [SerializeField]
     private float sightDistance;
+    [SerializeField]
+    private float playerAwarenessDistance;
+    [SerializeField]
+    private float playerSneakAwarenessDistance;
+    [SerializeField]
+    private float playerSprintAwarenenessDistance;
 
     private NavMeshAgent agent;
     public GameObject destinationsContainer;
@@ -26,8 +30,7 @@ public class FlyNavigator : MonoBehaviour
     private FlyRelativeMovmement flyRelativeMovement;
     private bool newDestinationAssigned;
 
-    public Transform player;
-
+    public GameObject player;
 
     float landCooldownTimer = 0.0f;
     bool canLand = false;
@@ -155,10 +158,11 @@ public class FlyNavigator : MonoBehaviour
         }
 
         //If the players withtin the awareness distance we want to override this behavior
-        if ((player.position - transform.position).magnitude < playerAwarenessDistance)
+        if (PlayerInRange(transform))
         {
             RaycastHit avoidHit;
-            Vector3 playerDir = (transform.position - player.position).normalized;
+            Vector3 playerDir = (transform.position - player.transform.position).normalized;
+            
             didHit = false;
             if (Physics.Raycast(flyRelativeMovement.transform.position, new Vector3(playerDir.x, 0, playerDir.z), out avoidHit, sightDistance))
             {
@@ -221,5 +225,15 @@ public class FlyNavigator : MonoBehaviour
         else
             newDestinationAssigned = false;
 
+    }
+    
+    public bool PlayerInRange(Transform otherTransform)
+    {
+        PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+        
+        var detectionDistance = playerMovement.IsSprinting ? playerSprintAwarenenessDistance : 
+            playerMovement.IsCrouching ? playerSneakAwarenessDistance : playerAwarenessDistance;
+        
+        return (player.gameObject.transform.position - otherTransform.position).magnitude < detectionDistance;
     }
 }

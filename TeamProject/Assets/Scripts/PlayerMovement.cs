@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     private bool ShouldCrouch => Input.GetKeyDown(KeyCode.LeftControl) && !duringCrouchAnimation && isGrounded;
-    private bool IsSprinting => canSprint && Input.GetKey(KeyCode.LeftShift) && isGrounded;
+    public bool IsSprinting => canSprint && Input.GetKey(KeyCode.LeftShift) && isGrounded;
 
     [Header("Movement")]
     [SerializeField] private float gravity = -9.81f;
@@ -48,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     
     private bool isCrouching;
+
+    public bool IsCrouching => isCrouching;
+    
     private bool duringCrouchAnimation;
 
     private void Start()
