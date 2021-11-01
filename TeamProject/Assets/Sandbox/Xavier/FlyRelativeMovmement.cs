@@ -83,7 +83,7 @@ public class FlyRelativeMovmement : MonoBehaviour
 
     void LandingRoutine()
     {
-        if(flyNavigator.PlayerInRange())
+        if(flyNavigator.PlayerInRange(transform))
         {
             flyNavigator.GetTargetAimlessly();
             flyMode = FlyMode.TRAVELLING;
@@ -109,7 +109,7 @@ public class FlyRelativeMovmement : MonoBehaviour
     {
         waitTimer += Time.deltaTime;
 
-        bool playerWasInRange = flyNavigator.PlayerInRange();
+        bool playerWasInRange = flyNavigator.PlayerInRange(transform);
         if (waitTimer > stationaryWaitTime || playerWasInRange)
         {
             

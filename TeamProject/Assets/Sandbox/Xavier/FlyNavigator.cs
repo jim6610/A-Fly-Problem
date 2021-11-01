@@ -158,7 +158,7 @@ public class FlyNavigator : MonoBehaviour
         }
 
         //If the players withtin the awareness distance we want to override this behavior
-        if (PlayerInRange())
+        if (PlayerInRange(transform))
         {
             RaycastHit avoidHit;
             Vector3 playerDir = (transform.position - player.transform.position).normalized;
@@ -227,13 +227,13 @@ public class FlyNavigator : MonoBehaviour
 
     }
     
-    public bool PlayerInRange()
+    public bool PlayerInRange(Transform otherTransform)
     {
         PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
         
         var detectionDistance = playerMovement.IsSprinting ? playerSprintAwarenenessDistance : 
             playerMovement.IsCrouching ? playerSneakAwarenessDistance : playerAwarenessDistance;
         
-        return (player.gameObject.transform.position - transform.position).magnitude < detectionDistance;
+        return (player.gameObject.transform.position - otherTransform.position).magnitude < detectionDistance;
     }
 }
