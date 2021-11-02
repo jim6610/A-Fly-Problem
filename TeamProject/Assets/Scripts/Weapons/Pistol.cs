@@ -1,13 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon_pistol : MonoBehaviour
+/// FlySwatter melee weapon
+/// TODO Code not DRY, shares almost all game variables/logic with FlySwatter, can probably use inheritance here
+public class Pistol : MonoBehaviour
 {
+    [Header("Weapon Parameters")]
     [SerializeField] private float damage = 10f;
     [SerializeField] private float impactForce = 75f;
     [SerializeField] private float fireRate = 5f;
     [SerializeField] private float range = 100f;
+    [Header("Effects")]
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject impactEffectParticle;
     [SerializeField] private GameObject bulletPrefab;
@@ -15,21 +17,23 @@ public class Weapon_pistol : MonoBehaviour
     private Camera fpsCam;
     private float nextTimeToFire;
 
+    private bool CanFire => Input.GetButton("Fire1") && Time.time >= nextTimeToFire;
+
     private void Start()
     {
         fpsCam = Camera.main;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (CanFire)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
             Shoot();
         }
     }
-
+    
+    /// Weapon firing logic
     void Shoot()
     {
         muzzleFlash.Play();
@@ -40,13 +44,12 @@ public class Weapon_pistol : MonoBehaviour
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.SetDirection(fpsCam.transform.forward);
 
-        RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range))
         {
             Debug.Log(hit.transform.name);
 
             // Damage destructible objects
-            if (hit.transform.tag == "Destructible")
+            if (hit.transform.CompareTag("Destructible"))
             {
                 Destructible target = hit.transform.GetComponent<Destructible>();
 
@@ -67,6 +70,5 @@ public class Weapon_pistol : MonoBehaviour
             GameObject impactEffect = Instantiate(impactEffectParticle, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactEffect, 1);
         }
-
     }
 }
