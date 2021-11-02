@@ -1,6 +1,6 @@
 using UnityEngine;
 
-/// FlySwatter melee weapon
+/// Pistol ranged weapon
 /// TODO Code not DRY, shares almost all game variables/logic with FlySwatter, can probably use inheritance here
 public class Pistol : MonoBehaviour
 {
