@@ -7,14 +7,12 @@ public class WeaponShop : MonoBehaviour
     [SerializeField] private GameObject weaponHolder;
     private bool firstWeapon = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 0;
     }
-
-    // Update is called once per frame
-    public void buyWeapon(GameObject a)
+    
+    public void BuyWeapon(GameObject a)
     {
         if(firstWeapon)
         {
@@ -27,10 +25,10 @@ public class WeaponShop : MonoBehaviour
         }
     }
 
-    public void closeShop()
+    public void CloseShop()
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

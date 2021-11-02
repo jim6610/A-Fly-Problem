@@ -330,11 +330,10 @@ MonoBehaviour:
   highlightMaterial: {fileID: 2100000, guid: b2b877d2f59c46140922023f1522eba0, type: 2}
   defaultMaterial: {fileID: 2100000, guid: ebc825da25a535c46b63766c1d1cc453, type: 2}
   grabDistance: 5
+  throwForce: 20
   hand: {fileID: 436894669}
   fpsCam: {fileID: 799323327}
-  heldObjectRef: {fileID: 0}
   weaponManager: {fileID: 503258465}
-  throwForce: 20
 --- !u!4 &91222085
 Transform:
   m_ObjectHideFlags: 0
@@ -804,7 +803,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 413997883}
         m_TargetAssemblyTypeName: WeaponShop, Assembly-CSharp
-        m_MethodName: closeShop
+        m_MethodName: CloseShop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2317,7 +2316,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 413997883}
         m_TargetAssemblyTypeName: WeaponShop, Assembly-CSharp
-        m_MethodName: buyWeapon
+        m_MethodName: BuyWeapon
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 7947948147216892747, guid: 165f5fba16787004897f8320f1550c94, type: 3}
