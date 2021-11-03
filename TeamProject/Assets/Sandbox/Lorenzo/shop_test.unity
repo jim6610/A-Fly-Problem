@@ -2880,7 +2880,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 413997883}
         m_TargetAssemblyTypeName: WeaponShop, Assembly-CSharp
-        m_MethodName: buyWeapon
+        m_MethodName: BuyWeapon
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 3980349170530774325, guid: 161d9346d75084a4fb7356c1ec7c197c, type: 3}
