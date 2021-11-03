@@ -944,6 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 503258463}
+  ws: {fileID: 503258465}
 --- !u!1 &436894668
 GameObject:
   m_ObjectHideFlags: 0
