@@ -5,14 +5,17 @@ using UnityEngine;
 public class WeaponShop : MonoBehaviour
 {
     [SerializeField] private GameObject weaponHolder;
-    [SerializeField] private WeaponSwitching ws; // can be removed once weapon shop is in main menu and not in level
     
+    private WeaponSwitching weaponSwitching; // can be removed once weapon shop is in main menu and not in level
     private InventoryManager inventoryManager;
+    
     private bool firstWeapon = true;
 
     void Start()
     {
         inventoryManager = FindObjectOfType<InventoryManager>();
+        weaponSwitching = FindObjectOfType<WeaponSwitching>();
+        
         Time.timeScale = 0;
     }
     
@@ -38,6 +41,6 @@ public class WeaponShop : MonoBehaviour
         // TO REMOVE: to fix null reference bug. can be removed once weapon shop is in main menu and not in level. SelectWeapon() needs to be called to set an active weapon.
         // Normally this is called in Start() function of WeaponSwitching but because WeaponShop is in the level, the player doesn't start with any weapons and no active weapon can be set. 
         inventoryManager.PopulateInventory();
-        ws.SelectWeapon(); 
+        weaponSwitching.SelectWeapon(); 
     }
 }
