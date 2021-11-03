@@ -5,10 +5,13 @@ using UnityEngine;
 public class WeaponShop : MonoBehaviour
 {
     [SerializeField] private GameObject weaponHolder;
+    
+    private InventoryManager inventoryManager;
     private bool firstWeapon = true;
 
     void Start()
     {
+        inventoryManager = FindObjectOfType<InventoryManager>();
         Time.timeScale = 0;
     }
     
@@ -29,6 +32,7 @@ public class WeaponShop : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;
+        inventoryManager.PopulateInventory();
         gameObject.SetActive(false);
     }
 }
