@@ -46,8 +46,6 @@ public class Pistol : MonoBehaviour
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range))
         {
-            Debug.Log(hit.transform.name);
-
             // Damage destructible objects
             if (hit.transform.CompareTag("Destructible"))
             {

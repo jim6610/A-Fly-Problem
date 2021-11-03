@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("Contract Value: " + contractValue);
+        // print("Contract Value: " + contractValue);
     }
 
     public static void ReduceContractValue(float reduction)
