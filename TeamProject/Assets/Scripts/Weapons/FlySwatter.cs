@@ -13,6 +13,7 @@ public class FlySwatter : MonoBehaviour
     [SerializeField] private GameObject impactEffectParticle;
     [Header("Animation")]
     [SerializeField] private Animator animator;
+    private AudioManager audioManager;
 
     private Camera fpsCam;
     private float nextTimeToFire;
@@ -25,6 +26,8 @@ public class FlySwatter : MonoBehaviour
 
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+        
         fpsCam = Camera.main;
         // isAttacking = false;
         timer = 0;
@@ -42,10 +45,14 @@ public class FlySwatter : MonoBehaviour
     /// Weapon firing logic
     void Swat()
     {
+        audioManager.Play("Swat");
+        
         animator.SetTrigger(Attack); //trigger our animation
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range))
         {
+            audioManager.Play("Smack");
+            
             // Damage destructible objects
             if (hit.transform.CompareTag("Destructible"))
             {

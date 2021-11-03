@@ -1496,7 +1496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -87.638, y: -17.6}
+  m_AnchoredPosition: {x: -92, y: -19}
   m_SizeDelta: {x: 66.103, y: 80.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449332853
@@ -4011,6 +4011,7 @@ Transform:
   m_Children:
   - {fileID: 1923076086}
   - {fileID: 1165152629}
+  - {fileID: 1590670533}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4974,6 +4975,64 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1590670532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590670533}
+  - component: {fileID: 1590670534}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1590670533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590670532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1268738076}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1590670534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590670532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a67c1abb488144cbf589d27794566f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Swat
+    clip: {fileID: 8300000, guid: 9e685df5875484f4fb643f8564c9cb95, type: 3}
+    volume: 0.2
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Smack
+    clip: {fileID: 8300000, guid: 477ae59b69dd2734482511ed0ed0b796, type: 3}
+    volume: 0.1
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1603861732
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,7 +5084,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ReferenceResolution: {x: 1920, y: 980}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -5207,6 +5266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665323840}
+  - component: {fileID: 1665323841}
   m_Layer: 5
   m_Name: Contract Indicator
   m_TagString: Untagged
@@ -5223,7 +5283,7 @@ RectTransform:
   m_GameObject: {fileID: 1665323839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_Children:
   - {fileID: 758406613}
   - {fileID: 449332852}
@@ -5232,9 +5292,17 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -137.426, y: -29.679}
+  m_AnchoredPosition: {x: -142, y: -29.679}
   m_SizeDelta: {x: 274.856, y: 59.359}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1665323841
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665323839}
+  m_CullTransparentMesh: 1
 --- !u!1 &1672589559
 GameObject:
   m_ObjectHideFlags: 0
@@ -6130,6 +6198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7988349420b95be42995ee78bb4e9214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyUI: {fileID: 758406615}
 --- !u!1 &1958724866
 GameObject:
   m_ObjectHideFlags: 0
