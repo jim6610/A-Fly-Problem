@@ -1,29 +1,65 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// Handles the highlighting of objects within a players range and the grabbing and throwing of objects
+/// TODO The game logic of higlighting objects and throwing/picking up should be split in different classes
 public class SelectionManager : MonoBehaviour
 {
     [SerializeField] private string selectableTag = "Throwable";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
-
-    public float grabDistance = 5f;
-
+    [SerializeField] private float grabDistance = 5f;
+    [SerializeField] private float throwForce = 1f;
+    
+    [SerializeField] private Transform hand;
+    [SerializeField] private Camera fpsCam;
+    [SerializeField] private WeaponSwitching weaponManager;
+    
+    private Transform heldObjectRef;
     private Transform _selection;
-    public Transform hand;
-    public Camera fpsCam;
-    public Transform heldObjectRef;
-    public WeaponSwitching weaponManager;
-
-    public float throwForce = 1f;
-
+    
     private bool isHolding;
     private float throwCooldown = 1f;
     private float throwTimer;
+    
+    /// Logic Lambdas to make our conditionals less cluttered
+    private bool CanThrow => !isHolding && throwTimer > throwCooldown;
+    private bool ShouldThrow => isHolding && Input.GetKeyDown(KeyCode.E);
+    private bool ShouldPickUp => !isHolding && Input.GetKeyDown(KeyCode.E);
 
-    // Update is called once per frame
     void Update()
+    {
+        RemoveSelection();
+        ThrowHandler();
+        SelectionHandler();
+    }
+    
+    /// Fires a ray at the center of the screen with a given range to see if an object should be highlighted (Grabbable)
+    private void SelectionHandler()
+    {
+        var ray = fpsCam.ScreenPointToRay(Input.mousePosition);
+        
+        if (CanThrow && Physics.Raycast(ray, out var hit, grabDistance))
+        {
+            var selection = hit.transform;
+
+            if (selection.CompareTag(selectableTag))
+            {
+                var selectionRenderer = selection.GetComponent<Renderer>();
+
+                if (selectionRenderer != null)
+                {
+                    selectionRenderer.material = highlightMaterial;
+                }
+
+                _selection = selection;
+
+                Pickup(selection);
+            }
+        }
+    }
+    
+    /// If something is currently select deselect it and reset its material
+    private void RemoveSelection()
     {
         if (_selection != null)
         {
@@ -31,73 +67,59 @@ public class SelectionManager : MonoBehaviour
             selectionRenderer.material = defaultMaterial;
             _selection = null;
         }
-
-        var ray = fpsCam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        Throw();
-
+    }
+    
+    /// Throw whatever object the player is currently holding
+    private void ThrowHandler()
+    {
         throwTimer += Time.deltaTime;
+        
+        if (!ShouldThrow) 
+            return;
+        
+        ToggleObject(heldObjectRef, true);
+        
+        heldObjectRef.GetComponent<Rigidbody>().AddForce(fpsCam.transform.forward * throwForce, ForceMode.Impulse);
 
-        if (!isHolding && throwTimer > throwCooldown)
-        {
-            if (Physics.Raycast(ray, out hit, grabDistance))
-            {
-                var selection = hit.transform;
+        heldObjectRef.parent = null;
+        isHolding = false;
+        heldObjectRef = null;
 
-                if (selection.CompareTag(selectableTag))
-                {
-                    var selectionRenderer = selection.GetComponent<Renderer>();
+        throwTimer = 0;
 
-                    if (selectionRenderer != null)
-                    {
-                        selectionRenderer.material = highlightMaterial;
-                    }
-
-                    _selection = selection;
-
-                    Pickup(selection);
-                }
-            }
-        }
+        weaponManager.EquipPreviousWeapon();
     }
-
-    void Throw()
+    
+    /// "Picks up" a gameobject and places it at the carry location of the player
+    /// <param name="selection">The transform of the eligible object</param>
+    private void Pickup(Transform selection)
     {
-        if (isHolding && Input.GetKeyDown(KeyCode.E))
-        {
-            heldObjectRef.GetComponent<Rigidbody>().useGravity = true;
-            heldObjectRef.GetComponent<Collider>().enabled = true;
-            heldObjectRef.GetComponent<Rigidbody>().freezeRotation = false;
-            heldObjectRef.GetComponent<Rigidbody>().AddForce(fpsCam.transform.forward * throwForce, ForceMode.Impulse);
+        if (!ShouldPickUp) 
+            return;
+        
+        ToggleObject(selection, false);
 
-            heldObjectRef.parent = null;
-            isHolding = false;
-            heldObjectRef = null;
+        selection.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
-            throwTimer = 0;
+        var handTransform = hand.transform;
+        
+        selection.position = handTransform.position;
+        selection.parent = handTransform;
 
-            weaponManager.EquipPreviousWeapon();
-        }
+        heldObjectRef = selection;
+        isHolding = true;
+
+        weaponManager.PutAwayCurrentWeapon();
     }
-
-    void Pickup(Transform selection)
+    
+    /// Toggle between a "frozen" (picked up) state and thrown
+    /// When disabled, removes gravity, disables collider and freezes the objects rotation
+    /// <param name="objectTransform">Transform to be toggle</param>
+    /// <param name="enabled">The new state of the object</param>
+    private void ToggleObject(Transform objectTransform, bool enabled)
     {
-        if (!isHolding && Input.GetKeyDown(KeyCode.E))
-        {
-            selection.GetComponent<Rigidbody>().useGravity = false;
-            selection.GetComponent<Rigidbody>().freezeRotation = true;
-            selection.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-            selection.position = hand.transform.position;
-            selection.parent = hand.transform;
-
-            heldObjectRef = selection;
-
-            selection.GetComponent<Collider>().enabled = false;
-
-            isHolding = true;
-
-            weaponManager.PutAwayCurrentWeapon();
-        }
+        objectTransform.GetComponent<Rigidbody>().useGravity = enabled;
+        objectTransform.GetComponent<Collider>().enabled = enabled;
+        objectTransform.GetComponent<Rigidbody>().freezeRotation = !enabled;
     }
 }

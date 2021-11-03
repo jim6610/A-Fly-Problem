@@ -1,24 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// Handles the directional looking behavior of the player
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 400f;
-    public Transform playerBody;
+    [Header("Mouse Parameters")]
+    [SerializeField] private float mouseSensitivity = 400f;
+    [Header("Game Objects")]
+    [SerializeField] private Transform playerBody;
 
-    float xRotation = 0f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
+    private float xRotation;
+    
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        MouseHandler();
+    }
+    
+    /// Moves where the player is looking based on the movement of the mouse
+    private void MouseHandler()
+    {
+        var mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        var mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
         // Clamp to prevent rotation around the player
