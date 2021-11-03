@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    public int selectedWeapon = 0;
+    private int selectedWeapon = 0;
     bool weaponsEnabled;
+
+    public int SelectedWeapon => selectedWeapon;
 
     GameObject activeWeapon;
 
