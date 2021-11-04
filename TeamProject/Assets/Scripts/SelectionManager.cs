@@ -4,7 +4,7 @@ using UnityEngine;
 /// TODO The game logic of higlighting objects and throwing/picking up should be split in different classes
 public class SelectionManager : MonoBehaviour
 {
-    [SerializeField] private string selectableTag = "Throwable";
+    [SerializeField] private string selectableTag = "Destructible";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
     [SerializeField] private float grabDistance = 5f;
@@ -40,15 +40,19 @@ public class SelectionManager : MonoBehaviour
         
         if (CanThrow && Physics.Raycast(ray, out var hit, grabDistance))
         {
-            var selection = hit.transform;
+            Transform selection = hit.transform;
 
-            if (selection.CompareTag(selectableTag))
+            //if (selection.CompareTag(selectableTag))
+            if (selection.tag == "Destructible")
             {
+                selection.GetComponent<Outline>().enabled = true;
+
                 var selectionRenderer = selection.GetComponent<Renderer>();
+
 
                 if (selectionRenderer != null)
                 {
-                    selectionRenderer.material = highlightMaterial;
+                    //selectionRenderer.material = highlightMaterial;
                 }
 
                 _selection = selection;
@@ -63,8 +67,9 @@ public class SelectionManager : MonoBehaviour
     {
         if (_selection != null)
         {
+            _selection.GetComponent<Outline>().enabled = false;
             var selectionRenderer = _selection.GetComponent<Renderer>();
-            selectionRenderer.material = defaultMaterial;
+            //selectionRenderer.material = defaultMaterial;
             _selection = null;
         }
     }

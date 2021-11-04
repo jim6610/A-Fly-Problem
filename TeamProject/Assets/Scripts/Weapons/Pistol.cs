@@ -13,6 +13,7 @@ public class Pistol : MonoBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject impactEffectParticle;
     [SerializeField] private GameObject bulletPrefab;
+    private AudioManager audioManager;
 
     private Camera fpsCam;
     private float nextTimeToFire;
@@ -21,6 +22,7 @@ public class Pistol : MonoBehaviour
 
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         fpsCam = Camera.main;
     }
     
@@ -36,6 +38,7 @@ public class Pistol : MonoBehaviour
     /// Weapon firing logic
     void Shoot()
     {
+        audioManager.Play("GunShot");
         muzzleFlash.Play();
 
         GameObject bulletObj = Instantiate(bulletPrefab);

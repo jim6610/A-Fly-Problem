@@ -17,8 +17,6 @@ public class FlySwatter : MonoBehaviour
 
     private Camera fpsCam;
     private float nextTimeToFire;
-    // private bool isAttacking;
-    private float timer;
     
     private static readonly int Attack = Animator.StringToHash("Attack");
     
@@ -30,7 +28,6 @@ public class FlySwatter : MonoBehaviour
         
         fpsCam = Camera.main;
         // isAttacking = false;
-        timer = 0;
     }
     
     void Update()
