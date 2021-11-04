@@ -11,7 +11,7 @@ public class Breakable : MonoBehaviour
 
     void Break()
     {
-        Debug.Log("BROKEN");
+        //Debug.Log("BROKEN");
         
         // TODO Instantiate your broken model here and then delete this gameobject
     }

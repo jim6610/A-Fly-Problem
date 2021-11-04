@@ -27,19 +27,19 @@ public class Destructible : MonoBehaviour {
         currentHealth -= amount;
 
         // Less than 25% health will cause player to lose 25% of this object's monetary value. 
-        if (currentHealth < initialHealth * 0.75 && !firstThresholdReached)
+        if (currentHealth <= initialHealth * 0.75 && !firstThresholdReached)
         {
             firstThresholdReached = true;
             LoseMoney();
         }
         // Less than 50% health will cause player to lose 25% of this object's monetary value. 
-        if (currentHealth < initialHealth * 0.50 && !secondThresholdReached)
+        if (currentHealth <= initialHealth * 0.50 && !secondThresholdReached)
         {
             secondThresholdReached = true;
             LoseMoney();
         }
         // Less than 75% health will cause player to lose 25% of this object's monetary value. 
-        if (currentHealth < initialHealth * 0.25 && !thirdThresholdReached)
+        if (currentHealth <= initialHealth * 0.25 && !thirdThresholdReached)
         {
             thirdThresholdReached = true;
             LoseMoney();

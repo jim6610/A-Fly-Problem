@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3418171637383669479}
   - component: {fileID: 4668564672449611580}
   - component: {fileID: 8522558290849726365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_WoodenCrate
   m_TagString: Destructible
   m_Icon: {fileID: 0}
