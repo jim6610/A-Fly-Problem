@@ -1565,7 +1565,7 @@ MonoBehaviour:
   jumpHeight: 2
   walkSpeed: 6
   sprintSpeed: 10
-  crouchSpeed: 3
+  crouchSpeed: 2
   canSprint: 1
   crouchingHeight: 2
   standingHeight: 3
@@ -1578,7 +1578,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   bobAmount: 0.15
-  crouchBobSpeed: 5
+  crouchBobSpeed: 4
   walkBobSpeed: 9
   sprintBobSpeed: 14
 --- !u!143 &315189624
