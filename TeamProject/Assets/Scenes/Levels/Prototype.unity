@@ -151,12 +151,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59453382}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.918, y: 0.302, z: 0.537}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.62, y: -0.456, z: 0.777}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 315189622}
-  m_RootOrder: 3
+  m_Father: {fileID: 787295750}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &77993352
 GameObject:
@@ -1543,7 +1543,6 @@ Transform:
   - {fileID: 616164646}
   - {fileID: 787295750}
   - {fileID: 311821955}
-  - {fileID: 59453383}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3330,6 +3329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1663483264}
+  - {fileID: 59453383}
   m_Father: {fileID: 315189622}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5911,15 +5911,15 @@ MonoBehaviour:
     spatialBlend: 0
     loop: 0
     source: {fileID: 0}
-  - name: BottleSmash
-    clip: {fileID: 8300000, guid: d5953db52e368434cae52fff1b7c3c58, type: 3}
+  - name: GunShot
+    clip: {fileID: 8300000, guid: cc63b3f2cde156f449503dd8abdd34c3, type: 3}
     volume: 0.3
     pitch: 1
     spatialBlend: 0
     loop: 0
     source: {fileID: 0}
-  - name: GunShot
-    clip: {fileID: 8300000, guid: cc63b3f2cde156f449503dd8abdd34c3, type: 3}
+  - name: GlassShards
+    clip: {fileID: 8300000, guid: 085a9b051523be2498384a68b9358f98, type: 3}
     volume: 0.3
     pitch: 1
     spatialBlend: 0

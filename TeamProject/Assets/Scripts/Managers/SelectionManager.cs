@@ -42,21 +42,10 @@ public class SelectionManager : MonoBehaviour
         {
             Transform selection = hit.transform;
 
-            //if (selection.CompareTag(selectableTag))
             if (selection.tag == "Destructible")
             {
                 selection.GetComponent<Outline>().enabled = true;
-
-                var selectionRenderer = selection.GetComponent<Renderer>();
-
-
-                if (selectionRenderer != null)
-                {
-                    //selectionRenderer.material = highlightMaterial;
-                }
-
                 _selection = selection;
-
                 Pickup(selection);
             }
         }
@@ -68,8 +57,6 @@ public class SelectionManager : MonoBehaviour
         if (_selection != null)
         {
             _selection.GetComponent<Outline>().enabled = false;
-            var selectionRenderer = _selection.GetComponent<Renderer>();
-            //selectionRenderer.material = defaultMaterial;
             _selection = null;
         }
     }

@@ -27,7 +27,6 @@ public class FlySwatter : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         
         fpsCam = Camera.main;
-        // isAttacking = false;
     }
     
     void Update()
