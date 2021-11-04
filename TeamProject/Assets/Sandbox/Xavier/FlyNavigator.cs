@@ -48,6 +48,11 @@ public class FlyNavigator : MonoBehaviour
         //player = ((PlayerMovement)(GameObject.FindObjectOfType<PlayerMovement>())).gameObject.transform;
     }
 
+    void Awake()
+    {
+        gameObject.GetComponent<AudioManager>().Play("Fly");
+    }
+
     public void GetNewDestination()
     {
         int newTargetIndex = (int)Random.Range(0.0f, destinationVolumes.Length);

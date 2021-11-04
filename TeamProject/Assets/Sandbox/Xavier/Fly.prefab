@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 1223799788972486244}
   - component: {fileID: 1223799788972486247}
   - component: {fileID: 1223799788972486245}
+  - component: {fileID: 3530969343813208041}
   m_Layer: 7
   m_Name: Fly
   m_TagString: Untagged
@@ -262,10 +263,39 @@ MonoBehaviour:
   wallAwarenessDistance: 5
   landChance: 25
   landCoolDown: 10
-  playerAwarenessDistance: 10
   sightDistance: 5
+  playerAwarenessDistance: 10
+  playerSneakAwarenessDistance: 0
+  playerSprintAwarenenessDistance: 0
   destinationsContainer: {fileID: 0}
   player: {fileID: 0}
+--- !u!114 &3530969343813208041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223799788972486246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a67c1abb488144cbf589d27794566f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Fly
+    clip: {fileID: 8300000, guid: 87a25b7df884a2348bab04f3f4955e75, type: 3}
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Die
+    clip: {fileID: 8300000, guid: 7f658edd2e159c74ea9b92df5ab2966d, type: 3}
+    volume: 1
+    pitch: 1
+    spatialBlend: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1223799789528521296
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +412,6 @@ MonoBehaviour:
   ceilingAwareness: 3
   maxSpeed: 8
   stationaryWaitTime: 1
-  playerAwarenessDistance: 10
 --- !u!54 &1223799789528521301
 Rigidbody:
   m_ObjectHideFlags: 0
