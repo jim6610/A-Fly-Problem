@@ -63,7 +63,6 @@ public class FlySwatter : MonoBehaviour
             else if (hit.transform.CompareTag("Enemy"))
             {
                 EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
-                print("hit");
                 if (target != null)
                 {
                     target.TakeDamage(damage);
