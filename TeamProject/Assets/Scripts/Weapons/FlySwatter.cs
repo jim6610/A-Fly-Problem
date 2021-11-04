@@ -8,7 +8,7 @@ public class FlySwatter : MonoBehaviour
     [SerializeField] private float damage = 2f;
     [SerializeField] private float impactForce = 30f;
     [SerializeField] private float fireRate = 2f;
-    [SerializeField] private float range = 4f;
+    [SerializeField] private float range = 5f;
     [Header("Effects")]
     [SerializeField] private GameObject impactEffectParticle;
     [Header("Animation")]
@@ -59,6 +59,17 @@ public class FlySwatter : MonoBehaviour
                     target.TakeDamage(damage);
                 }
             }
+            // Damage enemy
+            else if (hit.transform.CompareTag("Enemy"))
+            {
+                EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
+                print("hit");
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
+            }
+
 
             Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
 
