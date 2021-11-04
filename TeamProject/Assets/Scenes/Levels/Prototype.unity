@@ -3033,7 +3033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223799788972486244, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.9410577
+      value: -14.59
       objectReference: {fileID: 0}
     - target: {fileID: 1223799788972486244, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3521,7 +3521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc386b2308486e243bf164169fc653e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 400
+  mouseSensitivity: 300
   playerBody: {fileID: 315189622}
 --- !u!81 &787295752
 AudioListener:
@@ -6162,7 +6162,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: GunShot
     clip: {fileID: 8300000, guid: cc63b3f2cde156f449503dd8abdd34c3, type: 3}
-    volume: 0.3
+    volume: 0.2
     pitch: 1
     spatialBlend: 0
     loop: 0
