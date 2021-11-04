@@ -3083,6 +3083,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fly
       objectReference: {fileID: 0}
+    - target: {fileID: 1223799789528521296, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1223799789528521386, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: ceilingAwareness
       value: 0
@@ -4751,6 +4755,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220062475}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1240929292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1223799789528521296, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
+  m_PrefabInstance: {fileID: 1834907351}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1240929299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240929292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a5943ff0837e243a38f2882d9b943e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!1001 &1260871388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5237,6 +5259,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353218285}
   m_CullTransparentMesh: 1
+--- !u!1 &1362203861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1223799789528521296, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
+  m_PrefabInstance: {fileID: 719879583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1362203863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362203861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a5943ff0837e243a38f2882d9b943e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!1 &1372333988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,6 +5818,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4362101633734719258, guid: f0c727766bb1b394bbd5d46a1b33d4ce, type: 3}
   m_PrefabInstance: {fileID: 298802216}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1565829529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1223799789528521296, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
+  m_PrefabInstance: {fileID: 1998181634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1565829536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565829529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a5943ff0837e243a38f2882d9b943e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!1 &1570306358
 GameObject:
   m_ObjectHideFlags: 0
@@ -6874,7 +6932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223799788972486247, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: m_AngularSpeed
-      value: 30
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223799789528521296, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1223799789528521386, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: ceilingAwareness
@@ -7772,7 +7834,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1223799788972486247, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: m_AngularSpeed
-      value: 20
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1223799789528521296, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1223799789528521386, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: ceilingAwareness
