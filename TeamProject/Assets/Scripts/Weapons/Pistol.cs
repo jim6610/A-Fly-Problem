@@ -59,6 +59,16 @@ public class Pistol : MonoBehaviour
                     target.TakeDamage(damage);
                 }
             }
+            // Damage enemy
+            else if (hit.transform.CompareTag("Enemy"))
+            {
+                EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
+
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
+            }
 
             Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
 
