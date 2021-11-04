@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public AudioSource walkSoundEffect;
     private bool ShouldCrouch => Input.GetKeyDown(KeyCode.LeftControl) && !duringCrouchAnimation && isGrounded;
     public bool IsSprinting => canSprint && Input.GetKey(KeyCode.LeftShift) && isGrounded;
 
@@ -61,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
         HandleCrouch();
 
         HeadBobHandler();
+
+        //WalkSound();
     }
 
     /// Handle moving the player based on the directional keys pressed
@@ -158,6 +161,14 @@ public class PlayerMovement : MonoBehaviour
                 defaultYPosition + Mathf.Sin(timer) * bobAmount,
                 localPosition.z
             );
+        }
+    }
+
+    private void WalkSound()
+    {
+        if (controller.isGrounded == true && controller.velocity.magnitude > 0 && walkSoundEffect.isPlaying == false)
+        {
+            walkSoundEffect.Play();
         }
     }
 }
