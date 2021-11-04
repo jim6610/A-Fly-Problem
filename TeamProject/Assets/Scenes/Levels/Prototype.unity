@@ -6136,6 +6136,20 @@ MonoBehaviour:
     spatialBlend: 0
     loop: 0
     source: {fileID: 0}
+  - name: Fly
+    clip: {fileID: 8300000, guid: 87a25b7df884a2348bab04f3f4955e75, type: 3}
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Die
+    clip: {fileID: 8300000, guid: 7f658edd2e159c74ea9b92df5ab2966d, type: 3}
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1603861732
 GameObject:
   m_ObjectHideFlags: 0

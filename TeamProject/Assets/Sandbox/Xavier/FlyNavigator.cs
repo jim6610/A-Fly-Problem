@@ -37,6 +37,8 @@ public class FlyNavigator : MonoBehaviour
 
     void Start()
     {
+        // FindObjectOfType<AudioManager>().Play("Fly");
+        
         Random.InitState(System.DateTime.Now.Millisecond);
         agent = GetComponent<NavMeshAgent>();
         flyRelativeMovement = GetComponentInChildren<FlyRelativeMovmement>();
@@ -46,11 +48,6 @@ public class FlyNavigator : MonoBehaviour
         GetTargetAimlessly();
         agent.stoppingDistance = 1.0f;
         //player = ((PlayerMovement)(GameObject.FindObjectOfType<PlayerMovement>())).gameObject.transform;
-    }
-
-    void Awake()
-    {
-        gameObject.GetComponent<AudioManager>().Play("Fly");
     }
 
     public void GetNewDestination()
