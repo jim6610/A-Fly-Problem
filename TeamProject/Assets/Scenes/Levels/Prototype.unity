@@ -3812,7 +3812,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840686655}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -4458,9 +4458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7decf1ad8078e3448105fb465304500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Throwable
-  highlightMaterial: {fileID: 2100000, guid: b2b877d2f59c46140922023f1522eba0, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: ebc825da25a535c46b63766c1d1cc453, type: 2}
+  selectableTag: Destructible
   grabDistance: 5
   throwForce: 20
   hand: {fileID: 59453383}
@@ -6466,7 +6464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -142, y: -29.679}
+  m_AnchoredPosition: {x: -142, y: -29.678955}
   m_SizeDelta: {x: 274.856, y: 59.359}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1665323841
