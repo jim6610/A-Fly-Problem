@@ -5,8 +5,6 @@ using UnityEngine;
 public class SelectionManager : MonoBehaviour
 {
     [SerializeField] private string selectableTag = "Destructible";
-    [SerializeField] private Material highlightMaterial;
-    [SerializeField] private Material defaultMaterial;
     [SerializeField] private float grabDistance = 5f;
     [SerializeField] private float throwForce = 1f;
     
@@ -42,7 +40,7 @@ public class SelectionManager : MonoBehaviour
         {
             Transform selection = hit.transform;
 
-            if (selection.tag == "Destructible")
+            if (selection.CompareTag(selectableTag))
             {
                 selection.GetComponent<Outline>().enabled = true;
                 _selection = selection;
