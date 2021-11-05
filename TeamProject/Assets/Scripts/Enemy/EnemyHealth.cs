@@ -28,6 +28,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        Destroy(transform.parent.gameObject);
+        FlyRelativeMovmement frm = GetComponent<FlyRelativeMovmement>();
+        if (frm)
+            frm.SetFlyMode(FlyMode.DEATH);
     }
 }

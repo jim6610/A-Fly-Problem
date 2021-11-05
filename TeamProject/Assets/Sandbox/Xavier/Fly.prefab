@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallAwarenessDistance: 5
-  landChance: 25
-  landCoolDown: 10
+  landChance: 30
+  landCoolDown: 6
   sightDistance: 5
   playerAwarenessDistance: 10
   playerSneakAwarenessDistance: 2
@@ -139,7 +139,7 @@ MonoBehaviour:
   targetHeightRange: 8
   ceilingAwareness: 0
   maxSpeed: 8
-  stationaryWaitTime: 1
+  stationaryWaitTime: 4
 --- !u!54 &1223799789528521301
 Rigidbody:
   m_ObjectHideFlags: 0
