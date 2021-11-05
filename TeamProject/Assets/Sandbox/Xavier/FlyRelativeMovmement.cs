@@ -31,11 +31,14 @@ public class FlyRelativeMovmement : MonoBehaviour
     private BoxCollider collider;
     private float waitTimer;
     private float takeOffTime;
+    private Animator animator;
 
     private float targetHeight;
-    private float targetHeightMin = 5.0f;
+    private float targetHeightMin = 1.0f;
     private float targetHeightTimer;
     private float targetHeightTime;
+
+
 
     void Start()
     {
@@ -49,10 +52,13 @@ public class FlyRelativeMovmement : MonoBehaviour
         takeOffTime = 0.5f;
         targetHeightTime = 1.0f;
         targetHeight = Random.Range(targetHeightMin, targetHeightRange);
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void FlyRoutine()
     {
+        animator.SetBool("animFly", true);
+        animator.SetBool("animEat", false);
         targetHeightTimer += Time.deltaTime;
         if(targetHeightTimer>targetHeightTime)
         {
@@ -83,7 +89,9 @@ public class FlyRelativeMovmement : MonoBehaviour
 
     void LandingRoutine()
     {
-        if(flyNavigator.PlayerInRange(transform))
+        animator.SetBool("animFly", true);
+        animator.SetBool("animEat", false);
+        if (flyNavigator.PlayerInRange(transform))
         {
             flyNavigator.GetTargetAimlessly();
             flyMode = FlyMode.TRAVELLING;
@@ -107,14 +115,16 @@ public class FlyRelativeMovmement : MonoBehaviour
 
     void StationaryRoutine()
     {
+        animator.SetBool("animFly", false);
+        animator.SetBool("animEat", true);
         waitTimer += Time.deltaTime;
-
         bool playerWasInRange = flyNavigator.PlayerInRange(transform);
         if (waitTimer > stationaryWaitTime || playerWasInRange)
         {
             
             rb.AddRelativeForce(Vector3.up * thrustForce);
-            
+            animator.SetBool("animFly", true);
+            animator.SetBool("animEat", false);
             if (waitTimer > stationaryWaitTime + takeOffTime || playerWasInRange)
             {
                 waitTimer = 0.0f;
