@@ -442,11 +442,10 @@ MonoBehaviour:
   highlightMaterial: {fileID: 2100000, guid: b2b877d2f59c46140922023f1522eba0, type: 2}
   defaultMaterial: {fileID: 2100000, guid: ebc825da25a535c46b63766c1d1cc453, type: 2}
   grabDistance: 5
+  throwForce: 20
   hand: {fileID: 1799746092}
   fpsCam: {fileID: 1294224409}
-  heldObjectRef: {fileID: 0}
   weaponManager: {fileID: 0}
-  throwForce: 20
 --- !u!4 &345087728
 Transform:
   m_ObjectHideFlags: 0
@@ -917,6 +916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1067612976}
+  walkSoundEffect: {fileID: 0}
   gravity: -19.62
   jumpHeight: 3
   walkSpeed: 12
@@ -2279,7 +2279,7 @@ PrefabInstance:
     - target: {fileID: 1223799788972486245, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1067612974}
+      objectReference: {fileID: 1067612973}
     - target: {fileID: 1223799788972486245, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
       propertyPath: destinationsContainer
       value: 
