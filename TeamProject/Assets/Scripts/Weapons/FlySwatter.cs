@@ -8,16 +8,15 @@ public class FlySwatter : MonoBehaviour
     [SerializeField] private float damage = 2f;
     [SerializeField] private float impactForce = 30f;
     [SerializeField] private float fireRate = 2f;
-    [SerializeField] private float range = 4f;
+    [SerializeField] private float range = 5f;
     [Header("Effects")]
     [SerializeField] private GameObject impactEffectParticle;
     [Header("Animation")]
     [SerializeField] private Animator animator;
+    private AudioManager audioManager;
 
     private Camera fpsCam;
     private float nextTimeToFire;
-    // private bool isAttacking;
-    private float timer;
     
     private static readonly int Attack = Animator.StringToHash("Attack");
     
@@ -25,9 +24,9 @@ public class FlySwatter : MonoBehaviour
 
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+        
         fpsCam = Camera.main;
-        // isAttacking = false;
-        timer = 0;
     }
     
     void Update()
@@ -42,10 +41,14 @@ public class FlySwatter : MonoBehaviour
     /// Weapon firing logic
     void Swat()
     {
+        audioManager.Play("Swat");
+        
         animator.SetTrigger(Attack); //trigger our animation
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range))
         {
+            audioManager.Play("Smack");
+            
             // Damage destructible objects
             if (hit.transform.CompareTag("Destructible"))
             {
@@ -56,6 +59,16 @@ public class FlySwatter : MonoBehaviour
                     target.TakeDamage(damage);
                 }
             }
+            // Damage enemy
+            else if (hit.transform.CompareTag("Enemy"))
+            {
+                EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
+            }
+
 
             Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
 

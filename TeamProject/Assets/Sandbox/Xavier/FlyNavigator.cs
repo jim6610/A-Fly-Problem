@@ -37,6 +37,8 @@ public class FlyNavigator : MonoBehaviour
 
     void Start()
     {
+        // FindObjectOfType<AudioManager>().Play("Fly");
+        
         Random.InitState(System.DateTime.Now.Millisecond);
         agent = GetComponent<NavMeshAgent>();
         flyRelativeMovement = GetComponentInChildren<FlyRelativeMovmement>();

@@ -13,6 +13,7 @@ public class Pistol : MonoBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject impactEffectParticle;
     [SerializeField] private GameObject bulletPrefab;
+    private AudioManager audioManager;
 
     private Camera fpsCam;
     private float nextTimeToFire;
@@ -21,6 +22,7 @@ public class Pistol : MonoBehaviour
 
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         fpsCam = Camera.main;
     }
     
@@ -36,6 +38,7 @@ public class Pistol : MonoBehaviour
     /// Weapon firing logic
     void Shoot()
     {
+        audioManager.Play("GunShot");
         muzzleFlash.Play();
 
         GameObject bulletObj = Instantiate(bulletPrefab);
@@ -46,12 +49,20 @@ public class Pistol : MonoBehaviour
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range))
         {
-            Debug.Log(hit.transform.name);
-
             // Damage destructible objects
             if (hit.transform.CompareTag("Destructible"))
             {
                 Destructible target = hit.transform.GetComponent<Destructible>();
+
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
+            }
+            // Damage enemy
+            else if (hit.transform.CompareTag("Enemy"))
+            {
+                EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
 
                 if (target != null)
                 {
