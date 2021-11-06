@@ -5223,8 +5223,9 @@ GameObject:
   - component: {fileID: 7946648322266301499}
   - component: {fileID: 3218380068038748896}
   - component: {fileID: 8371794749499025031}
+  - component: {fileID: 7748240364179863431}
   m_Layer: 0
-  m_Name: Pistol_01
+  m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5273,9 +5274,12 @@ MonoBehaviour:
   impactForce: 75
   fireRate: 3
   range: 100
+  reloadTime: 3
+  maxAmmo: 6
   muzzleFlash: {fileID: 7946648323015904496}
   impactEffectParticle: {fileID: 8513659319318470114, guid: 5499830e123f2fe438dda654abf3fdbd, type: 3}
   bulletPrefab: {fileID: 5071994949306533872, guid: 9a7e81f347d534e47b258b2076c2d06a, type: 3}
+  animator: {fileID: 7748240364179863431}
 --- !u!222 &3218380068038748896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5314,6 +5318,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7748240364179863431
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7947948147216892747}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c42f654c67c7c440ae1d2ba66283670, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7948077947631618861
 GameObject:
   m_ObjectHideFlags: 0

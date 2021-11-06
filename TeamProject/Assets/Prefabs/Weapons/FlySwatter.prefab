@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4279021193490360276}
   - component: {fileID: 832857632505836396}
   m_Layer: 0
-  m_Name: Fly Swatter
+  m_Name: FlySwatter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

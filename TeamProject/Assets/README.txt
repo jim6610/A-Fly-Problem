@@ -34,3 +34,5 @@ Shooting with Raycasts
 - https://www.youtube.com/watch?v=THnivyG0Mvo
 Weapon switching
 - https://www.youtube.com/watch?v=Dn_BUIVdAPg
+Weapon Reloading
+- https://www.youtube.com/watch?v=kAx5g9V5bcM

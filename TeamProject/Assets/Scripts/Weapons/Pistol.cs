@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 /// Pistol ranged weapon
 /// TODO Code not DRY, shares almost all game variables/logic with FlySwatter, can probably use inheritance here
@@ -9,14 +11,20 @@ public class Pistol : MonoBehaviour
     [SerializeField] private float impactForce = 75f;
     [SerializeField] private float fireRate = 5f;
     [SerializeField] private float range = 100f;
+    [SerializeField] private float reloadTime = 3;
+    [SerializeField] private int maxAmmo = 6;
+
     [Header("Effects")]
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject impactEffectParticle;
     [SerializeField] private GameObject bulletPrefab;
     private AudioManager audioManager;
+    public Animator animator;
 
     private Camera fpsCam;
     private float nextTimeToFire;
+    private int currentAmmo;
+    private bool isReloading = false;
 
     private bool CanFire => Input.GetButton("Fire1") && Time.time >= nextTimeToFire;
 
@@ -24,10 +32,29 @@ public class Pistol : MonoBehaviour
     {
         audioManager = FindObjectOfType<AudioManager>();
         fpsCam = Camera.main;
+        currentAmmo = maxAmmo;
     }
     
+    void OnEnable()
+    {
+        isReloading = false;
+        animator.SetBool("Reloading", false);
+    }
+
     void Update()
     {
+        if (isReloading)
+        {
+            return;
+        }
+
+
+        if (currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
         if (CanFire)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
@@ -35,11 +62,25 @@ public class Pistol : MonoBehaviour
         }
     }
     
+    ///  Weapon reload logic
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        animator.SetBool("Reloading", true);
+        yield return new WaitForSeconds(reloadTime - 0.25f);
+        animator.SetBool("Reloading", false);
+        yield return new WaitForSeconds(0.25f);
+        currentAmmo = maxAmmo;
+        isReloading = false;
+    }
+
     /// Weapon firing logic
     void Shoot()
     {
         audioManager.Play("GunShot");
         muzzleFlash.Play();
+
+        currentAmmo--;
 
         GameObject bulletObj = Instantiate(bulletPrefab);
         bulletObj.transform.position = transform.position;
