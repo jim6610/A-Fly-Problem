@@ -5274,7 +5274,7 @@ MonoBehaviour:
   impactForce: 75
   fireRate: 3
   range: 100
-  reloadTime: 2.5
+  reloadTime: 2.3
   clipSize: 6
   ammoRemaining: 30
   muzzleFlash: {fileID: 7946648323015904496}
