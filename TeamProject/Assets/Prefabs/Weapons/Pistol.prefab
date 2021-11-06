@@ -5272,10 +5272,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 8
   impactForce: 75
-  fireRate: 2
+  fireRate: 3
   range: 100
-  reloadTime: 3
-  maxAmmo: 6
+  reloadTime: 2.5
+  clipSize: 6
+  ammoRemaining: 30
   muzzleFlash: {fileID: 7946648323015904496}
   impactEffectParticle: {fileID: 8513659319318470114, guid: 5499830e123f2fe438dda654abf3fdbd, type: 3}
   bulletPrefab: {fileID: 5071994949306533872, guid: 9a7e81f347d534e47b258b2076c2d06a, type: 3}

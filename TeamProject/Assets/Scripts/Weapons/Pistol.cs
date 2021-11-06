@@ -12,7 +12,8 @@ public class Pistol : MonoBehaviour
     [SerializeField] private float fireRate = 5f;
     [SerializeField] private float range = 100f;
     [SerializeField] private float reloadTime = 3;
-    [SerializeField] private int maxAmmo = 6;
+    [SerializeField] private int clipSize = 6;
+    [SerializeField] private int ammoRemaining = 30;
 
     [Header("Effects")]
     [SerializeField] private ParticleSystem muzzleFlash;
@@ -23,7 +24,7 @@ public class Pistol : MonoBehaviour
 
     private Camera fpsCam;
     private float nextTimeToFire;
-    private int currentAmmo;
+    private int currentAmmoClip;
     private bool isReloading = false;
 
     private bool CanFire => Input.GetButton("Fire1") && Time.time >= nextTimeToFire;
@@ -32,7 +33,7 @@ public class Pistol : MonoBehaviour
     {
         audioManager = FindObjectOfType<AudioManager>();
         fpsCam = Camera.main;
-        currentAmmo = maxAmmo;
+        currentAmmoClip = clipSize;
     }
     
     void OnEnable()
@@ -43,34 +44,44 @@ public class Pistol : MonoBehaviour
 
     void Update()
     {
+        // If weapon is still in process of being reloaded, do nothing
         if (isReloading)
         {
             return;
         }
 
-
-        if (currentAmmo <= 0)
+        // If weapon clip is empty and there is still ammo remaining, reload
+        if (currentAmmoClip == 0 && ammoRemaining != 0)
         {
             StartCoroutine(Reload());
             return;
         }
 
-        if (CanFire)
+        // If able to fire and ammo clip is not empty, fire weapon
+        if (CanFire && currentAmmoClip != 0)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
             Shoot();
+        }
+
+        // If player tries to fire an empty weapon, empty clip sound effect will play
+        if (CanFire && ammoRemaining == 0)
+        {
+            nextTimeToFire = Time.time + 1 / fireRate;
+            audioManager.Play("PistolClipEmpty");
         }
     }
     
     ///  Weapon reload logic
     IEnumerator Reload()
     {
+        audioManager.Play("PistolReload");
         isReloading = true;
         animator.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime - 0.25f);
         animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.25f);
-        currentAmmo = maxAmmo;
+        currentAmmoClip = clipSize;
         isReloading = false;
     }
 
@@ -80,7 +91,8 @@ public class Pistol : MonoBehaviour
         audioManager.Play("GunShot");
         muzzleFlash.Play();
 
-        currentAmmo--;
+        currentAmmoClip--;
+        ammoRemaining--;
 
         GameObject bulletObj = Instantiate(bulletPrefab);
         bulletObj.transform.position = transform.position;

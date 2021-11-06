@@ -11,8 +11,9 @@ public class Rifle : MonoBehaviour
     [SerializeField] private float impactForce = 75f;
     [SerializeField] private float fireRate = 15f;
     [SerializeField] private float range = 100f;
-    [SerializeField] private float reloadTime = 5;
-    [SerializeField] private int maxAmmo = 20;
+    [SerializeField] private float reloadTime = 6;
+    [SerializeField] private int clipSize = 20;
+    [SerializeField] private int ammoRemaining = 60;
 
     [Header("Effects")]
     [SerializeField] private ParticleSystem muzzleFlash;
@@ -23,7 +24,7 @@ public class Rifle : MonoBehaviour
 
     private Camera fpsCam;
     private float nextTimeToFire;
-    private int currentAmmo;
+    private int currentAmmoClip;
     private bool isReloading = false;
 
     private bool CanFire => Input.GetButton("Fire1") && Time.time >= nextTimeToFire;
@@ -32,7 +33,7 @@ public class Rifle : MonoBehaviour
     {
         audioManager = FindObjectOfType<AudioManager>();
         fpsCam = Camera.main;
-        currentAmmo = maxAmmo;
+        currentAmmoClip = clipSize;
     }
 
     void OnEnable()
@@ -43,34 +44,44 @@ public class Rifle : MonoBehaviour
 
     void Update()
     {
+        // If weapon is still in process of being reloaded, do nothing
         if (isReloading)
         {
             return;
         }
 
-
-        if (currentAmmo <= 0)
+        // If weapon clip is empty and there is still ammo remaining, reload
+        if (currentAmmoClip == 0 && ammoRemaining != 0)
         {
             StartCoroutine(Reload());
             return;
         }
 
-        if (CanFire)
+        // If able to fire and ammo clip is not empty, fire weapon
+        if (CanFire && currentAmmoClip != 0)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
             Shoot();
+        }
+
+        // If player tries to fire an empty weapon, empty clip sound effect will play
+        if (CanFire && ammoRemaining == 0)
+        {
+            nextTimeToFire = Time.time + 1 / fireRate;
+            audioManager.Play("RifleClipEmpty");
         }
     }
 
     ///  Weapon reload logic
     IEnumerator Reload()
     {
+        audioManager.Play("RifleReload");
         isReloading = true;
         animator.SetBool("Reloading", true);
         yield return new WaitForSeconds(reloadTime - 0.25f);
         animator.SetBool("Reloading", false);
         yield return new WaitForSeconds(0.25f);
-        currentAmmo = maxAmmo;
+        currentAmmoClip = clipSize;
         isReloading = false;
     }
 
@@ -80,7 +91,8 @@ public class Rifle : MonoBehaviour
         audioManager.Play("GunShot");
         muzzleFlash.Play();
 
-        currentAmmo--;
+        currentAmmoClip--;
+        ammoRemaining--;
 
         GameObject bulletObj = Instantiate(bulletPrefab);
         bulletObj.transform.position = transform.position;
