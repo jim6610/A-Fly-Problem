@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Sandbox/Lorenzo/MainMenu.unity
+    guid: 8c39978e07f19e9479a64d077d7f2814
+  - enabled: 1
+    path: Assets/Sandbox/Lorenzo/shop_test.unity
+    guid: ba123d86708827f4ba861a0ff16ad279
   m_configObjects: {}
