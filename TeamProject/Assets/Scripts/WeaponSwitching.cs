@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    public int selectedWeapon = 0;
+    private int selectedWeapon = 0;
     bool weaponsEnabled;
+
+    public int SelectedWeapon => selectedWeapon;
 
     GameObject activeWeapon;
 
-    // Start is called before the first frame update
     void Start()
     {
         SelectWeapon();
         weaponsEnabled = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // If weapons are enabled, you're able to switch between weapons in your inventory
         if (weaponsEnabled)
         {
             SwapWeapon();
@@ -29,6 +30,7 @@ public class WeaponSwitching : MonoBehaviour
     {
         int previousSelectedWeapon = selectedWeapon;
 
+        // Scroll wheel control to select weapon
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
             if (selectedWeapon >= transform.childCount - 1)
@@ -44,6 +46,7 @@ public class WeaponSwitching : MonoBehaviour
                 selectedWeapon--;
         }
 
+        // Keys 1-5 to select weapon
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             selectedWeapon = 0;
@@ -60,6 +63,10 @@ public class WeaponSwitching : MonoBehaviour
         {
             selectedWeapon = 3;
         }
+        if (Input.GetKeyDown(KeyCode.Alpha5) && transform.childCount >= 5)
+        {
+            selectedWeapon = 4;
+        }
 
         if (previousSelectedWeapon != selectedWeapon)
         {
@@ -67,16 +74,21 @@ public class WeaponSwitching : MonoBehaviour
         }
     }
 
-    void SelectWeapon()
+    public void SelectWeapon()
     {
         int i = 0;
+
+        // Loops over each weapon in weapon holder object and finds a match for the selected weapon which will become the active weapon
         foreach(Transform weapon in transform)
         {
             if (i == selectedWeapon)
             {
                 weapon.gameObject.SetActive(true);
-                activeWeapon = weapon.gameObject;
 
+                if (transform.childCount > 0)
+                {
+                    activeWeapon = weapon.gameObject;
+                }
             }
             else
             {
@@ -86,16 +98,31 @@ public class WeaponSwitching : MonoBehaviour
         }
     }
 
+    // Put away weapon if player has grabbed an object
     public void PutAwayCurrentWeapon()
     {
         weaponsEnabled = false;
-        activeWeapon.SetActive(false);
+
+        if (transform.childCount > 0)
+        {
+            activeWeapon.SetActive(false);
+        }
     }
 
+    // Equip weapon after player has released the grabbed object
     public void EquipPreviousWeapon()
     {
         weaponsEnabled = true;
-        activeWeapon.SetActive(true);
+
+        if (transform.childCount > 0)
+        {
+            activeWeapon.SetActive(true);
+        }
     }
 
+    // When weapon is reloading, this is called by the weapon to disable weapon switching. It is reenabled after reload has completed.
+    public void ToggleWeaponSwitching()
+    {
+        weaponsEnabled = !weaponsEnabled;
+    }
 }
