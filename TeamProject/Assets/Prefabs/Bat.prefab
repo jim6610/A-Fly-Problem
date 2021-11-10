@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 4
   impactForce: 40
-  fireRate: 3
+  fireRate: 2.5
   range: 8
   impactEffectParticle: {fileID: 5664843490233245664, guid: 56e770bd298d3bb479274a83c09669ed, type: 3}
   animator: {fileID: 9112659765001482662}

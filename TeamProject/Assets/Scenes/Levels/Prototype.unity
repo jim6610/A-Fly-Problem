@@ -6214,6 +6214,13 @@ MonoBehaviour:
     spatialBlend: 0
     loop: 0
     source: {fileID: 0}
+  - name: BatHit
+    clip: {fileID: 8300000, guid: 65bd2df4a21dc2648b6e0c0dc1bc4942, type: 3}
+    volume: 0.2
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &1603861732
 GameObject:
   m_ObjectHideFlags: 0
