@@ -24,6 +24,8 @@ public class SelectionManager : MonoBehaviour
     private bool ShouldThrow => isHolding && Input.GetKeyDown(KeyCode.E);
     private bool ShouldPickUp => !isHolding && Input.GetKeyDown(KeyCode.E);
 
+    public bool isReloading = false;
+
     void Update()
     {
         RemoveSelection();
@@ -36,7 +38,7 @@ public class SelectionManager : MonoBehaviour
     {
         var ray = fpsCam.ScreenPointToRay(Input.mousePosition);
         
-        if (CanThrow && Physics.Raycast(ray, out var hit, grabDistance))
+        if (CanThrow && !isReloading && Physics.Raycast(ray, out var hit, grabDistance))
         {
             Transform selection = hit.transform;
 
@@ -111,5 +113,10 @@ public class SelectionManager : MonoBehaviour
         objectTransform.GetComponent<Rigidbody>().useGravity = enabled;
         objectTransform.GetComponent<Collider>().enabled = enabled;
         objectTransform.GetComponent<Rigidbody>().freezeRotation = !enabled;
+    }
+
+    public void ToggleIsReloading()
+    {
+        isReloading = !isReloading;
     }
 }

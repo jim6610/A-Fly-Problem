@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 4
   monetaryValue: 4
+  breakForce: 4
   destroyedVersion: {fileID: 4791224381286764539, guid: 5c90cd94fe8e10b468f9d1926fd57671, type: 3}
 --- !u!54 &1283463629310174526
 Rigidbody:
