@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - Fire
   - Destructible
+  - Breaker
   layers:
   - Default
   - TransparentFX

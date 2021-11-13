@@ -48,6 +48,18 @@ public class SelectionManager : MonoBehaviour
                 _selection = selection;
                 Pickup(selection);
             }
+
+            if (selection.CompareTag("Breaker"))
+            {
+                selection.GetComponent<Outline>().enabled = true;
+                _selection = selection;
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    var lightHandler = selection.GetComponent<LightHandler>();
+                    lightHandler.ToggleLight();
+                }
+            }
         }
     }
     
