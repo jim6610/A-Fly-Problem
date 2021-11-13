@@ -27,33 +27,37 @@ public class Destructible : MonoBehaviour {
 
     public void TakeDamage(float amount)
     {
-        currentHealth -= amount;
-        /*
-        // Less than 25% health will cause player to lose 25% of this object's monetary value. 
-        if (currentHealth <= initialHealth * 0.75 && !firstThresholdReached)
+        if (currentHealth > 0)
         {
-            firstThresholdReached = true;
-            LoseQuarterValue();
-        }
-        // Less than 50% health will cause player to lose 25% of this object's monetary value. 
-        if (currentHealth <= initialHealth * 0.50 && !secondThresholdReached)
-        {
-            secondThresholdReached = true;
-            LoseQuarterValue();
-        }
-        // Less than 75% health will cause player to lose 25% of this object's monetary value. 
-        if (currentHealth <= initialHealth * 0.25 && !thirdThresholdReached)
-        {
-            thirdThresholdReached = true;
-            LoseQuarterValue();
-        }
-        */
+            currentHealth -= amount;
+            /*
+            // Less than 25% health will cause player to lose 25% of this object's monetary value. 
+            if (currentHealth <= initialHealth * 0.75 && !firstThresholdReached)
+            {
+                firstThresholdReached = true;
+                LoseQuarterValue();
+            }
+            // Less than 50% health will cause player to lose 25% of this object's monetary value. 
+            if (currentHealth <= initialHealth * 0.50 && !secondThresholdReached)
+            {
+                secondThresholdReached = true;
+                LoseQuarterValue();
+            }
+            // Less than 75% health will cause player to lose 25% of this object's monetary value. 
+            if (currentHealth <= initialHealth * 0.25 && !thirdThresholdReached)
+            {
+                thirdThresholdReached = true;
+                LoseQuarterValue();
+            }
+            */
 
-        if (currentHealth <= 0)
-        {
-            Shatter();
-            //LoseQuarterValue();
+            if (currentHealth <= 0)
+            {
+                Shatter();
+                //LoseQuarterValue();
+            }
         }
+
     }
 
     public void LoseQuarterValue()

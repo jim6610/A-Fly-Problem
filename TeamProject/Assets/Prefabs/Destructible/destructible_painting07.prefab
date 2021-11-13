@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 4946846657667763723}
   - component: {fileID: 8969158322263119120}
   m_Layer: 0
-  m_Name: destructible_painting06
+  m_Name: destructible_painting07
   m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ddc8c45e4ad44ac4b97855d23d3ecdd2, type: 2}
+  - {fileID: 2100000, guid: 66b8d2bec15e0104b999d5c7dfb45fdc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   initialHealth: 4
   monetaryValue: 25
   breakForce: 4
-  destroyedVersion: {fileID: 7592417769882654050, guid: 6c5fa38f8b49d2a4c86f2e73a9486907, type: 3}
+  destroyedVersion: {fileID: 7592417769882654050, guid: e253cfdc5e2a97a479bfd467f517aa80, type: 3}
 --- !u!114 &4946846657667763723
 MonoBehaviour:
   m_ObjectHideFlags: 0

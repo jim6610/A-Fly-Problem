@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 50
+  initialHealth: 40
   monetaryValue: 20
   breakForce: 100
   destroyedVersion: {fileID: 3612022730665424032, guid: b0d20269e753c1448ae62f0eb935640f, type: 3}
