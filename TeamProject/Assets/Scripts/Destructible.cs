@@ -28,7 +28,7 @@ public class Destructible : MonoBehaviour {
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-
+        /*
         // Less than 25% health will cause player to lose 25% of this object's monetary value. 
         if (currentHealth <= initialHealth * 0.75 && !firstThresholdReached)
         {
@@ -47,12 +47,12 @@ public class Destructible : MonoBehaviour {
             thirdThresholdReached = true;
             LoseQuarterValue();
         }
-
+        */
 
         if (currentHealth <= 0)
         {
             Shatter();
-            LoseQuarterValue();
+            //LoseQuarterValue();
         }
     }
 
@@ -69,8 +69,12 @@ public class Destructible : MonoBehaviour {
 
     void Shatter()
     {
-        Instantiate(destroyedVersion, transform.position, transform.rotation);
-        Destroy(gameObject);
+        LoseRemainingValue();
+        if (destroyedVersion != null)
+        {
+            Instantiate(destroyedVersion, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision other)

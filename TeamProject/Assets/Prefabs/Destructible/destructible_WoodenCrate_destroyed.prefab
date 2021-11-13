@@ -2271,7 +2271,7 @@ GameObject:
   - component: {fileID: 754089735059196818}
   - component: {fileID: -19766551909159001}
   m_Layer: 0
-  m_Name: destructible_WoodenCrate_cracked
+  m_Name: destructible_WoodenCrate_destroyed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 7291266427936850365}
   - component: {fileID: -7412108078441885867}
   m_Layer: 0
-  m_Name: destructible_Bottle_cracked
+  m_Name: destructible_Bottle_destroyed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

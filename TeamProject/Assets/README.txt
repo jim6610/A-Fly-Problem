@@ -14,6 +14,9 @@ Asset packs
 - https://devassets.com/assets/western-props-pack/
 
 
+Breakable glass
+- http://peerplay.nl/unity/breaking-glass/
+
 Furniture Models
 - https://free3d.com/3d-model/small-tv-table-708240.html
 - https://free3d.com/3d-model/casual-sofa-denim-v1--415793.html
