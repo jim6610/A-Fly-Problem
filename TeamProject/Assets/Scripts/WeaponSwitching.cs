@@ -119,4 +119,10 @@ public class WeaponSwitching : MonoBehaviour
             activeWeapon.SetActive(true);
         }
     }
+
+    // When weapon is reloading, this is called by the weapon to disable weapon switching. It is reenabled after reload has completed.
+    public void ToggleWeaponSwitching()
+    {
+        weaponsEnabled = !weaponsEnabled;
+    }
 }

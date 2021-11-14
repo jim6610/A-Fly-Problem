@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 4
   monetaryValue: 4
+  breakForce: 2
   destroyedVersion: {fileID: 4791224381286764539, guid: 5c90cd94fe8e10b468f9d1926fd57671, type: 3}
 --- !u!54 &1283463629310174526
 Rigidbody:
@@ -115,7 +116,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1803102841085907502
 BoxCollider:
   m_ObjectHideFlags: 0
