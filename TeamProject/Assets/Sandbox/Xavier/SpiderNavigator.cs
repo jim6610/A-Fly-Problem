@@ -28,8 +28,7 @@ public class SpiderNavigator : MonoBehaviour
     private float maximumStoppingTime = 3.0f;
 
     private NavMeshAgent agent;
-    private BoxCollider safeDestination;
-    private bool newDestinationAssigned;
+    public BoxCollider safeDestination = null;
     private float stoppingTime;
     private Animator animator;
 
@@ -39,6 +38,7 @@ public class SpiderNavigator : MonoBehaviour
     bool canStop = false;
     bool isStopped = false;
     bool isDead = false;
+    private Vector3 safePosition;
 
     void Start()
     {
@@ -50,17 +50,22 @@ public class SpiderNavigator : MonoBehaviour
         agent.stoppingDistance = agent.radius;
         animator = GetComponentInChildren<Animator>();
         isDead = false;
+        safePosition = transform.position;
     }
 
 
     private void GetSafeDestination()
     {
-        BoxCollider currentCollider = safeDestination;
-        Vector3 dest = currentCollider.bounds.center
-            + new Vector3(Random.Range(-currentCollider.bounds.size.x / 2, currentCollider.bounds.size.x / 2)
-            , 0, Random.Range(-currentCollider.bounds.size.z / 2, currentCollider.bounds.size.z / 2));
-        agent.destination = dest;
-        newDestinationAssigned = true;
+        if (safeDestination)
+        {
+            BoxCollider currentCollider = safeDestination;
+            Vector3 dest = currentCollider.bounds.center
+                + new Vector3(Random.Range(-currentCollider.bounds.size.x / 2, currentCollider.bounds.size.x / 2)
+                , 0, Random.Range(-currentCollider.bounds.size.z / 2, currentCollider.bounds.size.z / 2));
+            agent.destination = dest;
+        }
+        else
+            agent.destination = safePosition;
     }
 
     public void GetTargetAimlessly()
@@ -82,7 +87,7 @@ public class SpiderNavigator : MonoBehaviour
         //If none of the fwd directions hit then use them
         if (!didHitFwd || !didHitFwdLeft || !didHitFwdRight)
         {
-            print("Trying forward directions");
+            //print("Trying forward directions");
             distMax = sightDistance;
             bool set = false;
             didHit = false;
@@ -119,7 +124,7 @@ public class SpiderNavigator : MonoBehaviour
         }
         else
         {
-            print("trying other directions");
+            //print("trying other directions");
             //otherwise randomly choose between the back/sides
             float r = Random.Range(0, 1.0f);
             if (r < 0.333f)
@@ -175,10 +180,9 @@ public class SpiderNavigator : MonoBehaviour
 
         canStop = false;
         NavMeshHit nmh;
-        if (NavMesh.SamplePosition(xzCoord, out nmh, 5.0f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(xzCoord, out nmh, 1.0f, NavMesh.AllAreas))
         {
             agent.destination = nmh.position;
-            newDestinationAssigned = true;
         }
         else
         {
