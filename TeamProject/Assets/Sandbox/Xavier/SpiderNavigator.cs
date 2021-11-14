@@ -38,6 +38,7 @@ public class SpiderNavigator : MonoBehaviour
     float stopCooldownTimer = 0.0f;
     bool canStop = false;
     bool isStopped = false;
+    bool isDead = false;
 
     void Start()
     {
@@ -48,6 +49,7 @@ public class SpiderNavigator : MonoBehaviour
         GetTargetAimlessly();
         agent.stoppingDistance = agent.radius;
         animator = GetComponentInChildren<Animator>();
+        isDead = false;
     }
 
 
@@ -187,36 +189,59 @@ public class SpiderNavigator : MonoBehaviour
 
     void Update()
     {
-       // print(agent.destination);
-        if (!canStop)
+        if (!isDead)
         {
-            stopCooldownTimer += Time.deltaTime;
-            if (stopCooldownTimer >= stopCoolDown)
+            if (!canStop)
             {
-                canStop = true;
-                stopCooldownTimer = 0.0f;
+                stopCooldownTimer += Time.deltaTime;
+                if (stopCooldownTimer >= stopCoolDown)
+                {
+                    canStop = true;
+                    stopCooldownTimer = 0.0f;
+                }
+            }
+
+            if (agent.remainingDistance < agent.stoppingDistance && !isStopped)
+            {
+                float landDraw = Random.Range(0.0f, 100.0f);
+                if (landDraw <= stopChance && canStop)
+                {
+                    isStopped = true;
+                    stoppingTime = Random.Range(minimumStoppingTime, maximumStoppingTime);
+                }
+                else
+                    GetTargetAimlessly();
+            }
+            else if (isStopped)
+            {
+                Stop();
+            }
+
+            animator.SetBool("animIsWalking", !isStopped);
+            animator.SetBool("animIsEating", isStopped);
+        }
+        else
+            Dying();
+
+    }
+
+    private void Dying()
+    {
+        animator.SetBool("animIsWalking", false);
+        animator.SetBool("animIsEating", false);
+        animator.SetBool("animIsDead", true);
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
+            {
+                Destroy(this.gameObject);
             }
         }
+    }
 
-        if (agent.remainingDistance < agent.stoppingDistance && !isStopped)
-        {
-            float landDraw = Random.Range(0.0f, 100.0f);
-            if (landDraw <= stopChance && canStop)
-            {
-                isStopped = true;
-                stoppingTime = Random.Range(minimumStoppingTime, maximumStoppingTime);
-            }
-            else
-                GetTargetAimlessly();
-        }
-        else if(isStopped)
-        {
-            Stop();
-        }
-
-        animator.SetBool("animIsWalking", !isStopped);
-        animator.SetBool("animIsEating", isStopped);
-
+    public void SetDead()
+    {
+        isDead = true;
     }
 
 

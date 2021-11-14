@@ -357,6 +357,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138483476}
   m_CullTransparentMesh: 1
+--- !u!1 &147951332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8406351591685814972, guid: 0f1dda72612c3874dbf095f6d55d20de, type: 3}
+  m_PrefabInstance: {fileID: 8406351591506315730}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &147951333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147951332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a5943ff0837e243a38f2882d9b943e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!4 &151128000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9220145659042068518, guid: a71bd6c405b1448458cbd08ca83569be, type: 3}
@@ -9591,6 +9609,10 @@ PrefabInstance:
     - target: {fileID: 8406351591685814972, guid: 0f1dda72612c3874dbf095f6d55d20de, type: 3}
       propertyPath: m_Name
       value: Spider
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406351591685814972, guid: 0f1dda72612c3874dbf095f6d55d20de, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8406351591685814973, guid: 0f1dda72612c3874dbf095f6d55d20de, type: 3}
       propertyPath: player

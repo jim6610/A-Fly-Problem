@@ -31,5 +31,9 @@ public class EnemyHealth : MonoBehaviour
         FlyRelativeMovmement frm = GetComponent<FlyRelativeMovmement>();
         if (frm)
             frm.SetFlyMode(FlyMode.DEATH);
+
+        SpiderNavigator sn = GetComponent<SpiderNavigator>();
+        if (sn)
+            sn.SetDead();
     }
 }
