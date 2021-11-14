@@ -143,8 +143,9 @@ public class SpiderNavigator : MonoBehaviour
             }
         }
 
+        float avoidPlayer = Random.Range(0, 1);
         //If the players withtin the awareness distance we want to override this behavior
-        if (PlayerInRange(transform))
+        if (PlayerInRange(transform) && avoidPlayer>0.5f)
         {
             RaycastHit avoidHit;
             Vector3 playerDir = (transform.position - player.transform.position).normalized;
