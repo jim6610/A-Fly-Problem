@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03b9ee8f47ece74599e80fb7924b121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrustForce: 5
+  thrustForce: 0.5
   targetHeightRange: 8
   ceilingAwareness: 0
   maxSpeed: 8

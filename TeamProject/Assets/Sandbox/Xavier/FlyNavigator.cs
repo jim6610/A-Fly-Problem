@@ -168,15 +168,19 @@ public class FlyNavigator : MonoBehaviour
             didHit = false;
             if (Physics.Raycast(flyRelativeMovement.transform.position, new Vector3(playerDir.x, 0, playerDir.z), out avoidHit, sightDistance))
             {
-                hitMax = avoidHit;
-                distMax = avoidHit.distance;
-                didHit = true;
+                //hitMax = avoidHit;
+                //distMax = avoidHit.distance;
+                //didHit = true;
+            }
+            else
+            {
+                dir = playerDir;
             }
         }
 
         if (didHit)
         {
-            xzCoord = (hitMax.point - flyRelativeMovement.transform.position).normalized * Random.Range(distMax * 0.5f, distMax - agent.radius);
+            xzCoord = flyRelativeMovement.transform.position + (hitMax.point - flyRelativeMovement.transform.position).normalized * Random.Range(distMax * 0.5f, distMax - agent.radius);
             //print("did hit");
         }
         else
@@ -186,6 +190,7 @@ public class FlyNavigator : MonoBehaviour
         }
         Physics.Raycast(xzCoord, Vector3.down, out hitDown);
 
+        canLand = false;
         NavMeshHit nmh;
         if (NavMesh.SamplePosition(hitDown.point, out nmh, 5.0f, NavMesh.AllAreas))
         {
@@ -218,7 +223,6 @@ public class FlyNavigator : MonoBehaviour
                 if (landDraw <= landChance && canLand)
                 {
                     flyRelativeMovement.SetFlyMode(FlyMode.FLOOR_LANDING);
-                    canLand = false;
                 }
                 else
                     GetTargetAimlessly();
