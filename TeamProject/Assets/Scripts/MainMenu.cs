@@ -5,19 +5,15 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject levelSelect;
     [SerializeField] private GameObject shopMenu;
     [SerializeField] private GameObject creditsMenu;
 
-    public void loadMainFromCredits()
-    {
-        creditsMenu.SetActive(false);
-        mainMenu.SetActive(true);
-    }
-
-    public void loadShop()
+    //Main Menu 
+    public void loadLevelSelect()
     {
         mainMenu.SetActive(false);
-        shopMenu.SetActive(true);
+        levelSelect.SetActive(true);
     }
 
     public void loadCredits()
@@ -29,5 +25,30 @@ public class MainMenu : MonoBehaviour
     public void closeGame()
     {
         Application.Quit();
+    }
+
+    //Credits Menu 
+    public void loadMainFromCredits()
+    {
+        creditsMenu.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    //Level Select Navigation
+    public void loadMainFromLevelSelect()
+    {
+        levelSelect.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    public void loadShop()
+    {
+        levelSelect.SetActive(false);
+        shopMenu.SetActive(true);
+    }
+
+    public void setDifficulty(string diff)
+    {
+        PlayerPrefs.SetString("difficulty", diff);
     }
 }

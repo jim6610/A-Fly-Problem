@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class WeaponShop : MonoBehaviour
 {
-    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject levelSelect;
     private string shoppingList;
+    private int scene;
 
     private void Start()
     {
         shoppingList = "";
+    }
+
+    public void setScene(int i)
+    {
+        scene = i;
     }
 
     public void BuyWeapon(string a)
@@ -18,11 +24,11 @@ public class WeaponShop : MonoBehaviour
         shoppingList += a + ',';
     }
 
-    public void returnToMain()
+    public void returnToLevelSelect()
     {
         shoppingList = "";
         this.gameObject.SetActive(false);
-        mainMenu.SetActive(true);
+        levelSelect.SetActive(true);
     }
 
 
@@ -35,7 +41,7 @@ public class WeaponShop : MonoBehaviour
         PlayerPrefs.SetString("items", shoppingList);
         PlayerPrefs.Save();
 
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(scene);
     }
 
 }

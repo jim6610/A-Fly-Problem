@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Sandbox/Lorenzo/MainMenu.unity
-    guid: 8c39978e07f19e9479a64d077d7f2814
+    path: Assets/Sandbox/Lorenzo/MainMenuWorld.unity
+    guid: 1df4b088fb622be418750daf23f11e3d
   - enabled: 1
-    path: Assets/Sandbox/Lorenzo/shop_test.unity
-    guid: ba123d86708827f4ba861a0ff16ad279
+    path: Assets/Sandbox/Lorenzo/shop_test_proto.unity
+    guid: 6bcfdf1e13bfa5242b04a773e47278f8
+  - enabled: 1
+    path: Assets/Sandbox/Lorenzo/shop_test_proto_2.unity
+    guid: 34f498f4bf8bbb74e8a8661e806c17d7
   m_configObjects: {}
