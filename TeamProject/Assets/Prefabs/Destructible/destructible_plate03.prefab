@@ -239,11 +239,13 @@ MonoBehaviour:
   - {fileID: 6836889601274948904}
   - {fileID: 6836889601274948910}
   - {fileID: 6836889601274948900}
-  hiddenPieces: []
+  hidingPieces: []
   explosionForce: 100
   destroyedPiecesRotation: 20
   breakForce: 3
   FX: {fileID: 0}
+  destroyAftertime: 1
+  time: 10
 --- !u!114 &1532995169342826886
 MonoBehaviour:
   m_ObjectHideFlags: 0
