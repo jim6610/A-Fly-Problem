@@ -9,10 +9,13 @@
 
 
 Sources
-
 Asset packs
-- https://devassets.com/assets/western-props-pack/
-
+3Dfrk
+- https://assetstore.unity.com/publishers/33751
+9t5 Low poly insects
+- https://assetstore.unity.com/packages/3d/characters/animals/insects/9t5-low-poly-insects-202139
+Destructible props pack 
+- https://assetstore.unity.com/packages/3d/props/destructible-props-pack-27379
 
 Breakable glass
 - http://peerplay.nl/unity/breaking-glass/
@@ -27,7 +30,19 @@ Furniture Models
 - https://free3d.com/3d-model/night-stand-v2--465221.html
 
 Sounds
-- "Glass Smash, Bottle, D.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
+"Glass Smash, Bottle, D.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
+- https://freesound.org/people/InspectorJ/sounds/344265/
+Gun shot
+- https://freesound.org/people/schots/sounds/382735/
+Rife Reload
+- https://freesound.org/people/GFL7/sounds/276963/
+Pistol Reload
+- https://freesound.org/people/nioczkus/sounds/396331/
+Rifle Clip Empty
+- https://freesound.org/people/michorvath/sounds/427603/
+Pistol Clip Empty
+- https://freesound.org/people/Sophia_C/sounds/467183/
+
 
 
 Tutorials
