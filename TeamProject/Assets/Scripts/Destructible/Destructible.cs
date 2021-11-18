@@ -12,8 +12,6 @@ public class Destructible : MonoBehaviour {
     [SerializeField] private float breakForce; // How easily the object breaks
     [SerializeField] private GameObject FX;
 
-    //public GameObject destroyedVersion;	// Reference to the shattered version of the object
-
     private float currentHealth;
     private float currentValue;
     private bool firstThresholdReached;
@@ -122,7 +120,7 @@ public class Destructible : MonoBehaviour {
             if (other.collider.CompareTag("Enemy"))
             {
                 other.collider.GetComponent<EnemyHealth>().TakeDamage(initialHealth);
-                this.TakeDamage(other.collider.GetComponent<Destructible>().initialHealth);
+                this.TakeDamage(other.collider.GetComponent<EnemyHealth>().health);
             }
             else if (other.collider.CompareTag("Destructible"))
             {
