@@ -771,6 +771,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4362101633734719258, guid: f0c727766bb1b394bbd5d46a1b33d4ce, type: 3}
   m_PrefabInstance: {fileID: 1260871388}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &137486678
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1663483264}
+    m_Modifications:
+    - target: {fileID: 4431509750902941255, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Name
+      value: Flamethrower
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121076463406081009, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284615169571719069, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
 --- !u!1001 &152085341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3485,6 +3546,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3559798223512261263, guid: eb3d9845b1781ae4f9cc95fb9e39de06, type: 3}
   m_PrefabInstance: {fileID: 147390535716753556}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &710656699 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7284615169571719069, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+  m_PrefabInstance: {fileID: 137486678}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &719186837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4882,7 +4948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8055399225345888382, guid: b7ac887c6a4b57d448f1e9a521440faa, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8055399225345888382, guid: b7ac887c6a4b57d448f1e9a521440faa, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6938,6 +7004,13 @@ MonoBehaviour:
     spatialBlend: 0
     loop: 0
     source: {fileID: 0}
+  - name: Flamethrower
+    clip: {fileID: 8300000, guid: 6c0f432ea659ed44c8712f56fbfe3e17, type: 3}
+    volume: 0.375
+    pitch: 1
+    spatialBlend: 0
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &1603861732
 GameObject:
   m_ObjectHideFlags: 0
@@ -7179,6 +7252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1933436440}
+  - {fileID: 710656699}
   m_Father: {fileID: 787295750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
