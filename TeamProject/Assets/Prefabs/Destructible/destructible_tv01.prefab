@@ -9914,9 +9914,11 @@ MonoBehaviour:
   monetaryValue: 80
   destroyedPieces:
   - {fileID: 994880033129145491}
-  hiddenPieces:
+  hidingPieces:
   - {fileID: 994880033129145493}
   explosionForce: 0
   destroyedPiecesRotation: 0
   breakForce: 10
   FX: {fileID: 0}
+  destroyAftertime: 0
+  time: 10

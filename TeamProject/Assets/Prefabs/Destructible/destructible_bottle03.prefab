@@ -820,8 +820,10 @@ MonoBehaviour:
   - {fileID: 1532995169342826883}
   - {fileID: 1532995169342826891}
   - {fileID: 1532995169342826887}
-  hiddenPieces: []
+  hidingPieces: []
   explosionForce: 100
   destroyedPiecesRotation: 20
   breakForce: 3
   FX: {fileID: 0}
+  destroyAftertime: 1
+  time: 10
