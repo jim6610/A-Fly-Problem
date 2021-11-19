@@ -8,6 +8,18 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject levelSelect;
     [SerializeField] private GameObject shopMenu;
     [SerializeField] private GameObject creditsMenu;
+    [SerializeField] private GameObject splash;
+
+
+    public void Start()
+    {
+        Invoke("removeArt", 1);
+    }
+
+    public void removeArt()
+    {
+        splash.SetActive(false);
+    }
 
     //Main Menu 
     public void loadLevelSelect()
@@ -24,6 +36,9 @@ public class MainMenu : MonoBehaviour
 
     public void closeGame()
     {
+        PlayerPrefs.DeleteKey("money");
+        PlayerPrefs.DeleteKey("inventory");
+        PlayerPrefs.Save();
         Application.Quit();
     }
 

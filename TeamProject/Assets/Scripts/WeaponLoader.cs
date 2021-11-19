@@ -10,7 +10,7 @@ public class WeaponLoader : MonoBehaviour
 
     private void Awake()
     {
-        items = PlayerPrefs.GetString("items").Split(',');
+        items = PlayerPrefs.GetString("loadout").Split(',');
         loadWeapons();
     }
 
