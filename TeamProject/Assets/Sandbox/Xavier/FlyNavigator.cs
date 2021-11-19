@@ -39,9 +39,11 @@ public class FlyNavigator : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         flyRelativeMovement = GetComponentInChildren<FlyRelativeMovmement>();
         //GetNewDestination(currentTargetIndex);
+        player = (GameObject.FindObjectOfType<PlayerMovement>()).gameObject;
         GetTargetAimlessly();
         agent.stoppingDistance = 1.0f;
         safePosition = transform.position;
+        
     }
 
 

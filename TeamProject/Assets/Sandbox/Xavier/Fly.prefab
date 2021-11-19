@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1223799788972486245}
   m_Layer: 7
   m_Name: Fly
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1223799788972486246}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.8
+  m_Radius: 0.5
   m_Speed: 15
   m_Acceleration: 30
   avoidancePriority: 50
@@ -74,7 +74,6 @@ MonoBehaviour:
   playerAwarenessDistance: 10
   playerSneakAwarenessDistance: 2
   playerSprintAwarenenessDistance: 15
-  destinationsContainer: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &1223799789528521296
 GameObject:
@@ -88,9 +87,10 @@ GameObject:
   - component: {fileID: 1223799789528521302}
   - component: {fileID: 1223799789528521386}
   - component: {fileID: 1223799789528521301}
+  - component: {fileID: 5983831572150843991}
   m_Layer: 0
   m_Name: FlyModel
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 1223799789528521296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 5139190283442635071}
   m_Father: {fileID: 1223799788972486244}
@@ -121,7 +121,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.66, y: 1, z: 1.96}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1223799789528521386
 MonoBehaviour:
@@ -156,6 +156,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &5983831572150843991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223799789528521296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a5943ff0837e243a38f2882d9b943e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!95 &8190977271511966433
 Animator:
   serializedVersion: 3
