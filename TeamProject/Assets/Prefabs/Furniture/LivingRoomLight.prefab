@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1016979807758291794}
   - component: {fileID: 479092518232783336}
   - component: {fileID: 7821215469604998631}
+  - component: {fileID: 3855289614741203235}
   m_Layer: 0
   m_Name: lampka_nocna11
   m_TagString: Untagged
@@ -162,6 +163,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3855289614741203235
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3377418736955747379}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -9151878480875360018, guid: 66e28504fa59132499fd6a0ae3f4154d, type: 3}
 --- !u!1 &4548579112101273868
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +188,7 @@ GameObject:
   - component: {fileID: 4280649061955735173}
   - component: {fileID: 3706984464740930106}
   - component: {fileID: 2079442821880495331}
+  - component: {fileID: 3911935848409576846}
   m_Layer: 0
   m_Name: lampka_nocna08
   m_TagString: Untagged
@@ -243,6 +259,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3911935848409576846
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4548579112101273868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -789708749478974196, guid: 66e28504fa59132499fd6a0ae3f4154d, type: 3}
 --- !u!1 &7327800153681414938
 GameObject:
   m_ObjectHideFlags: 0

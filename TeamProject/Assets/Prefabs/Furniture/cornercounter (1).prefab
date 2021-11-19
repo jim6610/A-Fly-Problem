@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 681590727725218567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cornercounter (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,6 +38,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 681590727725218567}
     m_Modifications:
+    - target: {fileID: 5371682203732788117, guid: 94b99c931b5c439468d52e7f9829c3aa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5876336530773533248, guid: 94b99c931b5c439468d52e7f9829c3aa, type: 3}
       propertyPath: m_Name
       value: CornerCabinet1
