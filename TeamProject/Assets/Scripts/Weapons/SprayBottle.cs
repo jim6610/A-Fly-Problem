@@ -7,11 +7,7 @@ using System.Collections;
 public class SprayBottle : MonoBehaviour
 {
     [Header("Weapon Parameters")]
-    [SerializeField] private float damage = 4f;
-    [SerializeField] private float impactForce = 75f;
     [SerializeField] private float fireRate = 2f;
-    [SerializeField] private float range = 100f;
-    [SerializeField] private float reloadTime = 6;
     [SerializeField] private int ammoRemaining = 15;
 
     [Header("Effects")]
@@ -82,7 +78,12 @@ public class SprayBottle : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //Output the Collider's GameObject's name
-        Debug.Log(collision.collider.name);
+        Debug.Log(collision.gameObject.transform.parent.gameObject.GetComponent<FlyNavigator>());
+        if(collision.gameObject.name == "FlyModel")
+        {
+            collision.gameObject.transform.parent.gameObject.GetComponent<FlyNavigator>().Sprayed();
+        }
+
     }
 
     IEnumerator ShootCoroutine()
