@@ -30,17 +30,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209068489610179062}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.0993019, y: -0.10865869, z: -0.01090951, w: 0.9890467}
+  m_LocalPosition: {x: 0, y: 0, z: 0.563}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
   - {fileID: 1283474838469658433}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.467, y: -12.539, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.287, y: -0.654}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5419726531514657447
@@ -161,11 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624c50f6e0725dc41be78292f55ac136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
-  impactForce: 75
   fireRate: 2
-  range: 100
-  reloadTime: 6
   ammoRemaining: 10
   particles: {fileID: 3497871254577961624}
   animator: {fileID: 4548270374117829176}
