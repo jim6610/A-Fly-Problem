@@ -20,6 +20,7 @@ public class InventoryManager : MonoBehaviour
         GetChildren();
         
         selectionHistory = weaponHolder.SelectedWeapon;
+        PopulateInventory();
     }
     
     /// This should only ever be called once at the start of the game (After weapons have been instantiated)

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         contractValue = 1000;
+        Debug.Log(PlayerPrefs.GetString("difficulty"));
     }
 
     // Update is called once per frame
