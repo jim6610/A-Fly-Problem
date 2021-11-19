@@ -78,10 +78,10 @@ public class SprayBottle : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //Output the Collider's GameObject's name
-        Debug.Log(collision.gameObject.transform.parent.gameObject.GetComponent<FlyNavigator>());
-        if(collision.gameObject.name == "FlyModel")
+        FlySprayDebuff fsd = collision.gameObject.GetComponentInParent<FlySprayDebuff>();
+        if(fsd)
         {
-            collision.gameObject.transform.parent.gameObject.GetComponent<FlyNavigator>().Sprayed();
+            fsd.Sprayed();
         }
 
     }

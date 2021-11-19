@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1223799788972486244}
   - component: {fileID: 1223799788972486247}
   - component: {fileID: 1223799788972486245}
+  - component: {fileID: -1012556075458332199}
   m_Layer: 7
   m_Name: Fly
   m_TagString: Enemy
@@ -75,6 +76,18 @@ MonoBehaviour:
   playerSneakAwarenessDistance: 2
   playerSprintAwarenenessDistance: 15
   player: {fileID: 0}
+--- !u!114 &-1012556075458332199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223799788972486246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04946bf977c03846b38a660d8fbc1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1223799789528521296
 GameObject:
   m_ObjectHideFlags: 0
