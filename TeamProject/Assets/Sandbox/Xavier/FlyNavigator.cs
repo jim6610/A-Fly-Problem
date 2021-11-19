@@ -212,4 +212,21 @@ public class FlyNavigator : MonoBehaviour
         
         return (player.gameObject.transform.position - otherTransform.position).magnitude < detectionDistance;
     }
+
+    public void Sprayed()
+    {
+        //Todo: Status Effects
+
+        gameObject.GetComponent<NavMeshAgent>().speed = gameObject.GetComponent<NavMeshAgent>().speed / 3f;
+        gameObject.GetComponent<NavMeshAgent>().acceleration = gameObject.GetComponent<NavMeshAgent>().acceleration / 3f;
+        gameObject.GetComponent<NavMeshAgent>().angularSpeed = gameObject.GetComponent<NavMeshAgent>().angularSpeed / 3f;
+        StartCoroutine(SprayedCoroutine());
+    }
+    IEnumerator SprayedCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
+        gameObject.GetComponent<NavMeshAgent>().speed = gameObject.GetComponent<NavMeshAgent>().speed * 3f;
+        gameObject.GetComponent<NavMeshAgent>().acceleration = gameObject.GetComponent<NavMeshAgent>().acceleration * 3f;
+        gameObject.GetComponent<NavMeshAgent>().angularSpeed = gameObject.GetComponent<NavMeshAgent>().angularSpeed * 3f;
+    }
 }
