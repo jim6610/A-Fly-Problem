@@ -39,7 +39,6 @@ public class SpiderNavigator : MonoBehaviour
     bool isStopped = false;
     bool isDead = false;
     private Vector3 safePosition;
-    private Vector3 previousDest;
 
     void Start()
     {
@@ -55,19 +54,6 @@ public class SpiderNavigator : MonoBehaviour
     }
 
 
-    private void GetSafeDestination()
-    {
-        if (safeDestination)
-        {
-            BoxCollider currentCollider = safeDestination;
-            Vector3 dest = currentCollider.bounds.center
-                + new Vector3(Random.Range(-currentCollider.bounds.size.x / 2, currentCollider.bounds.size.x / 2)
-                , 0, Random.Range(-currentCollider.bounds.size.z / 2, currentCollider.bounds.size.z / 2));
-            agent.destination = dest;
-        }
-        else
-            agent.destination = previousDest;
-    }
 
     public void GetTargetAimlessly()
     {
@@ -184,20 +170,17 @@ public class SpiderNavigator : MonoBehaviour
         NavMeshHit nmh;
         if (NavMesh.SamplePosition(xzCoord, out nmh, 1.0f, NavMesh.AllAreas))
         {
-            if((previousDest-agent.destination).magnitude>sightDistance*0.5f)
-                previousDest = agent.destination;
+            if ((nmh.position - agent.destination).magnitude > 1.0f)
+                agent.destination = nmh.position;
             else
-                previousDest = safePosition;
-            agent.destination = nmh.position;
+            {
+                agent.destination = safePosition;
+            }
         }
         else
         {
             //if its not on the navmesh get a point normally
-            if ((previousDest - agent.destination).magnitude > sightDistance * 0.5f)
-                previousDest = agent.destination;
-            else
-                previousDest = safePosition;
-            GetSafeDestination();
+            agent.destination = safePosition;
         }
     }
 

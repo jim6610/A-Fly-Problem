@@ -70,7 +70,7 @@ MonoBehaviour:
   wallAwarenessDistance: 5
   landChance: 30
   landCoolDown: 6
-  sightDistance: 5
+  sightDistance: 3
   playerAwarenessDistance: 10
   playerSneakAwarenessDistance: 2
   playerSprintAwarenenessDistance: 15

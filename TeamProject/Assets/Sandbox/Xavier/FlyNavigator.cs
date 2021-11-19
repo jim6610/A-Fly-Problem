@@ -24,9 +24,6 @@ public class FlyNavigator : MonoBehaviour
     private float playerSprintAwarenenessDistance;
 
     private NavMeshAgent agent;
-    public GameObject destinationsContainer;
-    private BoxCollider[] destinationVolumes;
-    private int currentTargetIndex;
     private FlyRelativeMovmement flyRelativeMovement;
     private bool newDestinationAssigned;
 
@@ -34,47 +31,19 @@ public class FlyNavigator : MonoBehaviour
 
     float landCooldownTimer = 0.0f;
     bool canLand = false;
+    private Vector3 safePosition;
 
     void Start()
     {
-        // FindObjectOfType<AudioManager>().Play("Fly");
-        
         Random.InitState(System.DateTime.Now.Millisecond);
         agent = GetComponent<NavMeshAgent>();
         flyRelativeMovement = GetComponentInChildren<FlyRelativeMovmement>();
-        destinationVolumes = destinationsContainer.GetComponentsInChildren<BoxCollider>();
-        currentTargetIndex = 0;
         //GetNewDestination(currentTargetIndex);
         GetTargetAimlessly();
         agent.stoppingDistance = 1.0f;
-        //player = ((PlayerMovement)(GameObject.FindObjectOfType<PlayerMovement>())).gameObject.transform;
+        safePosition = transform.position;
     }
 
-    public void GetNewDestination()
-    {
-        int newTargetIndex = (int)Random.Range(0.0f, destinationVolumes.Length);
-        if (newTargetIndex == currentTargetIndex)
-        {
-            if (currentTargetIndex == destinationVolumes.Length - 1)
-                currentTargetIndex = 0;
-            else
-                currentTargetIndex = newTargetIndex + 1;
-        }
-        else
-            currentTargetIndex = newTargetIndex;
-        GetNewDestination(currentTargetIndex);
-    }
-
-    private void GetNewDestination(int index)
-    {
-        BoxCollider currentCollider = destinationVolumes[index];
-        Vector3 dest = currentCollider.bounds.center
-            + new Vector3(Random.Range(-currentCollider.bounds.size.x / 2, currentCollider.bounds.size.x / 2)
-            , 0, Random.Range(-currentCollider.bounds.size.z / 2, currentCollider.bounds.size.z / 2));
-        agent.destination = dest;
-        newDestinationAssigned = true;
-
-    }
 
     public void GetTargetAimlessly()
     {
@@ -193,16 +162,15 @@ public class FlyNavigator : MonoBehaviour
 
         canLand = false;
         NavMeshHit nmh;
-        if (NavMesh.SamplePosition(hitDown.point, out nmh, 5.0f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(hitDown.point, out nmh, 2.0f, NavMesh.AllAreas))
         {
             agent.destination = nmh.position;
             newDestinationAssigned = true;
         }
         else
         {
-            print("point not on navmesh-fly");
             //if its not on the navmesh get a point normally
-            GetNewDestination();
+            agent.destination = safePosition;
         }
     }
 
