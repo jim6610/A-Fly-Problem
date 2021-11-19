@@ -6,13 +6,11 @@ public class EnemyHealth : MonoBehaviour
 {
     public float health;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        health *= GameManager.enemyHealthModifier; // Depending on difficulty, health will be adjusted
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (health <= 0)
