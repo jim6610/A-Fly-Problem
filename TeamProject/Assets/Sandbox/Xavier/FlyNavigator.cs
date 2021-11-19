@@ -165,7 +165,7 @@ public class FlyNavigator : MonoBehaviour
             RaycastHit avoidHit;
             Vector3 playerDir = (transform.position - player.transform.position).normalized;
             
-            didHit = false;
+            
             if (Physics.Raycast(flyRelativeMovement.transform.position, new Vector3(playerDir.x, 0, playerDir.z), out avoidHit, sightDistance))
             {
                 //hitMax = avoidHit;
@@ -174,6 +174,7 @@ public class FlyNavigator : MonoBehaviour
             }
             else
             {
+                didHit = false;
                 dir = playerDir;
             }
         }
@@ -199,6 +200,7 @@ public class FlyNavigator : MonoBehaviour
         }
         else
         {
+            print("point not on navmesh-fly");
             //if its not on the navmesh get a point normally
             GetNewDestination();
         }

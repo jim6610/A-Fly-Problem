@@ -6,14 +6,8 @@ using UnityEngine.AI;
 
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class SpiderNavigator : MonoBehaviour
+public class ScorpionNavigator : MonoBehaviour
 {
-    [SerializeField]
-    private float wallAwarenessDistance;
-    [Range(1.0f, 99.0f)]
-    public float stopChance;
-    [SerializeField]
-    private float stopCoolDown;
     [SerializeField]
     private float sightDistance;
     [SerializeField]
@@ -23,35 +17,31 @@ public class SpiderNavigator : MonoBehaviour
     [SerializeField]
     private float playerSprintAwarenenessDistance;
     [SerializeField]
-    private float minimumStoppingTime = 1.0f;
-    [SerializeField]
-    private float maximumStoppingTime = 3.0f;
+    private float attackCoolDownTime = 5.0f;
 
     private NavMeshAgent agent;
     public BoxCollider safeDestination = null;
-    private float stoppingTime;
     private Animator animator;
 
     public GameObject player;
 
-    float stopCooldownTimer = 0.0f;
-    bool canStop = false;
-    bool isStopped = false;
+    float attackCooldownTimer = 0.0f;
+    bool canAttack = true;
     bool isDead = false;
     private Vector3 safePosition;
+    private float attackAnimDist = 5.0f;
     private Vector3 previousDest;
 
     void Start()
     {
-        // FindObjectOfType<AudioManager>().Play("Fly");
-
         Random.InitState(System.DateTime.Now.Millisecond);
         agent = GetComponent<NavMeshAgent>();
-        GetTargetAimlessly();
+        GetTargetAimlessly(false);
         agent.stoppingDistance = agent.radius;
         animator = GetComponentInChildren<Animator>();
         isDead = false;
         safePosition = transform.position;
+        previousDest = safePosition;
     }
 
 
@@ -69,7 +59,7 @@ public class SpiderNavigator : MonoBehaviour
             agent.destination = previousDest;
     }
 
-    public void GetTargetAimlessly()
+    public void GetTargetAimlessly(bool avoidPlayer)
     {
         RaycastHit hitFwd, hitRight, hitLeft, hitDown, hitBack, hitFwdRight, hitFwdLeft;
         bool didHitFwd = false, didHitRight = false, didHitLeft = false, didHitFwdRight = false, didHitFwdLeft = false, didHitBack = false;
@@ -151,25 +141,27 @@ public class SpiderNavigator : MonoBehaviour
             }
         }
 
-        float avoidPlayer = Random.Range(0, 1);
-        //If the players withtin the awareness distance we want to override this behavior
-        if (PlayerInRange(transform) && avoidPlayer>0.5f)
+        if (avoidPlayer)
         {
-            RaycastHit avoidHit;
-            Vector3 playerDir = (transform.position - player.transform.position).normalized;
+            //If the players withtin the awareness distance we want to override this behavior
+            if (PlayerInRange(transform))
+            {
+                RaycastHit avoidHit;
+                Vector3 playerDir = (transform.position - player.transform.position).normalized;
 
-            
-            if (Physics.Raycast(transform.position, new Vector3(playerDir.x, 0, playerDir.z), out avoidHit, sightDistance))
-            {
-                //would run into the wall so dont go this direction...
-                
-            }
-            else
-            {
-                didHit = false;
-                dir = playerDir;
+
+                if (Physics.Raycast(transform.position, new Vector3(playerDir.x, 0, playerDir.z), out avoidHit, sightDistance))
+                {
+                    //would run into the wall so dont go this direction...
+                }
+                else
+                {
+                    didHit = false;
+                    dir = playerDir;
+                }
             }
         }
+
 
         if (didHit)
         {
@@ -180,11 +172,10 @@ public class SpiderNavigator : MonoBehaviour
             xzCoord = transform.position + dir * sightDistance;
         }
 
-        canStop = false;
         NavMeshHit nmh;
         if (NavMesh.SamplePosition(xzCoord, out nmh, 1.0f, NavMesh.AllAreas))
         {
-            if((previousDest-agent.destination).magnitude>sightDistance*0.5f)
+            if ((previousDest - agent.destination).magnitude > sightDistance * 0.5f)
                 previousDest = agent.destination;
             else
                 previousDest = safePosition;
@@ -205,45 +196,53 @@ public class SpiderNavigator : MonoBehaviour
     {
         if (!isDead)
         {
-            if (!canStop)
+            animator.SetBool("animIsWalking", true);
+            animator.SetBool("animIsAttacking", false);
+            animator.SetBool("animIsStinging", false);
+
+            if (canAttack)
             {
-                stopCooldownTimer += Time.deltaTime;
-                if (stopCooldownTimer >= stopCoolDown)
+                if (PlayerInRange(transform))
+                    agent.destination = player.transform.position;
+                else if (agent.remainingDistance < agent.stoppingDistance)
+                    GetTargetAimlessly(false);
+            }
+            else
+            {
+                attackCooldownTimer += Time.deltaTime;
+                if(attackCooldownTimer >= attackCoolDownTime)
                 {
-                    canStop = true;
-                    stopCooldownTimer = 0.0f;
+                    canAttack = true;
+                    attackCooldownTimer = 0.0f;
                 }
+                if (agent.remainingDistance < agent.stoppingDistance)
+                    GetTargetAimlessly(true);
             }
 
-            if (agent.remainingDistance < agent.stoppingDistance && !isStopped)
-            {
-                float landDraw = Random.Range(0.0f, 100.0f);
-                if (landDraw <= stopChance && canStop)
-                {
-                    isStopped = true;
-                    stoppingTime = Random.Range(minimumStoppingTime, maximumStoppingTime);
-                }
-                else
-                    GetTargetAimlessly();
-            }
-            else if (isStopped)
-            {
-                Stop();
-            }
-
-            animator.SetBool("animIsWalking", !isStopped);
-            animator.SetBool("animIsEating", isStopped);
         }
         else
             Dying();
 
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject == player.gameObject && canAttack)
+        {
+            animator.SetBool("animIsStinging", true);
+            canAttack = false;
+            GetTargetAimlessly(true);
+        }
+    }
+
     private void Dying()
     {
         animator.SetBool("animIsWalking", false);
-        animator.SetBool("animIsEating", false);
-        animator.SetBool("animIsDead", true);
+        animator.SetBool("animIsAttacking", false);
+        animator.SetBool("animIsStinging", false);
+        animator.SetBool("animIsDying", true);
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
         {
             if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
@@ -259,18 +258,7 @@ public class SpiderNavigator : MonoBehaviour
     }
 
 
-    private void Stop()
-    {
 
-        stopCooldownTimer += Time.deltaTime;
-        if(stopCooldownTimer>stoppingTime || PlayerInRange(transform))
-        {
-            isStopped = false;
-            stopCooldownTimer = 0.0f;
-            GetTargetAimlessly();
-        }
-    }    
-    
 
     public bool PlayerInRange(Transform otherTransform)
     {

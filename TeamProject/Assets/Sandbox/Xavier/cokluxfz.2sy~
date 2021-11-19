@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class SpiderNavigator : MonoBehaviour
+public class ScorpionNavigator : MonoBehaviour
 {
     [SerializeField]
     private float wallAwarenessDistance;
@@ -35,16 +35,13 @@ public class SpiderNavigator : MonoBehaviour
     public GameObject player;
 
     float stopCooldownTimer = 0.0f;
-    bool canStop = false;
-    bool isStopped = false;
+    bool canChase = false;
+    bool isChasing = false;
     bool isDead = false;
     private Vector3 safePosition;
-    private Vector3 previousDest;
 
     void Start()
     {
-        // FindObjectOfType<AudioManager>().Play("Fly");
-
         Random.InitState(System.DateTime.Now.Millisecond);
         agent = GetComponent<NavMeshAgent>();
         GetTargetAimlessly();
@@ -66,7 +63,7 @@ public class SpiderNavigator : MonoBehaviour
             agent.destination = dest;
         }
         else
-            agent.destination = previousDest;
+            agent.destination = safePosition;
     }
 
     public void GetTargetAimlessly()
@@ -153,20 +150,19 @@ public class SpiderNavigator : MonoBehaviour
 
         float avoidPlayer = Random.Range(0, 1);
         //If the players withtin the awareness distance we want to override this behavior
-        if (PlayerInRange(transform) && avoidPlayer>0.5f)
+        if (PlayerInRange(transform) && avoidPlayer > 0.5f)
         {
             RaycastHit avoidHit;
             Vector3 playerDir = (transform.position - player.transform.position).normalized;
 
-            
+            didHit = false;
             if (Physics.Raycast(transform.position, new Vector3(playerDir.x, 0, playerDir.z), out avoidHit, sightDistance))
             {
                 //would run into the wall so dont go this direction...
-                
+
             }
             else
             {
-                didHit = false;
                 dir = playerDir;
             }
         }
@@ -184,19 +180,11 @@ public class SpiderNavigator : MonoBehaviour
         NavMeshHit nmh;
         if (NavMesh.SamplePosition(xzCoord, out nmh, 1.0f, NavMesh.AllAreas))
         {
-            if((previousDest-agent.destination).magnitude>sightDistance*0.5f)
-                previousDest = agent.destination;
-            else
-                previousDest = safePosition;
             agent.destination = nmh.position;
         }
         else
         {
             //if its not on the navmesh get a point normally
-            if ((previousDest - agent.destination).magnitude > sightDistance * 0.5f)
-                previousDest = agent.destination;
-            else
-                previousDest = safePosition;
             GetSafeDestination();
         }
     }
@@ -263,14 +251,14 @@ public class SpiderNavigator : MonoBehaviour
     {
 
         stopCooldownTimer += Time.deltaTime;
-        if(stopCooldownTimer>stoppingTime || PlayerInRange(transform))
+        if (stopCooldownTimer > stoppingTime || PlayerInRange(transform))
         {
             isStopped = false;
             stopCooldownTimer = 0.0f;
             GetTargetAimlessly();
         }
-    }    
-    
+    }
+
 
     public bool PlayerInRange(Transform otherTransform)
     {
