@@ -42,15 +42,16 @@ public class SpiderNavigator : MonoBehaviour
 
     void Start()
     {
-        // FindObjectOfType<AudioManager>().Play("Fly");
 
         Random.InitState(System.DateTime.Now.Millisecond);
         agent = GetComponent<NavMeshAgent>();
+        player = (GameObject.FindObjectOfType<PlayerMovement>()).gameObject;
         GetTargetAimlessly();
         agent.stoppingDistance = agent.radius;
         animator = GetComponentInChildren<Animator>();
         isDead = false;
         safePosition = transform.position;
+        
     }
 
 

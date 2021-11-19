@@ -35,6 +35,7 @@ public class ScorpionNavigator : MonoBehaviour
     void Start()
     {
         Random.InitState(System.DateTime.Now.Millisecond);
+        player = (GameObject.FindObjectOfType<PlayerMovement>()).gameObject;
         agent = GetComponent<NavMeshAgent>();
         GetTargetAimlessly(false);
         agent.stoppingDistance = agent.radius;
