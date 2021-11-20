@@ -13,7 +13,7 @@ public class GameTimer : MonoBehaviour
 
     private void Awake()
     {
-        _seconds = levelTime;
+        _seconds = GameManager.levelTimer;
 
         _startTimer = startImmediately;
         
@@ -28,9 +28,11 @@ public class GameTimer : MonoBehaviour
         
         var timeAsInt = Mathf.FloorToInt(_seconds);
         
-        if (timeAsInt < 0)
+        // Level over conditions: timer runs out or all flies killed
+        if (timeAsInt < 0 || GameManager.flyCount == 0)
         {
-            GameOver();
+            _startTimer = false;
+            GameManager.LevelOver(timeAsInt);
         }
 
         UpdateText(_seconds);
@@ -52,11 +54,6 @@ public class GameTimer : MonoBehaviour
         UpdateLabel(displayTime);
     }
 
-    // TODO Enable the game over scoreboard UI or something along those lines here
-    private void GameOver()
-    {
-        Debug.Log("Time's up");
-    }
 
     private void UpdateLabel(float displayTime)
     {
@@ -65,4 +62,5 @@ public class GameTimer : MonoBehaviour
 
         timeDisplay.text = $"{minutes:00}:{seconds:00}";
     }
+
 }

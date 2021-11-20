@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Normal Mode Variables")]
     [SerializeField] private float contractValueNormal;
+    [SerializeField] private float levelTimerNormal;
     [SerializeField] private int totalNumberOfFliesNormal;
     [SerializeField] private int maxNumberOfSpecialsNormal;
-    // TO DO: add time limit
     [SerializeField] private float enemyHealthModifierNormal = 1.0f;
     [SerializeField] private float enemySpeedModifierNormal = 1.0f;
     [SerializeField] private float spawnChanceModifierNormal = 1.0f;
@@ -21,9 +21,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Hard Mode Variables")]
     [SerializeField] private float contractValueHard;
+    [SerializeField] private float levelTimerHard;
     [SerializeField] private int totalNumberOfFliesHard;
     [SerializeField] private int maxNumberOfSpecialsHard;
-    // TO DO: add time limit
     [SerializeField] private float enemyHealthModifierHard;
     [SerializeField] private float enemySpeedModifierHard;
     [SerializeField] private float spawnChanceModifierHard;
@@ -38,9 +38,9 @@ public class GameManager : MonoBehaviour
 
     // Difficulty modifiers
     public static float currentContractValue; // How much money player is getting upon finishing the level. Can be reduced if destructible objects are damaged/destroyed
+    public static float levelTimer; // Timer for level
     public static int startingNumberOfFlies; // Starting Number of flies for the level
     public static int maxNumberOfSpecials;  // max number of special enemies in a level
-    // TO DO: add time limit
     public static float enemyHealthModifier;
     public static float enemySpeedModifier;
     public static float spawnChanceModifier;
@@ -56,6 +56,9 @@ public class GameManager : MonoBehaviour
     public static int spiderKillCount;
     public static int scorpionKillCount;
 
+    // End level stats
+    public static float levelBonus; // Bonus money for finishing level before timer ran out
+    public static float levelPenalty; // Money lost for not finishing level before timer ran out
     public static float totalDamageCosts; // Amount of money lost due to destroyed objects
 
     // *******************************
@@ -72,9 +75,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         UpdateHUD();
-
-        // TO DO: end level logic
-        // TO DO: calculate end level bonus/deductions
     }
 
     private void SetupLevel()
@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
     private void NormalMode()
     {
         currentContractValue = contractValueNormal;
+        levelTimer = levelTimerNormal;
         startingNumberOfFlies = totalNumberOfFliesNormal;
         maxNumberOfSpecials = maxNumberOfSpecialsNormal;
         enemyHealthModifier = enemyHealthModifierNormal;
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour
     private void HardMode()
     {
         currentContractValue = contractValueHard;
+        levelTimer = levelTimerHard;
         startingNumberOfFlies = totalNumberOfFliesHard;
         maxNumberOfSpecials = maxNumberOfSpecialsHard;
         enemyHealthModifier = enemyHealthModifierHard;
@@ -129,6 +131,31 @@ public class GameManager : MonoBehaviour
         flyCounterDisplay.text = flyCount.ToString();
     }
 
+    // If level was completed before timer ended, add bonus money based on how much time was left
+    public static void CalculateBonus(int timeRemaining)
+    {
+        currentContractValue += timeRemaining;
+    }
+
+    // If level ended when timer ran out, deduct money based on how many flies that are alive
+    public static void CalculatePenalty()
+    {
+        currentContractValue -= flyCount * 4; // each fly will reduce contract value by 4$
+    }
+
+    public static void LevelOver(int timeRemaining)
+    {
+        if (flyCount == 0)
+        {
+            CalculateBonus(timeRemaining);
+        }
+        else
+        {
+            CalculatePenalty();
+        }
+
+        // TODO: Display the end level screen with stats
+    }
 
 
     // Contract value increase/decrease functions
@@ -138,7 +165,7 @@ public class GameManager : MonoBehaviour
     }
     public static void ReduceContractValue(float penalty)
     {
-        currentContractValue -= penalty;
+        currentContractValue -= penalty * moneyPenaltyModifier;
         totalDamageCosts += penalty;
     }
 
