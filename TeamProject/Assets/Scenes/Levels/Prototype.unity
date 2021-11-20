@@ -7733,6 +7733,13 @@ MonoBehaviour:
     spatialBlend: 0
     loop: 0
     source: {fileID: 0}
+  - name: DamageHit
+    clip: {fileID: 8300000, guid: 85f4b336cc35c264581c3abe0bacf48b, type: 3}
+    volume: 0.2
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1001 &1592882774
 PrefabInstance:
   m_ObjectHideFlags: 0

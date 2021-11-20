@@ -1,10 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     public float health;
+
+    private AudioManager _audioManager;
+
+    private void Awake()
+    {
+        _audioManager = FindObjectOfType<AudioManager>();
+    }
 
     void Start()
     {
@@ -21,6 +26,11 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        if (gameObject.CompareTag("Enemy"))
+        {
+            _audioManager.Play("DamageHit");
+        }
+
         health -= amount;
     }
 

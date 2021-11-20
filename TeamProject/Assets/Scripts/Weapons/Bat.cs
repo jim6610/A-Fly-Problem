@@ -46,7 +46,7 @@ public class Bat : MonoBehaviour
         animator.SetTrigger(Attack); //trigger our animation
         
         Debug.DrawLine(fpsCam.transform.position, fpsCam.transform.position + (fpsCam.transform.forward.normalized * range), Color.green, 2);
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range))
+        if (Physics.SphereCast(fpsCam.transform.position, 0.1f, fpsCam.transform.forward, out var hit, range))
         {
             audioManager.Play("BatHit");
             
