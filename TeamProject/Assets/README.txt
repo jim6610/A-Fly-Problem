@@ -17,8 +17,16 @@ By:
 
 ----- Mechanics -----
 - Destructible Objects
+	- Destructible objects can be picked up and thrown as a weapon. It is possible to kill enemies by doing this, however the player will lose money due to damages.
+	- Every destructible object has a value, and that value is substracted from the contract value if it is destroyed.
 - Stealth
+	- Crouching will reduce the player detection range on the flies as well as turning off the lights. This will allow the player to get closer to the fly before it
+	  detects the player and flies away.
+	- Turning off the lights will also reduce the player's visibilty.
 - Shooting
+	- Player can aim and shoot with the weapons bought from the shop menu.
+- Shop 
+	- The shop menu allows the player to purchase new weapons and decide what to equip for the level.
 
 
 ----- Enemy Types -----
