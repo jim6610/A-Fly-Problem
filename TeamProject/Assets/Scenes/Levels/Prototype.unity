@@ -359,9 +359,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1663483264}
     m_Modifications:
+    - target: {fileID: 1511610690724915648, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2107133258763380408, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403567513009838183, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4431509750902941255, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
       propertyPath: m_Name
       value: Flamethrower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431509750902941255, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937028890209206517, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256207896240103454, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7284615169571719069, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
       propertyPath: m_Pivot.x
@@ -446,6 +470,22 @@ PrefabInstance:
     - target: {fileID: 7284615169571719069, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333196184678769583, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8616858956993849490, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102448103674939760, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135695889981347608, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0035c33e3e4995843809fb4071723f97, type: 3}
@@ -646,7 +686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59453383}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ObjectPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1132,6 +1172,10 @@ PrefabInstance:
     - target: {fileID: 2498292627266026353, guid: 8ce43d2b28398cf438d81ace963f556d, type: 3}
       propertyPath: m_Name
       value: Bat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498292627266026353, guid: 8ce43d2b28398cf438d81ace963f556d, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9128683545943517862, guid: 8ce43d2b28398cf438d81ace963f556d, type: 3}
       propertyPath: m_Pivot.x
@@ -2108,7 +2152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311821955}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundCollisionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2141,7 +2185,7 @@ GameObject:
   - component: {fileID: 315189624}
   - component: {fileID: 315189623}
   - component: {fileID: 315189625}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FPS Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2666,9 +2710,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1663483264}
     m_Modifications:
+    - target: {fileID: 3490289877475320320, guid: 161d9346d75084a4fb7356c1ec7c197c, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3980349170530774325, guid: 161d9346d75084a4fb7356c1ec7c197c, type: 3}
       propertyPath: m_Name
       value: FlySwatter
+      objectReference: {fileID: 0}
+    - target: {fileID: 3980349170530774325, guid: 161d9346d75084a4fb7356c1ec7c197c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4508295891998725785, guid: 161d9346d75084a4fb7356c1ec7c197c, type: 3}
       propertyPath: m_Pivot.x
@@ -2753,6 +2805,10 @@ PrefabInstance:
     - target: {fileID: 4508295891998725785, guid: 161d9346d75084a4fb7356c1ec7c197c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839698531870281844, guid: 161d9346d75084a4fb7356c1ec7c197c, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 161d9346d75084a4fb7356c1ec7c197c, type: 3}
@@ -3560,7 +3616,7 @@ GameObject:
   - component: {fileID: 616164649}
   - component: {fileID: 616164648}
   - component: {fileID: 616164647}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3651,9 +3707,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1663483264}
     m_Modifications:
+    - target: {fileID: 1038202262540530, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439148281649736, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462590004240832, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516607273765548, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777336020457016, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787989994309776, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891939013567316, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 126785457160975063, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
       propertyPath: m_Name
       value: Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 126785457160975063, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 749224333007209647, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4823574947037317030, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
       propertyPath: m_Pivot.x
@@ -3738,6 +3830,10 @@ PrefabInstance:
     - target: {fileID: 4823574947037317030, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416288463202599279, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
@@ -4500,7 +4596,7 @@ GameObject:
   - component: {fileID: 787295753}
   - component: {fileID: 787295752}
   - component: {fileID: 787295751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FPSCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -8091,7 +8187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663483264}
   - component: {fileID: 1663483263}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8578,6 +8674,14 @@ PrefabInstance:
     - target: {fileID: 209068489610179062, guid: b7ac887c6a4b57d448f1e9a521440faa, type: 3}
       propertyPath: m_Name
       value: Spray
+      objectReference: {fileID: 0}
+    - target: {fileID: 209068489610179062, guid: b7ac887c6a4b57d448f1e9a521440faa, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5356875433371629051, guid: b7ac887c6a4b57d448f1e9a521440faa, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8055399225345888382, guid: b7ac887c6a4b57d448f1e9a521440faa, type: 3}
       propertyPath: m_Pivot.x

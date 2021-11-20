@@ -24,8 +24,6 @@ public class FlameParticle : MonoBehaviour
         
         if (other.CompareTag("Destructible"))
         {
-            Debug.Log("Lemao");
-            
             Destructible target = other.GetComponent<Destructible>();
 
             if (target != null)
