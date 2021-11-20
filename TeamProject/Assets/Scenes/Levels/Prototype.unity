@@ -7623,6 +7623,20 @@ MonoBehaviour:
     spatialBlend: 0
     loop: 0
     source: {fileID: 0}
+  - name: Spray
+    clip: {fileID: 8300000, guid: fb7e1cd38182975409b4cf129322c120, type: 3}
+    volume: 0.2
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Flamethrower
+    clip: {fileID: 8300000, guid: 6c0f432ea659ed44c8712f56fbfe3e17, type: 3}
+    volume: 0.2
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1001 &1592882774
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class GameTimer : MonoBehaviour
         var timeAsInt = Mathf.FloorToInt(_seconds);
         
         // Level over conditions: timer runs out or all flies killed
-        if (timeAsInt < 0 || GameManager.flyCount == 0)
+        if (timeAsInt < 0 || GameManager.flyKillCount == GameManager.startingNumberOfFlies)
         {
             _startTimer = false;
             GameManager.LevelOver(timeAsInt);
