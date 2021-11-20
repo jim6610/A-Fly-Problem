@@ -10,25 +10,24 @@ public class EnemySpawner : MonoBehaviour
     private GameObject scorpion;
     [SerializeField]
     private GameObject spider;
-
-    [SerializeField]
-    private int maxNumberOfEnemies;
-    [SerializeField]
-    private float specialEnemyChance = 0.3f;
     [SerializeField]
     private float spawnInterval = 3.0f;
+    [SerializeField]
+    private float specialEnemeyChance = 0.1f;
 
     private Transform[] spawnTransforms;
     private int numberOfEnemiesSpawned;
-
-    public void SetMaxNumberOfEnemies(int num)
-    {
-        maxNumberOfEnemies = num;
-    }
+    private int specialEnemiesCount;
+    private int maxNumberOfFlies;
+    private int maxSpecialEnemyAmount;
 
     // Start is called before the first frame update
     void Start()
     {
+        maxNumberOfFlies = GameManager.startingNumberOfFlies;
+        maxSpecialEnemyAmount = GameManager.maxNumberOfSpecials;
+        specialEnemiesCount = 0;
+
         Transform[] tempTransforms = GetComponentsInChildren<Transform>();
         spawnTransforms = new Transform[tempTransforms.Length - 1];
         //remove this transform because tempTransforms also contains this transform
@@ -39,31 +38,46 @@ public class EnemySpawner : MonoBehaviour
                 spawnTransforms[index++] = t;
         }
         numberOfEnemiesSpawned = 0;
-        StartSpawnRoutine();
-    }
 
-    public void StartSpawnRoutine()
-    {
+
         foreach (Transform t in spawnTransforms)
             StartCoroutine(SpawnRoutine(t));
     }
 
+
     IEnumerator SpawnRoutine(Transform location)
-    {
-        while(numberOfEnemiesSpawned<maxNumberOfEnemies)
+    { 
+        while(numberOfEnemiesSpawned<maxNumberOfFlies)
         {
+
             float specialChance = Random.Range(0.0f, 1.0f);
-            if (specialChance < specialEnemyChance)
+            if (specialEnemiesCount <= maxSpecialEnemyAmount && specialChance <= specialEnemeyChance)
             {
-                if (specialChance < specialEnemyChance * 0.5f)
+                if (specialChance < specialEnemeyChance * 0.5f)
+                {
                     Instantiate(scorpion, location.position, scorpion.transform.rotation);
+                    GameManager.IncrementScorpionCount();
+                    specialEnemiesCount++;
+                }
                 else
+                {
                     Instantiate(spider, location.position, spider.transform.rotation);
+                    GameManager.IncrementSpiderCount();
+                    specialEnemiesCount++;
+                }
             }
             else
+            {
                 Instantiate(fly, location.position, fly.transform.rotation);
-            numberOfEnemiesSpawned++;
+                GameManager.IncrementFlyCount();
+                numberOfEnemiesSpawned++;
+            }
             yield return new WaitForSeconds(spawnInterval);
         }
+    }
+
+    public void DecrimentSpecialEnemyCount()
+    {
+        specialEnemiesCount--;
     }
 }
