@@ -25,7 +25,6 @@ public class Flamethrower : MonoBehaviour
     private float nextTimeToFire;
     private int currentAmmoClip;
     private bool isReloading = false;
-    private CapsuleCollider areaOfEffect;
 
     private bool IsFiring => Input.GetButton("Fire1");
     private bool firstShot = true;
@@ -37,7 +36,6 @@ public class Flamethrower : MonoBehaviour
         selectionManager = GameObject.Find("SelectionManager");
         fpsCam = Camera.main;
         currentAmmoClip = ammoRemaining;
-        areaOfEffect = gameObject.GetComponent<CapsuleCollider>();
     }
 
     void Update()
@@ -70,7 +68,6 @@ public class Flamethrower : MonoBehaviour
             firstShot = false;
             audioManager.Play("Flamethrower");
             attackParticles.Play();
-            areaOfEffect.enabled = true;
         }
 
         currentAmmoClip--;
@@ -83,11 +80,5 @@ public class Flamethrower : MonoBehaviour
         firstShot = true;
         audioManager.Stop("Flamethrower");
         attackParticles.Stop();
-        areaOfEffect.enabled = false;
-    }
-
-    void OnCollisionStay(Collision collision)
-    {
-        Debug.Log(collision.collider.name);
     }
 }
