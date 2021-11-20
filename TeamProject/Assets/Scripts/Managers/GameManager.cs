@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Normal Mode Variables")]
     [SerializeField] private float contractValueNormal;
-    [SerializeField] private int startingNumberOfFliesNormal;
+    [SerializeField] private int totalNumberOfFliesNormal;
+    [SerializeField] private int maxNumberOfSpecialsNormal;
     // TO DO: add time limit
     [SerializeField] private float enemyHealthModifierNormal = 1.0f;
     [SerializeField] private float enemySpeedModifierNormal = 1.0f;
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Hard Mode Variables")]
     [SerializeField] private float contractValueHard;
-    [SerializeField] private int startingNumberOfFliesHard;
+    [SerializeField] private int totalNumberOfFliesHard;
+    [SerializeField] private int maxNumberOfSpecialsHard;
     // TO DO: add time limit
     [SerializeField] private float enemyHealthModifierHard;
     [SerializeField] private float enemySpeedModifierHard;
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
     // Difficulty modifiers
     public static float currentContractValue; // How much money player is getting upon finishing the level. Can be reduced if destructible objects are damaged/destroyed
     public static int startingNumberOfFlies; // Starting Number of flies for the level
+    public static int maxNumberOfSpecials;  // max number of special enemies in a level
     // TO DO: add time limit
     public static float enemyHealthModifier;
     public static float enemySpeedModifier;
@@ -101,7 +104,8 @@ public class GameManager : MonoBehaviour
     private void NormalMode()
     {
         currentContractValue = contractValueNormal;
-        startingNumberOfFlies = startingNumberOfFliesNormal;
+        startingNumberOfFlies = totalNumberOfFliesNormal;
+        maxNumberOfSpecials = maxNumberOfSpecialsNormal;
         enemyHealthModifier = enemyHealthModifierNormal;
         enemySpeedModifier = enemySpeedModifierNormal;
         spawnChanceModifier = spawnChanceModifierNormal;
@@ -111,7 +115,8 @@ public class GameManager : MonoBehaviour
     private void HardMode()
     {
         currentContractValue = contractValueHard;
-        startingNumberOfFlies = startingNumberOfFliesHard;
+        startingNumberOfFlies = totalNumberOfFliesHard;
+        maxNumberOfSpecials = maxNumberOfSpecialsHard;
         enemyHealthModifier = enemyHealthModifierHard;
         enemySpeedModifier = enemySpeedModifierHard;
         spawnChanceModifier = spawnChanceModifierHard;
@@ -135,17 +140,6 @@ public class GameManager : MonoBehaviour
     {
         currentContractValue -= penalty;
         totalDamageCosts += penalty;
-    }
-
-
-    // Money related getter functions
-    public static float GetCurrentContractValue()
-    {
-        return currentContractValue;
-    }
-    public static float GetTotalDamageCosts()
-    {
-        return totalDamageCosts;
     }
 
 
@@ -176,21 +170,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-    // Enemy counter getter functions
-    public static int GetFlyCount()
-    {
-        return flyCount;
-    }
-    public static int GetSpiderCount()
-    {
-        return spiderCount;
-    }
-    public static int GetScorpionCount()
-    {
-        return scorpionCount;
-    }
-
-
     // Enemy kill count increment/decrement functions
     public static void IncrementFlyKillCount()
     {
@@ -204,20 +183,4 @@ public class GameManager : MonoBehaviour
     {
         scorpionKillCount++;
     }
-
-
-    // Enemy kill count getter functions
-    public static int GetFlyKillCount()
-    {
-        return flyKillCount;
-    }
-    public static int GetSpiderKillCount()
-    {
-        return spiderKillCount;
-    }
-    public static int GetScorpionKillCount()
-    {
-        return scorpionKillCount;
-    }
-
 }

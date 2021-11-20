@@ -9504,13 +9504,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hardMode: 0
   contractValueNormal: 1000
-  startingNumberOfFliesNormal: 40
+  totalNumberOfFliesNormal: 40
+  maxNumberOfSpecialsNormal: 4
   enemyHealthModifierNormal: 1
   enemySpeedModifierNormal: 1
   spawnChanceModifierNormal: 1
   moneyPenaltyModifierNormal: 1
   contractValueHard: 1200
-  startingNumberOfFliesHard: 45
+  totalNumberOfFliesHard: 60
+  maxNumberOfSpecialsHard: 6
   enemyHealthModifierHard: 2
   enemySpeedModifierHard: 1.5
   spawnChanceModifierHard: 1.5
