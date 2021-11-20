@@ -6,14 +6,42 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // *** Global game variables ***
-    // Money related variables
-    public static float currentContractValue; // How much money player is getting upon finishing the level. Can be reduced if destructible objects are damaged/destroyed
-    public static float totalDamageCosts; // Amount of money lost due to destroyed objects
-    public static float penaltyModifier; // 1.0 for normal. 2.0 for hard
+    [Header("TEMP")]
+    [SerializeField] bool hardMode; // temporary. for testing purposes. TO DELETE
 
-    // Starting Number of flies for the level
-    public static int startingNumberOfFlies;
+    [Header("Normal Mode Variables")]
+    [SerializeField] private float contractValueNormal;
+    [SerializeField] private int startingNumberOfFliesNormal;
+    // TO DO: add time limit
+    [SerializeField] private float enemyHealthModifierNormal = 1.0f;
+    [SerializeField] private float enemySpeedModifierNormal = 1.0f;
+    [SerializeField] private float spawnChanceModifierNormal = 1.0f;
+    [SerializeField] private float moneyPenaltyModifierNormal = 1.0f;
+
+    [Header("Hard Mode Variables")]
+    [SerializeField] private float contractValueHard;
+    [SerializeField] private int startingNumberOfFliesHard;
+    // TO DO: add time limit
+    [SerializeField] private float enemyHealthModifierHard;
+    [SerializeField] private float enemySpeedModifierHard;
+    [SerializeField] private float spawnChanceModifierHard;
+    [SerializeField] private float moneyPenaltyModifierHard;
+
+    [Header("HUD Text Objects")]
+    [SerializeField] private Text moneyDisplay;
+    [SerializeField] private Text flyCounterDisplay;
+
+
+    // *** Global game variables ***
+
+    // Difficulty modifiers
+    public static float currentContractValue; // How much money player is getting upon finishing the level. Can be reduced if destructible objects are damaged/destroyed
+    public static int startingNumberOfFlies; // Starting Number of flies for the level
+    // TO DO: add time limit
+    public static float enemyHealthModifier;
+    public static float enemySpeedModifier;
+    public static float spawnChanceModifier;
+    public static float moneyPenaltyModifier;
 
     // Number of enemies remaining on level
     public static int flyCount;
@@ -25,43 +53,80 @@ public class GameManager : MonoBehaviour
     public static int spiderKillCount;
     public static int scorpionKillCount;
 
-    // Enemy Stats (dependent on difficulty)
-    public static float enemyHealthModifier = 1.0f; // 1.0 for normal, 2.0 for hard
-    public static float enemySpeedModifier;
-    public static float spawnChanceModifier;
+    public static float totalDamageCosts; // Amount of money lost due to destroyed objects
 
     // *******************************
 
 
-    // Level variables
-    [SerializeField] private float contractValue;
-    [SerializeField] private int setStartingNumberOfFlies;
-
-    // HUD text elements
-    [SerializeField] private Text moneyDisplay;
-    [SerializeField] private Text flyCounterDisplay;
+    private string difficulty;
 
 
-    void Start()
+    void Awake()
     {
-        currentContractValue = contractValue;
-        startingNumberOfFlies = setStartingNumberOfFlies;
-
-        // TODO: get difficulty selected
-        Debug.Log(PlayerPrefs.GetString("difficulty"));
+        SetupLevel();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Update HUD elements
+        UpdateHUD();
+
+        // TO DO: end level logic
+        // TO DO: calculate end level bonus/deductions
+    }
+
+    private void SetupLevel()
+    {
+        // SetDifficulty(); USE THIS WHEN MAIN MENU IS RUNNING
+
+        difficulty = (hardMode) ? "hard" : "normal"; // temporary. for testing purposes. TO DELETE
+
+        if (difficulty == "normal")
+            NormalMode();
+        else if (difficulty == "hard")
+            HardMode();
+    }
+
+    private void SetDifficulty()
+    {
+        difficulty = PlayerPrefs.GetString("difficulty");
+
+        // null check on difficulty. default to normal
+        if (difficulty == null)
+        {
+            difficulty = "normal";
+        }
+        Debug.Log(difficulty); // TO DELETE
+    }
+
+    private void NormalMode()
+    {
+        currentContractValue = contractValueNormal;
+        startingNumberOfFlies = startingNumberOfFliesNormal;
+        enemyHealthModifier = enemyHealthModifierNormal;
+        enemySpeedModifier = enemySpeedModifierNormal;
+        spawnChanceModifier = spawnChanceModifierNormal;
+        moneyPenaltyModifier = moneyPenaltyModifierNormal;
+    }
+
+    private void HardMode()
+    {
+        currentContractValue = contractValueHard;
+        startingNumberOfFlies = startingNumberOfFliesHard;
+        enemyHealthModifier = enemyHealthModifierHard;
+        enemySpeedModifier = enemySpeedModifierHard;
+        spawnChanceModifier = spawnChanceModifierHard;
+        moneyPenaltyModifier = moneyPenaltyModifierHard;
+    }
+
+    private void UpdateHUD()
+    {
         moneyDisplay.text = String.Format("{0:.00}", currentContractValue);
         flyCounterDisplay.text = flyCount.ToString();
     }
 
 
 
-    // Contract modifier functions
+    // Contract value increase/decrease functions
     public static void IncreaseContractValue(float bonus)
     {
         currentContractValue += bonus;
@@ -72,7 +137,19 @@ public class GameManager : MonoBehaviour
         totalDamageCosts += penalty;
     }
 
-    // Enemy counter modifier functions
+
+    // Money related getter functions
+    public static float GetCurrentContractValue()
+    {
+        return currentContractValue;
+    }
+    public static float GetTotalDamageCosts()
+    {
+        return totalDamageCosts;
+    }
+
+
+    // Enemy counter increment/decrement functions
     public static void IncrementFlyCount()
     {
         flyCount++;
@@ -98,7 +175,23 @@ public class GameManager : MonoBehaviour
         scorpionCount--;
     }
 
-    // Enemy kill count functions
+
+    // Enemy counter getter functions
+    public static int GetFlyCount()
+    {
+        return flyCount;
+    }
+    public static int GetSpiderCount()
+    {
+        return spiderCount;
+    }
+    public static int GetScorpionCount()
+    {
+        return scorpionCount;
+    }
+
+
+    // Enemy kill count increment/decrement functions
     public static void IncrementFlyKillCount()
     {
         flyKillCount++;
@@ -111,4 +204,20 @@ public class GameManager : MonoBehaviour
     {
         scorpionKillCount++;
     }
+
+
+    // Enemy kill count getter functions
+    public static int GetFlyKillCount()
+    {
+        return flyKillCount;
+    }
+    public static int GetSpiderKillCount()
+    {
+        return spiderKillCount;
+    }
+    public static int GetScorpionKillCount()
+    {
+        return scorpionKillCount;
+    }
+
 }

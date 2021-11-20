@@ -9502,8 +9502,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7988349420b95be42995ee78bb4e9214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractValue: 1000
-  setStartingNumberOfFlies: 40
+  hardMode: 0
+  contractValueNormal: 1000
+  startingNumberOfFliesNormal: 40
+  enemyHealthModifierNormal: 1
+  enemySpeedModifierNormal: 1
+  spawnChanceModifierNormal: 1
+  moneyPenaltyModifierNormal: 1
+  contractValueHard: 1200
+  startingNumberOfFliesHard: 45
+  enemyHealthModifierHard: 2
+  enemySpeedModifierHard: 1.5
+  spawnChanceModifierHard: 1.5
+  moneyPenaltyModifierHard: 1.5
   moneyDisplay: {fileID: 690971275}
   flyCounterDisplay: {fileID: 1861836776}
 --- !u!1 &1930883872
