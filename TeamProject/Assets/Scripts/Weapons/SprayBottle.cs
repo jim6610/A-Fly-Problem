@@ -75,15 +75,12 @@ public class SprayBottle : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        //Output the Collider's GameObject's name
-        FlySprayDebuff fsd = collision.gameObject.GetComponentInParent<FlySprayDebuff>();
-        if(fsd)
+        if (other.CompareTag("Enemy"))
         {
-            fsd.Sprayed();
+            other.GetComponentInParent<FlySprayDebuff>().Sprayed();
         }
-
     }
 
     IEnumerator ShootCoroutine()
