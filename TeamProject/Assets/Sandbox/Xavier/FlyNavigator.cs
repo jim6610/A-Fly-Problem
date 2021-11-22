@@ -24,9 +24,6 @@ public class FlyNavigator : MonoBehaviour
     private float playerSprintAwarenenessDistance;
 
     private NavMeshAgent agent;
-    public GameObject destinationsContainer;
-    private BoxCollider[] destinationVolumes;
-    private int currentTargetIndex;
     private FlyRelativeMovmement flyRelativeMovement;
     private bool newDestinationAssigned;
 
@@ -34,47 +31,21 @@ public class FlyNavigator : MonoBehaviour
 
     float landCooldownTimer = 0.0f;
     bool canLand = false;
+    private Vector3 safePosition;
 
     void Start()
     {
-        // FindObjectOfType<AudioManager>().Play("Fly");
-        
         Random.InitState(System.DateTime.Now.Millisecond);
         agent = GetComponent<NavMeshAgent>();
         flyRelativeMovement = GetComponentInChildren<FlyRelativeMovmement>();
-        destinationVolumes = destinationsContainer.GetComponentsInChildren<BoxCollider>();
-        currentTargetIndex = 0;
         //GetNewDestination(currentTargetIndex);
+        player = (GameObject.FindObjectOfType<PlayerMovement>()).gameObject;
         GetTargetAimlessly();
         agent.stoppingDistance = 1.0f;
-        //player = ((PlayerMovement)(GameObject.FindObjectOfType<PlayerMovement>())).gameObject.transform;
+        safePosition = transform.position;
+        
     }
 
-    public void GetNewDestination()
-    {
-        int newTargetIndex = (int)Random.Range(0.0f, destinationVolumes.Length);
-        if (newTargetIndex == currentTargetIndex)
-        {
-            if (currentTargetIndex == destinationVolumes.Length - 1)
-                currentTargetIndex = 0;
-            else
-                currentTargetIndex = newTargetIndex + 1;
-        }
-        else
-            currentTargetIndex = newTargetIndex;
-        GetNewDestination(currentTargetIndex);
-    }
-
-    private void GetNewDestination(int index)
-    {
-        BoxCollider currentCollider = destinationVolumes[index];
-        Vector3 dest = currentCollider.bounds.center
-            + new Vector3(Random.Range(-currentCollider.bounds.size.x / 2, currentCollider.bounds.size.x / 2)
-            , 0, Random.Range(-currentCollider.bounds.size.z / 2, currentCollider.bounds.size.z / 2));
-        agent.destination = dest;
-        newDestinationAssigned = true;
-
-    }
 
     public void GetTargetAimlessly()
     {
@@ -165,18 +136,23 @@ public class FlyNavigator : MonoBehaviour
             RaycastHit avoidHit;
             Vector3 playerDir = (transform.position - player.transform.position).normalized;
             
-            didHit = false;
+            
             if (Physics.Raycast(flyRelativeMovement.transform.position, new Vector3(playerDir.x, 0, playerDir.z), out avoidHit, sightDistance))
             {
-                hitMax = avoidHit;
-                distMax = avoidHit.distance;
-                didHit = true;
+                //hitMax = avoidHit;
+                //distMax = avoidHit.distance;
+                //didHit = true;
+            }
+            else
+            {
+                didHit = false;
+                dir = playerDir;
             }
         }
 
         if (didHit)
         {
-            xzCoord = (hitMax.point - flyRelativeMovement.transform.position).normalized * Random.Range(distMax * 0.5f, distMax - agent.radius);
+            xzCoord = flyRelativeMovement.transform.position + (hitMax.point - flyRelativeMovement.transform.position).normalized * Random.Range(distMax * 0.5f, distMax - agent.radius);
             //print("did hit");
         }
         else
@@ -186,8 +162,9 @@ public class FlyNavigator : MonoBehaviour
         }
         Physics.Raycast(xzCoord, Vector3.down, out hitDown);
 
+        canLand = false;
         NavMeshHit nmh;
-        if (NavMesh.SamplePosition(hitDown.point, out nmh, 5.0f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(hitDown.point, out nmh, 2.0f, NavMesh.AllAreas))
         {
             agent.destination = nmh.position;
             newDestinationAssigned = true;
@@ -195,7 +172,7 @@ public class FlyNavigator : MonoBehaviour
         else
         {
             //if its not on the navmesh get a point normally
-            GetNewDestination();
+            agent.destination = safePosition;
         }
     }
 
@@ -218,7 +195,6 @@ public class FlyNavigator : MonoBehaviour
                 if (landDraw <= landChance && canLand)
                 {
                     flyRelativeMovement.SetFlyMode(FlyMode.FLOOR_LANDING);
-                    canLand = false;
                 }
                 else
                     GetTargetAimlessly();
@@ -238,4 +214,5 @@ public class FlyNavigator : MonoBehaviour
         
         return (player.gameObject.transform.position - otherTransform.position).magnitude < detectionDistance;
     }
+
 }

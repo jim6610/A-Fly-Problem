@@ -7,7 +7,8 @@ public enum FlyMode
     TRAVELLING = 0,
     FLOOR_LANDING = 1,
     WALL_LANDING = 2,
-    STATIONARY = 3
+    STATIONARY = 3,
+    DEATH = 4
 }
 
 [RequireComponent(typeof(Rigidbody))]
@@ -31,11 +32,13 @@ public class FlyRelativeMovmement : MonoBehaviour
     private BoxCollider collider;
     private float waitTimer;
     private float takeOffTime;
+    
 
     private float targetHeight;
     private float targetHeightMin = 1.0f;
     private float targetHeightTimer;
     private float targetHeightTime;
+
     private Animator animator;
 
     void Start()
@@ -136,6 +139,20 @@ public class FlyRelativeMovmement : MonoBehaviour
 
 
 
+    void DeathRoutine()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Death"))
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f)
+            {
+                Destroy(navigatorTransform.gameObject);
+                Destroy(this.gameObject);
+            }
+        }
+    }
+
+
+
     void Update()
     {
         switch (flyMode)
@@ -151,6 +168,9 @@ public class FlyRelativeMovmement : MonoBehaviour
             case FlyMode.STATIONARY:
                 StationaryRoutine();
                 break;
+            case FlyMode.DEATH:
+                DeathRoutine();
+                break;
 
         }
 
@@ -158,6 +178,16 @@ public class FlyRelativeMovmement : MonoBehaviour
 
     public void SetFlyMode(FlyMode flyMode)
     {
+        if(flyMode == FlyMode.DEATH)
+        {
+            animator.SetBool("animFly", false);
+            animator.SetBool("animScratch", false);
+            animator.SetBool("animDeath", true);
+            rb.constraints = RigidbodyConstraints.None;
+            rb.useGravity = true;
+            waitTimer = 0.0f;
+            transform.parent = null;
+        }
         this.flyMode = flyMode;
     }
 

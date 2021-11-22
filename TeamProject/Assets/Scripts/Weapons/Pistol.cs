@@ -21,6 +21,7 @@ public class Pistol : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     private AudioManager audioManager;
     private GameObject weaponManager;
+    private GameObject selectionManager;
     public Animator animator;
 
     private Camera fpsCam;
@@ -34,6 +35,7 @@ public class Pistol : MonoBehaviour
     {
         audioManager = FindObjectOfType<AudioManager>();
         weaponManager = GameObject.Find("WeaponHolder");
+        selectionManager = GameObject.Find("SelectionManager");
         fpsCam = Camera.main;
         currentAmmoClip = clipSize;
     }
@@ -82,6 +84,7 @@ public class Pistol : MonoBehaviour
         isReloading = true;
         animator.SetBool("Reloading", true);
         weaponManager.GetComponent<WeaponSwitching>().ToggleWeaponSwitching();
+        selectionManager.GetComponent<SelectionManager>().ToggleIsReloading();
         yield return new WaitForSeconds(reloadTime - 0.25f);
 
         // Reload completed
@@ -89,6 +92,7 @@ public class Pistol : MonoBehaviour
         yield return new WaitForSeconds(0.25f); // this wait is to prevent weapon from firing before the animation is complete
         isReloading = false;
         weaponManager.GetComponent<WeaponSwitching>().ToggleWeaponSwitching();
+        selectionManager.GetComponent<SelectionManager>().ToggleIsReloading();
         currentAmmoClip = clipSize;
     }
 
