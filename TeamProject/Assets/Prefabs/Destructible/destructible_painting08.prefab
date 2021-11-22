@@ -3711,7 +3711,7 @@ MonoBehaviour:
   - {fileID: 630812103947712272}
   hidingPieces:
   - {fileID: 6244183433654691486}
-  explosionForce: -15
+  explosionForce: 5
   destroyedPiecesRotation: 0
   breakForce: 6
   FX: {fileID: 0}
