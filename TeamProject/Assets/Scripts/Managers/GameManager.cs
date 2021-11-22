@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float contractValueNormal;
     [SerializeField] private float levelTimerNormal;
     [SerializeField] private int totalNumberOfFliesNormal;
+    [SerializeField] private int flyCapacityNormal;
+    [SerializeField] private float flySpawnRateNormal;
     [SerializeField] private int maxNumberOfSpecialsNormal;
+    [SerializeField] private float specialSpawnRateNormal;
     [SerializeField] private float enemyHealthModifierNormal = 1.0f;
     [SerializeField] private float enemySpeedModifierNormal = 1.0f;
     [SerializeField] private float spawnChanceModifierNormal = 1.0f;
@@ -23,7 +26,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float contractValueHard;
     [SerializeField] private float levelTimerHard;
     [SerializeField] private int totalNumberOfFliesHard;
+    [SerializeField] private int flyCapacityHard;
+    [SerializeField] private float flySpawnRateHard;
     [SerializeField] private int maxNumberOfSpecialsHard;
+    [SerializeField] private float specialSpawnRateHard;
     [SerializeField] private float enemyHealthModifierHard;
     [SerializeField] private float enemySpeedModifierHard;
     [SerializeField] private float spawnChanceModifierHard;
@@ -36,11 +42,14 @@ public class GameManager : MonoBehaviour
 
     // *** Global game variables ***
 
-    // Difficulty modifiers
+    // Difficulty settings
     public static float currentContractValue; // How much money player is getting upon finishing the level. Can be reduced if destructible objects are damaged/destroyed
     public static float levelTimer; // Timer for level
     public static int startingNumberOfFlies; // Starting Number of flies for the level
+    public static int flyCapacity; // max number of flies in a level at once
+    public static float flySpawnRate; // how often a fly spawns in the level
     public static int maxNumberOfSpecials;  // max number of special enemies in a level
+    public static float specialSpawnRate; // how often a special spawns in the level
     public static float enemyHealthModifier;
     public static float enemySpeedModifier;
     public static float spawnChanceModifier;
@@ -106,7 +115,10 @@ public class GameManager : MonoBehaviour
         currentContractValue = contractValueNormal;
         levelTimer = levelTimerNormal;
         startingNumberOfFlies = totalNumberOfFliesNormal;
+        flyCapacity = flyCapacityNormal;
+        flySpawnRate = flySpawnRateNormal;
         maxNumberOfSpecials = maxNumberOfSpecialsNormal;
+        specialSpawnRate = specialSpawnRateNormal;
         enemyHealthModifier = enemyHealthModifierNormal;
         enemySpeedModifier = enemySpeedModifierNormal;
         spawnChanceModifier = spawnChanceModifierNormal;
@@ -118,7 +130,10 @@ public class GameManager : MonoBehaviour
         currentContractValue = contractValueHard;
         levelTimer = levelTimerHard;
         startingNumberOfFlies = totalNumberOfFliesHard;
+        flyCapacity = flyCapacityHard;
+        flySpawnRate = flySpawnRateHard;
         maxNumberOfSpecials = maxNumberOfSpecialsHard;
+        specialSpawnRate = specialSpawnRateHard;
         enemyHealthModifier = enemyHealthModifierHard;
         enemySpeedModifier = enemySpeedModifierHard;
         spawnChanceModifier = spawnChanceModifierHard;
@@ -145,7 +160,7 @@ public class GameManager : MonoBehaviour
 
     public static void LevelOver(int timeRemaining)
     {
-        if (flyCount == 0)
+        if (GameManager.flyKillCount == GameManager.startingNumberOfFlies)
         {
             CalculateBonus(timeRemaining);
         }
@@ -171,43 +186,16 @@ public class GameManager : MonoBehaviour
 
 
     // Enemy counter increment/decrement functions
-    public static void IncrementFlyCount()
-    {
-        flyCount++;
-    }
-    public static void IncrementSpiderCount()
-    {
-        spiderCount++;
-    }
-    public static void IncrementScorpionCount()
-    {
-        scorpionCount++;
-    }
-    public static void DecrementFlyCount()
-    {
-        flyCount--;
-    }
-    public static void DecrementSpiderCount()
-    {
-        spiderCount--;
-    }
-    public static void DecrementScorpionCount()
-    {
-        scorpionCount--;
-    }
+    public static Action IncrementFlyCount = () => flyCount++;
+    public static Action IncrementSpiderCount = () => spiderCount++;
+    public static Action IncrementScorpionCount = () => scorpionCount++;
+    public static Action DecrementFlyCount = () => flyCount--;
+    public static Action DecrementSpiderCount = () => spiderCount--;
+    public static Action DecrementScorpionCount = () => scorpionCount--;
 
 
     // Enemy kill count increment/decrement functions
-    public static void IncrementFlyKillCount()
-    {
-        flyKillCount++;
-    }
-    public static void IncrementSpiderKillCount()
-    {
-        spiderKillCount++;
-    }
-    public static void IncrementScorpionKillCount()
-    {
-        scorpionKillCount++;
-    }
+    public static Action IncrementFlyKillCount = () => flyKillCount++;
+    public static Action IncrementSpiderKillCount = () => spiderKillCount++;
+    public static Action IncrementScorpionKillCount = () => scorpionKillCount++;
 }
