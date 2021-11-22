@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
     private void UpdateHUD()
     {
         moneyDisplay.text = String.Format("{0:.00}", currentContractValue);
-        flyCounterDisplay.text = flyCount.ToString();
+        flyCounterDisplay.text = (startingNumberOfFlies - flyKillCount).ToString();
     }
 
     // If level was completed before timer ended, add bonus money based on how much time was left

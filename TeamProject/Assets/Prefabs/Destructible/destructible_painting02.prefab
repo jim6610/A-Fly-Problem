@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 905471870270806150}
   - component: {fileID: 915212815300874668}
   - component: {fileID: 864738590205830990}
-  - component: {fileID: 4463275956071946496}
   - component: {fileID: 3873459168284272256}
   - component: {fileID: 590068486637002663}
   - component: {fileID: 9073265933140151024}
@@ -215,18 +214,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5145125, y: 0.030000007, z: 0.5145126}
   m_Center: {x: 0, y: 0, z: 0.25000003}
---- !u!114 &4463275956071946496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3698220157576967346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e4d99285f948374784183761b8b10ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3873459168284272256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +228,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 4
   monetaryValue: 25
+  isHanging: 1
+  breakForce: 6
+  explosionForce: 5
+  destroyedPiecesRotation: 0
+  destroyAftertime: 0
+  time: 10
   destroyedPieces:
   - {fileID: 4586402630679500629}
   - {fileID: 4586402630679500623}
@@ -274,12 +267,7 @@ MonoBehaviour:
   - {fileID: 630812103947712272}
   hidingPieces:
   - {fileID: 6244183433654691486}
-  explosionForce: 5
-  destroyedPiecesRotation: 0
-  breakForce: 6
   FX: {fileID: 0}
-  destroyAftertime: 0
-  time: 10
 --- !u!114 &590068486637002663
 MonoBehaviour:
   m_ObjectHideFlags: 0

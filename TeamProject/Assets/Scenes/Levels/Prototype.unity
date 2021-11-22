@@ -3254,6 +3254,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: destructible_vase_big_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2771010796492370055, guid: fbb9041845ab2ca4c904c29fb949710e, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771010796492370055, guid: fbb9041845ab2ca4c904c29fb949710e, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771010796492370055, guid: fbb9041845ab2ca4c904c29fb949710e, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771010796492370055, guid: fbb9041845ab2ca4c904c29fb949710e, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4460185387471910684, guid: fbb9041845ab2ca4c904c29fb949710e, type: 3}
       propertyPath: m_RootOrder
       value: 41

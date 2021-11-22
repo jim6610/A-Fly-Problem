@@ -9,14 +9,15 @@ using UnityEngine;
 public class Destructible : MonoBehaviour {
     [SerializeField] private float initialHealth;
     [SerializeField] private float monetaryValue;
-    [SerializeField] private GameObject[] destroyedPieces;
-    [SerializeField] private GameObject[] hidingPieces; // list of the objects that will be hidden after the object breaks
+    [SerializeField] private bool isHanging;
+    [SerializeField] private float breakForce; // How easily the object breaks
     [SerializeField] private float explosionForce = 200; // force added to every piece of the broken object
     [SerializeField] private float destroyedPiecesRotation = 20; // Rotation force added to every chunk when it explodes
-    [SerializeField] private float breakForce; // How easily the object breaks
-    [SerializeField] private GameObject FX; // special effect
     [SerializeField] private bool destroyAftertime = true; // if true, then destroyed pieces will be removed after a set time
     [SerializeField] private float time = 5; // time before destroyed pieces will be destroyed from the scene
+    [SerializeField] private GameObject[] destroyedPieces;
+    [SerializeField] private GameObject[] hidingPieces; // list of the objects that will be hidden after the object breaks
+    [SerializeField] private GameObject FX; // special effect
 
     private float currentHealth;
     private float currentValue;
@@ -130,6 +131,11 @@ public class Destructible : MonoBehaviour {
     private void OnCollisionEnter(Collision other)
     {
         Vector3 impactForce = other.relativeVelocity;
+
+        if (isHanging)
+        {
+            this.GetComponent<Rigidbody>().useGravity = true;
+        }
 
         if (other.relativeVelocity.magnitude > breakForce)
         {
