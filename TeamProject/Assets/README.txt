@@ -54,6 +54,9 @@ Asset packs
 	- https://assetstore.unity.com/packages/3d/characters/animals/insects/9t5-low-poly-insects-202139
 	Destructible props pack 
 	- https://assetstore.unity.com/packages/3d/props/destructible-props-pack-27379
+	Bar Stool
+	- https://assetstore.unity.com/packages/3d/props/bar-stool-98790
+
 
 
 Models
@@ -69,6 +72,8 @@ Models
 	- https://free3d.com/3d-model/dresser-old-65315.html
 	- https://free3d.com/3d-model/night-stand-v2--465221.html
 	- https://free3d.com/3d-model/jacuzzi-30573.html
+	- https://free3d.com/3d-model/rubbish-bin-83371.html
+	- https://free3d.com/3d-model/wine-shelves-v2-537113.html
 
 
 Audio
