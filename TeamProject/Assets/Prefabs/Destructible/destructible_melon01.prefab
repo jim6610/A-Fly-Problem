@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1532995169349109537}
   - component: {fileID: 1532995169346013921}
   - component: {fileID: 1532995169348825185}
-  - component: {fileID: 1532995169342826886}
   - component: {fileID: 1532995169342826884}
+  - component: {fileID: 1532995169342826886}
   m_Layer: 0
   m_Name: destructible_melon01
   m_TagString: Destructible
@@ -217,6 +217,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1532995169342826884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146763732955828501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 8
+  monetaryValue: 4
+  isHanging: 0
+  breakForce: 8
+  explosionForce: 20
+  destroyedPiecesRotation: 5
+  destroyAftertime: 1
+  time: 10
+  destroyedPieces:
+  - {fileID: 8240414569708834550}
+  - {fileID: 8240414569708834548}
+  - {fileID: 8240414569708834546}
+  - {fileID: 8240414569708834544}
+  hidePieces: []
+  FX: {fileID: 8240414569708834556}
 --- !u!114 &1532995169342826886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,32 +262,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &1532995169342826884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3146763732955828501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 8
-  monetaryValue: 4
-  destroyedPieces:
-  - {fileID: 8240414569708834550}
-  - {fileID: 8240414569708834548}
-  - {fileID: 8240414569708834546}
-  - {fileID: 8240414569708834544}
-  hidingPieces: []
-  explosionForce: 20
-  destroyedPiecesRotation: 5
-  breakForce: 8
-  FX: {fileID: 8240414569708834556}
-  destroyAftertime: 1
-  time: 10
 --- !u!1 &8240414569708834544
 GameObject:
   m_ObjectHideFlags: 0

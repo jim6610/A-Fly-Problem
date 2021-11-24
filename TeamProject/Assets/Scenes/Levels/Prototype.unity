@@ -2387,7 +2387,7 @@ RectTransform:
   m_LocalScale: {x: 1.1211178, y: 1.1211178, z: 1.1211178}
   m_Children: []
   m_Father: {fileID: 1603861736}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5644,7 +5644,7 @@ RectTransform:
   - {fileID: 3102149}
   - {fileID: 1881143635}
   m_Father: {fileID: 1603861736}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5865,7 +5865,7 @@ RectTransform:
   - {fileID: 509558238}
   - {fileID: 1470126968}
   m_Father: {fileID: 1603861736}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -7825,6 +7825,7 @@ GameObject:
   - component: {fileID: 1603861735}
   - component: {fileID: 1603861734}
   - component: {fileID: 1603861733}
+  - component: {fileID: 1603861737}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -7907,9 +7908,9 @@ RectTransform:
   - {fileID: 1636517708}
   - {fileID: 1627877818}
   - {fileID: 1317887049}
-  - {fileID: 988261593}
   - {fileID: 327242233}
   - {fileID: 1087161634}
+  - {fileID: 988261593}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7918,6 +7919,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1603861737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603861732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5257ca31eebd7a64ea625abab435690b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseUI: {fileID: 988261592}
 --- !u!1 &1627877817
 GameObject:
   m_ObjectHideFlags: 0

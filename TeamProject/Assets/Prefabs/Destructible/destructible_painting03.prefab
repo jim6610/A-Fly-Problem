@@ -153,7 +153,7 @@ MonoBehaviour:
   - {fileID: 4586402630679500605}
   - {fileID: 4586402630679500579}
   - {fileID: 630812103947712272}
-  hidingPieces:
+  hidePieces:
   - {fileID: 6244183433654691486}
   FX: {fileID: 0}
 --- !u!114 &590068486637002663

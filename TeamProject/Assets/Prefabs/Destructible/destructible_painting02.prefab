@@ -124,10 +124,10 @@ GameObject:
   - component: {fileID: 905471870270806150}
   - component: {fileID: 915212815300874668}
   - component: {fileID: 864738590205830990}
-  - component: {fileID: 3873459168284272256}
-  - component: {fileID: 590068486637002663}
   - component: {fileID: 9073265933140151024}
   - component: {fileID: 8455577783576557984}
+  - component: {fileID: 3873459168284272256}
+  - component: {fileID: 590068486637002663}
   m_Layer: 0
   m_Name: destructible_painting02
   m_TagString: Destructible
@@ -214,78 +214,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5145125, y: 0.030000007, z: 0.5145126}
   m_Center: {x: 0, y: 0, z: 0.25000003}
---- !u!114 &3873459168284272256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3698220157576967346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 4
-  monetaryValue: 25
-  isHanging: 1
-  breakForce: 6
-  explosionForce: 5
-  destroyedPiecesRotation: 0
-  destroyAftertime: 0
-  time: 10
-  destroyedPieces:
-  - {fileID: 4586402630679500629}
-  - {fileID: 4586402630679500623}
-  - {fileID: 4586402630679500577}
-  - {fileID: 4586402630679500583}
-  - {fileID: 4586402630679500581}
-  - {fileID: 4586402630679500587}
-  - {fileID: 4586402630679500585}
-  - {fileID: 4586402630679500591}
-  - {fileID: 4586402630679500589}
-  - {fileID: 4586402630679500635}
-  - {fileID: 4586402630679500633}
-  - {fileID: 4586402630679500639}
-  - {fileID: 4586402630679500637}
-  - {fileID: 4586402630679500611}
-  - {fileID: 4586402630679500609}
-  - {fileID: 4586402630679500615}
-  - {fileID: 4586402630679500613}
-  - {fileID: 4586402630679500619}
-  - {fileID: 4586402630679500617}
-  - {fileID: 4586402630679500621}
-  - {fileID: 4586402630679500595}
-  - {fileID: 4586402630679500593}
-  - {fileID: 4586402630679500599}
-  - {fileID: 4586402630679500597}
-  - {fileID: 4586402630679500603}
-  - {fileID: 4586402630679500601}
-  - {fileID: 4586402630679500607}
-  - {fileID: 4586402630679500605}
-  - {fileID: 4586402630679500579}
-  - {fileID: 630812103947712272}
-  hidingPieces:
-  - {fileID: 6244183433654691486}
-  FX: {fileID: 0}
---- !u!114 &590068486637002663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3698220157576967346}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 4
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!54 &9073265933140151024
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -398,6 +326,78 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3873459168284272256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698220157576967346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 4
+  monetaryValue: 25
+  isHanging: 1
+  breakForce: 6
+  explosionForce: 5
+  destroyedPiecesRotation: 0
+  destroyAftertime: 0
+  time: 10
+  destroyedPieces:
+  - {fileID: 4586402630679500629}
+  - {fileID: 4586402630679500623}
+  - {fileID: 4586402630679500577}
+  - {fileID: 4586402630679500583}
+  - {fileID: 4586402630679500581}
+  - {fileID: 4586402630679500587}
+  - {fileID: 4586402630679500585}
+  - {fileID: 4586402630679500591}
+  - {fileID: 4586402630679500589}
+  - {fileID: 4586402630679500635}
+  - {fileID: 4586402630679500633}
+  - {fileID: 4586402630679500639}
+  - {fileID: 4586402630679500637}
+  - {fileID: 4586402630679500611}
+  - {fileID: 4586402630679500609}
+  - {fileID: 4586402630679500615}
+  - {fileID: 4586402630679500613}
+  - {fileID: 4586402630679500619}
+  - {fileID: 4586402630679500617}
+  - {fileID: 4586402630679500621}
+  - {fileID: 4586402630679500595}
+  - {fileID: 4586402630679500593}
+  - {fileID: 4586402630679500599}
+  - {fileID: 4586402630679500597}
+  - {fileID: 4586402630679500603}
+  - {fileID: 4586402630679500601}
+  - {fileID: 4586402630679500607}
+  - {fileID: 4586402630679500605}
+  - {fileID: 4586402630679500579}
+  - {fileID: 630812103947712272}
+  hidePieces:
+  - {fileID: 6244183433654691486}
+  FX: {fileID: 0}
+--- !u!114 &590068486637002663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3698220157576967346}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 4
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4586402630679500577
 GameObject:
   m_ObjectHideFlags: 0

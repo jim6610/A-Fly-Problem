@@ -9620,7 +9620,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d2846faacf0bacb48bea582ced78db46, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9680,8 +9680,8 @@ GameObject:
   - component: {fileID: 994880033127041591}
   - component: {fileID: 994880033125910519}
   - component: {fileID: 994880033127808375}
-  - component: {fileID: 994880033129145490}
   - component: {fileID: 994880033129145488}
+  - component: {fileID: 994880033129145490}
   - component: {fileID: 140977483956170163}
   m_Layer: 0
   m_Name: destructible_tv01
@@ -9881,6 +9881,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &994880033129145488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7440048440331520609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 20
+  monetaryValue: 80
+  isHanging: 0
+  breakForce: 10
+  explosionForce: 0
+  destroyedPiecesRotation: 0
+  destroyAftertime: 0
+  time: 10
+  destroyedPieces:
+  - {fileID: 994880033129145491}
+  hidePieces:
+  - {fileID: 994880033129145493}
+  FX: {fileID: 994880033129145491}
 --- !u!114 &994880033129145490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9899,30 +9924,6 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!114 &994880033129145488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7440048440331520609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHealth: 20
-  monetaryValue: 80
-  destroyedPieces:
-  - {fileID: 994880033129145491}
-  hidingPieces:
-  - {fileID: 994880033129145493}
-  explosionForce: 0
-  destroyedPiecesRotation: 0
-  breakForce: 10
-  FX: {fileID: 0}
-  destroyAftertime: 0
-  time: 10
 --- !u!208 &140977483956170163
 NavMeshObstacle:
   m_ObjectHideFlags: 0

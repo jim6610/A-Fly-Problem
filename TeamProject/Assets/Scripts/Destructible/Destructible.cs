@@ -16,7 +16,7 @@ public class Destructible : MonoBehaviour {
     [SerializeField] private bool destroyAftertime = true; // if true, then destroyed pieces will be removed after a set time
     [SerializeField] private float time = 5; // time before destroyed pieces will be destroyed from the scene
     [SerializeField] private GameObject[] destroyedPieces;
-    [SerializeField] private GameObject[] hidingPieces; // list of the objects that will be hidden after the object breaks
+    [SerializeField] private GameObject[] hidePieces; // list of the objects that will be hidden after the object breaks
     [SerializeField] private GameObject FX; // special effect
 
     private float currentHealth;
@@ -91,9 +91,9 @@ public class Destructible : MonoBehaviour {
         LoseRemainingValue();
 
         // if there were any 
-        if (hidingPieces.Length != 0)
+        if (hidePieces.Length != 0)
         {
-            foreach (GameObject hidingObj in hidingPieces)
+            foreach (GameObject hidingObj in hidePieces)
             {
                 hidingObj.SetActive(false);
             }

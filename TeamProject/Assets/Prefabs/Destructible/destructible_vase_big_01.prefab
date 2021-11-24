@@ -234,8 +234,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 8
+  initialHealth: 14
   monetaryValue: 25
+  isHanging: 0
+  breakForce: 6
+  explosionForce: 120
+  destroyedPiecesRotation: 20
+  destroyAftertime: 1
+  time: 10
   destroyedPieces:
   - {fileID: 2771010796474116599}
   - {fileID: 2771010796474116597}
@@ -246,13 +252,8 @@ MonoBehaviour:
   - {fileID: 2771010796474116579}
   - {fileID: 2771010796474116577}
   - {fileID: 2771010796474116583}
-  hidingPieces: []
-  explosionForce: 120
-  destroyedPiecesRotation: 20
-  breakForce: 5
+  hidePieces: []
   FX: {fileID: 2771010796474116595}
-  destroyAftertime: 1
-  time: 10
 --- !u!114 &5562279325127058922
 MonoBehaviour:
   m_ObjectHideFlags: 0

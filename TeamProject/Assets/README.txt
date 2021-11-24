@@ -56,6 +56,8 @@ Asset packs
 	- https://assetstore.unity.com/packages/3d/props/destructible-props-pack-27379
 	Bar Stool
 	- https://assetstore.unity.com/packages/3d/props/bar-stool-98790
+	Wine Glass and Bottle
+	- https://assetstore.unity.com/packages/3d/props/wine-glass-bottle-124055
 
 
 
@@ -81,6 +83,8 @@ Audio
 - SFX
 	"Glass Smash, Bottle, D.wav" by InspectorJ (www.jshaw.co.uk) of Freesound.org
 	- https://freesound.org/people/InspectorJ/sounds/344265/
+	Wine glass breaking
+	- https://freesound.org/people/Pablobd/sounds/502999/
 	Gun shot
 	- https://freesound.org/people/schots/sounds/382735/
 	Rife Reload
