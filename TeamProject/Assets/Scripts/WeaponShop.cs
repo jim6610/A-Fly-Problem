@@ -214,8 +214,8 @@ public class WeaponShop : MonoBehaviour
 
         if (inventory.Contains("flame,"))
         {
-            buyButtons[4].SetActive(false);
-            equipdButtons[4].SetActive(true);
+            buyButtons[5].SetActive(false);
+            equipdButtons[5].SetActive(true);
         }
     }
 
