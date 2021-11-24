@@ -71,8 +71,8 @@ public class EnemySpawner : MonoBehaviour
     {
         while (numberOfFlysSpawned < GameManager.startingNumberOfFlies)
         {
-            print("fly count: " + GameManager.flyCount);
-            print("fly capacity: " + GameManager.flyCapacity);
+            //print("fly count: " + GameManager.flyCount);
+            //print("fly capacity: " + GameManager.flyCapacity);
             if (GameManager.flyCount < GameManager.flyCapacity)
             {
                 Instantiate(fly, location.position, fly.transform.rotation, this.transform);
