@@ -11,9 +11,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject spider;
     [SerializeField]
-    private float spawnInterval = 3.0f;
-    [SerializeField]
-    private float specialEnemeyChance = 0.1f;
+    private float specialEnemeyChance = 0.3f;
+
 
     private Transform[] spawnTransforms;
     private int numberOfFlysSpawned;
@@ -48,19 +47,18 @@ public class EnemySpawner : MonoBehaviour
         while (numberOfFlysSpawned < GameManager.startingNumberOfFlies)
         {
             float specialChance = Random.Range(0.0f, 1.0f);
+            specialEnemiesCount = GameManager.scorpionCount + GameManager.spiderCount;
             if (specialEnemiesCount <= GameManager.maxNumberOfSpecials && specialChance <= specialEnemeyChance)
             {
                 if (specialChance < specialEnemeyChance * 0.5f)
                 {
-                    Instantiate(scorpion, location.position, scorpion.transform.rotation);
+                    Instantiate(scorpion, location.position, scorpion.transform.rotation, this.transform);
                     GameManager.IncrementScorpionCount();
-                    specialEnemiesCount++;
                 }
                 else
                 {
-                    Instantiate(spider, location.position, spider.transform.rotation);
+                    Instantiate(spider, location.position, spider.transform.rotation, this.transform);
                     GameManager.IncrementSpiderCount();
-                    specialEnemiesCount++;
                 }
             }
 
@@ -73,9 +71,11 @@ public class EnemySpawner : MonoBehaviour
     {
         while (numberOfFlysSpawned < GameManager.startingNumberOfFlies)
         {
+            print("fly count: " + GameManager.flyCount);
+            print("fly capacity: " + GameManager.flyCapacity);
             if (GameManager.flyCount < GameManager.flyCapacity)
             {
-                Instantiate(fly, location.position, fly.transform.rotation);
+                Instantiate(fly, location.position, fly.transform.rotation, this.transform);
                 GameManager.IncrementFlyCount();
                 numberOfFlysSpawned++;
             }

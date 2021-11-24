@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
     public float health;
 
     private AudioManager _audioManager;
+    private bool dead;
 
     private void Awake()
     {
@@ -14,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         health *= GameManager.enemyHealthModifier; // Depending on difficulty, health will be adjusted
+        dead = false;
     }
 
     void Update()
@@ -36,16 +38,29 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        FlyRelativeMovmement frm = GetComponent<FlyRelativeMovmement>();
-        if (frm)
-            frm.SetFlyMode(FlyMode.DEATH);
+        if (!dead)
+        {
+            FlyRelativeMovmement frm = GetComponent<FlyRelativeMovmement>();
+            if (frm)
+            {
+                frm.SetFlyMode(FlyMode.DEATH);
+                GameManager.DecrementFlyCount();
+            }
 
-        SpiderNavigator spn = GetComponent<SpiderNavigator>();
-        if (spn)
-            spn.SetDead();
+            SpiderNavigator spn = GetComponent<SpiderNavigator>();
+            if (spn)
+            {
+                spn.SetDead();
+                GameManager.DecrementSpiderCount();
+            }
 
-        ScorpionNavigator scn = GetComponent<ScorpionNavigator>();
-        if (scn)
-            scn.SetDead();
+            ScorpionNavigator scn = GetComponent<ScorpionNavigator>();
+            if (scn)
+            {
+                scn.SetDead();
+                GameManager.DecrementScorpionCount();
+            }
+            dead = true;
+        }
     }
 }
