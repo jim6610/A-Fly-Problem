@@ -5711,8 +5711,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7988349420b95be42995ee78bb4e9214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contractValue: 0
-  setStartingNumberOfFlies: 0
+  hardMode: 0
+  contractValueNormal: 0
+  levelTimerNormal: 0
+  totalNumberOfFliesNormal: 20
+  flyCapacityNormal: 10
+  flySpawnRateNormal: 5
+  maxNumberOfSpecialsNormal: 2
+  specialSpawnRateNormal: 15
+  enemyHealthModifierNormal: 1
+  enemySpeedModifierNormal: 1
+  spawnChanceModifierNormal: 1
+  moneyPenaltyModifierNormal: 1
+  contractValueHard: 0
+  levelTimerHard: 0
+  totalNumberOfFliesHard: 0
+  flyCapacityHard: 0
+  flySpawnRateHard: 0
+  maxNumberOfSpecialsHard: 0
+  specialSpawnRateHard: 0
+  enemyHealthModifierHard: 0
+  enemySpeedModifierHard: 0
+  spawnChanceModifierHard: 0
+  moneyPenaltyModifierHard: 0
   moneyDisplay: {fileID: 0}
   flyCounterDisplay: {fileID: 0}
 --- !u!1001 &1046001218
@@ -10539,14 +10560,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 50
   monetaryValue: 0
-  destroyedPieces: []
-  hidingPieces: []
+  isHanging: 0
+  breakForce: 10
   explosionForce: 200
   destroyedPiecesRotation: 20
-  breakForce: 10
-  FX: {fileID: 0}
   destroyAftertime: 1
   time: 5
+  destroyedPieces: []
+  hidePieces: []
+  FX: {fileID: 0}
 --- !u!114 &2143423323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10707,6 +10729,10 @@ PrefabInstance:
     - target: {fileID: 2106299485159735945, guid: 343ea7708b745944198d850ab2052cce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2106299485159735950, guid: 343ea7708b745944198d850ab2052cce, type: 3}
+      propertyPath: spawnInterval
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2106299485159735951, guid: 343ea7708b745944198d850ab2052cce, type: 3}
       propertyPath: m_Name

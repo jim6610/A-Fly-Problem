@@ -16,42 +16,39 @@ public class EnemySpawner : MonoBehaviour
     private float specialEnemeyChance = 0.1f;
 
     private Transform[] spawnTransforms;
-    private int numberOfEnemiesSpawned;
+    private int numberOfFlysSpawned;
     private int specialEnemiesCount;
-    private int maxNumberOfFlies;
-    private int maxSpecialEnemyAmount;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxNumberOfFlies = GameManager.startingNumberOfFlies;
-        maxSpecialEnemyAmount = GameManager.maxNumberOfSpecials;
         specialEnemiesCount = 0;
+        numberOfFlysSpawned = 0;
 
         Transform[] tempTransforms = GetComponentsInChildren<Transform>();
         spawnTransforms = new Transform[tempTransforms.Length - 1];
         //remove this transform because tempTransforms also contains this transform
         int index = 0;
-        foreach(Transform t in tempTransforms)
+        foreach (Transform t in tempTransforms)
         {
             if (t != this.transform)
                 spawnTransforms[index++] = t;
         }
-        numberOfEnemiesSpawned = 0;
 
 
         foreach (Transform t in spawnTransforms)
             StartCoroutine(SpawnRoutine(t));
+
+        foreach (Transform t in spawnTransforms)
+            StartCoroutine(SpecialEnemiesSpawnRoutine(t));
     }
 
-
-    IEnumerator SpawnRoutine(Transform location)
-    { 
-        while(numberOfEnemiesSpawned<maxNumberOfFlies)
+    IEnumerator SpecialEnemiesSpawnRoutine(Transform location)
+    {
+        while (numberOfFlysSpawned < GameManager.startingNumberOfFlies)
         {
-
             float specialChance = Random.Range(0.0f, 1.0f);
-            if (specialEnemiesCount <= maxSpecialEnemyAmount && specialChance <= specialEnemeyChance)
+            if (specialEnemiesCount <= GameManager.maxNumberOfSpecials && specialChance <= specialEnemeyChance)
             {
                 if (specialChance < specialEnemeyChance * 0.5f)
                 {
@@ -66,13 +63,24 @@ public class EnemySpawner : MonoBehaviour
                     specialEnemiesCount++;
                 }
             }
-            else
+
+            yield return new WaitForSeconds(GameManager.specialSpawnRate);
+        }
+    }
+
+
+    IEnumerator SpawnRoutine(Transform location)
+    {
+        while (numberOfFlysSpawned < GameManager.startingNumberOfFlies)
+        {
+            if (GameManager.flyCount < GameManager.flyCapacity)
             {
                 Instantiate(fly, location.position, fly.transform.rotation);
                 GameManager.IncrementFlyCount();
-                numberOfEnemiesSpawned++;
+                numberOfFlysSpawned++;
             }
-            yield return new WaitForSeconds(spawnInterval);
+
+            yield return new WaitForSeconds(GameManager.flySpawnRate);
         }
     }
 
