@@ -34,7 +34,7 @@ public class WeaponShop : MonoBehaviour
         }
         else
         {
-            money = 5f;
+            money = 10000f;
             PlayerPrefs.SetFloat("money", money);
         }
 
@@ -99,10 +99,34 @@ public class WeaponShop : MonoBehaviour
                 equipdButtons[0].SetActive(true);
             }
 
-            if (item == "gun")
+            else if (item == "bat")
             {
                 buyButtons[1].SetActive(false);
                 equipdButtons[1].SetActive(true);
+            }
+
+            else if (item == "spray")
+            {
+                buyButtons[2].SetActive(false);
+                equipdButtons[2].SetActive(true);
+            }
+
+            else if (item == "gun")
+            {
+                buyButtons[3].SetActive(false);
+                equipdButtons[3].SetActive(true);
+            }
+
+            else if (item == "rifle")
+            {
+                buyButtons[4].SetActive(false);
+                equipdButtons[4].SetActive(true);
+            }
+
+            else if (item == "flame")
+            {
+                buyButtons[5].SetActive(false);
+                equipdButtons[5].SetActive(true);
             }
 
         }
@@ -164,10 +188,34 @@ public class WeaponShop : MonoBehaviour
             equipdButtons[0].SetActive(true);
         }
 
-        if(inventory.Contains("gun,"))
+        if (inventory.Contains("bat,"))
         {
             buyButtons[1].SetActive(false);
             equipdButtons[1].SetActive(true);
+        }
+
+        if (inventory.Contains("spray,"))
+        {
+            buyButtons[2].SetActive(false);
+            equipdButtons[2].SetActive(true);
+        }
+
+        if (inventory.Contains("gun,"))
+        {
+            buyButtons[3].SetActive(false);
+            equipdButtons[3].SetActive(true);
+        }
+
+        if (inventory.Contains("rifle,"))
+        {
+            buyButtons[4].SetActive(false);
+            equipdButtons[4].SetActive(true);
+        }
+
+        if (inventory.Contains("flame,"))
+        {
+            buyButtons[4].SetActive(false);
+            equipdButtons[4].SetActive(true);
         }
     }
 
