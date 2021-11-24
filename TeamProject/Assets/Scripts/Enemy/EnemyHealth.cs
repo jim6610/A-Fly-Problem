@@ -45,6 +45,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 frm.SetFlyMode(FlyMode.DEATH);
                 GameManager.DecrementFlyCount();
+                GameManager.IncrementFlyKillCount();
             }
 
             SpiderNavigator spn = GetComponent<SpiderNavigator>();
@@ -52,6 +53,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 spn.SetDead();
                 GameManager.DecrementSpiderCount();
+                GameManager.IncrementSpiderKillCount();
             }
 
             ScorpionNavigator scn = GetComponent<ScorpionNavigator>();
@@ -59,6 +61,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 scn.SetDead();
                 GameManager.DecrementScorpionCount();
+                GameManager.IncrementScorpionKillCount();
             }
             dead = true;
         }
