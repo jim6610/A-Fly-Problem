@@ -32,7 +32,8 @@ public class WeaponLoader : MonoBehaviour
                         Instantiate(weapons[0], this.gameObject.transform).SetActive(false);
                     }
                 }
-                else if(x == "gun")
+
+                else if (x == "bat")
                 {
                     if (firstWeapon)
                     {
@@ -42,6 +43,58 @@ public class WeaponLoader : MonoBehaviour
                     else
                     {
                         Instantiate(weapons[1], this.gameObject.transform).SetActive(false);
+                    }
+                }
+
+                else if (x == "spray")
+                {
+                    if (firstWeapon)
+                    {
+                        Instantiate(weapons[2], this.gameObject.transform);
+                        firstWeapon = false;
+                    }
+                    else
+                    {
+                        Instantiate(weapons[2], this.gameObject.transform).SetActive(false);
+                    }
+                }
+
+                else if (x == "gun")
+                {
+                    if (firstWeapon)
+                    {
+                        Instantiate(weapons[3], this.gameObject.transform);
+                        firstWeapon = false;
+                    }
+                    else
+                    {
+                        Instantiate(weapons[3], this.gameObject.transform).SetActive(false);
+                    }
+                }
+
+                else if (x == "rifle")
+                {
+                    if (firstWeapon)
+                    {
+                        Instantiate(weapons[4], this.gameObject.transform);
+                        firstWeapon = false;
+                    }
+                    else
+                    {
+                        Instantiate(weapons[4], this.gameObject.transform).SetActive(false);
+                    }
+                }
+
+                else if (x == "flame")
+                {
+                    if (firstWeapon)
+                    {
+                        Instantiate(weapons[5], this.gameObject.transform);
+                        firstWeapon = false;
+                    }
+                    else
+                    {
+                        Instantiate(weapons[5], this.gameObject.transform).SetActive(false);
                     }
                 }
             }
