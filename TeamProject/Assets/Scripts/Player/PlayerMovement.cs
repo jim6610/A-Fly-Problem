@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     
     private float timer;
     private float defaultYPosition;
+    private bool reverseMovment;
     
     private Vector3 velocity;
     private Vector3 movementDirection;
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerCam = GetComponentInChildren<Camera>();
         defaultYPosition = playerCam.transform.localPosition.y;
+        reverseMovment = false;
     }
 
     void Update()
@@ -73,6 +75,12 @@ public class PlayerMovement : MonoBehaviour
         
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
+
+        if(reverseMovment)
+        {
+            x = -x;
+            z = -z;
+        }
 
         movementDirection = _transform.right * x + _transform.forward * z;
 
@@ -170,5 +178,12 @@ public class PlayerMovement : MonoBehaviour
         {
             walkSoundEffect.Play();
         }
+    }
+
+    public IEnumerator ApplyMovementReverse(float time)
+    {
+        reverseMovment = true;
+        yield return new WaitForSeconds(time);
+        reverseMovment = false;
     }
 }

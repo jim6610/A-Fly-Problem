@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2792229732287106157}
   - component: {fileID: 2792229732287106154}
   - component: {fileID: 2792229732287106153}
+  - component: {fileID: -1351480858378956955}
   m_Layer: 0
   m_Name: Scorpion
   m_TagString: Enemy
@@ -102,6 +103,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+--- !u!114 &-1351480858378956955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2792229732287106158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c411c0b97de05b9499b87e80cc027e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &2792229731317196014
 Animator:
   serializedVersion: 3
