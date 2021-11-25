@@ -28,9 +28,14 @@ public class ScorpionNavigator : MonoBehaviour
     float attackCooldownTimer = 0.0f;
     bool canAttack = true;
     bool isDead = false;
-    private Vector3 safePosition;
+    private List<Vector3> safePositions = null;
     private float attackAnimDist = 5.0f;
     private Vector3 previousDest;
+
+    private void Awake()
+    {
+        safePositions = new List<Vector3>();
+    }
 
     void Start()
     {
@@ -41,8 +46,18 @@ public class ScorpionNavigator : MonoBehaviour
         agent.stoppingDistance = agent.radius;
         animator = GetComponentInChildren<Animator>();
         isDead = false;
-        safePosition = transform.position;
-        previousDest = safePosition;
+        safePositions.Add(transform.position);
+    }
+
+    private Vector3 GetSafePosition()
+    {
+        int index = (int)Random.Range(0.0f, (float)safePositions.Count);
+        return safePositions[index];
+    }
+
+    public void AddSafePosition(Vector3 position)
+    {
+        safePositions.Add(position);
     }
 
 
@@ -167,12 +182,12 @@ public class ScorpionNavigator : MonoBehaviour
             if ((nmh.position - agent.destination).magnitude > 1.0f)
                 agent.destination = nmh.position;
             else
-                agent.destination = safePosition;
+                agent.destination = GetSafePosition();
         }
         else
         {
             //if its not on the navmesh get a point normally
-            agent.destination = safePosition;
+            agent.destination = GetSafePosition();
         }
     }
 

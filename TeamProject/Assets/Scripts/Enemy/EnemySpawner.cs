@@ -52,12 +52,24 @@ public class EnemySpawner : MonoBehaviour
             {
                 if (specialChance < specialEnemeyChance * 0.5f)
                 {
-                    Instantiate(scorpion, location.position, scorpion.transform.rotation, this.transform);
+                    GameObject enemy = Instantiate(scorpion, location.position, scorpion.transform.rotation, this.transform);
+                    ScorpionNavigator nav = enemy.GetComponent<ScorpionNavigator>();
+                    if (nav)
+                    {
+                        foreach (Transform t in spawnTransforms)
+                            nav.AddSafePosition(t.position);
+                    }
                     GameManager.IncrementScorpionCount();
                 }
                 else
                 {
-                    Instantiate(spider, location.position, spider.transform.rotation, this.transform);
+                    GameObject enemy = Instantiate(spider, location.position, spider.transform.rotation, this.transform);
+                    SpiderNavigator nav = enemy.GetComponent<SpiderNavigator>();
+                    if (nav)
+                    {
+                        foreach (Transform t in spawnTransforms)
+                            nav.AddSafePosition(t.position);
+                    }
                     GameManager.IncrementSpiderCount();
                 }
             }
@@ -75,7 +87,13 @@ public class EnemySpawner : MonoBehaviour
             //print("fly capacity: " + GameManager.flyCapacity);
             if (GameManager.flyCount < GameManager.flyCapacity)
             {
-                Instantiate(fly, location.position, fly.transform.rotation, this.transform);
+                GameObject enemy = Instantiate(fly, location.position, fly.transform.rotation, this.transform);
+                FlyNavigator nav = enemy.GetComponent<FlyNavigator>();
+                if (nav)
+                {
+                    foreach (Transform t in spawnTransforms)
+                        nav.AddSafePosition(t.position);
+                }
                 GameManager.IncrementFlyCount();
                 numberOfFlysSpawned++;
             }

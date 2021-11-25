@@ -31,7 +31,12 @@ public class FlyNavigator : MonoBehaviour
 
     float landCooldownTimer = 0.0f;
     bool canLand = false;
-    private Vector3 safePosition;
+    private List<Vector3> safePositions = null;
+
+    private void Awake()
+    {
+        safePositions = new List<Vector3>();
+    }
 
     void Start()
     {
@@ -42,8 +47,19 @@ public class FlyNavigator : MonoBehaviour
         player = (GameObject.FindObjectOfType<PlayerMovement>()).gameObject;
         GetTargetAimlessly();
         agent.stoppingDistance = 1.0f;
-        safePosition = transform.position;
+        safePositions.Add(transform.position);
         
+    }
+
+    private Vector3 GetSafePosition()
+    {
+        int index = (int)Random.Range(0.0f, (float)safePositions.Count);
+        return safePositions[index];
+    }
+
+    public void AddSafePosition(Vector3 position)
+    {
+        safePositions.Add(position);
     }
 
 
@@ -172,7 +188,7 @@ public class FlyNavigator : MonoBehaviour
         else
         {
             //if its not on the navmesh get a point normally
-            agent.destination = safePosition;
+            agent.destination = GetSafePosition();
         }
     }
 

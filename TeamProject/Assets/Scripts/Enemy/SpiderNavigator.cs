@@ -38,7 +38,12 @@ public class SpiderNavigator : MonoBehaviour
     bool canStop = false;
     bool isStopped = false;
     bool isDead = false;
-    private Vector3 safePosition;
+    private List<Vector3> safePositions = null;
+
+    private void Awake()
+    {
+        safePositions = new List<Vector3>();
+    }
 
     void Start()
     {
@@ -50,8 +55,19 @@ public class SpiderNavigator : MonoBehaviour
         agent.stoppingDistance = agent.radius;
         animator = GetComponentInChildren<Animator>();
         isDead = false;
-        safePosition = transform.position;
-        
+        safePositions.Add(transform.position);
+
+    }
+
+    private Vector3 GetSafePosition()
+    {
+        int index = (int)Random.Range(0.0f, (float)safePositions.Count);
+        return safePositions[index];
+    }
+
+    public void AddSafePosition(Vector3 position)
+    {
+        safePositions.Add(position);
     }
 
 
@@ -175,13 +191,13 @@ public class SpiderNavigator : MonoBehaviour
                 agent.destination = nmh.position;
             else
             {
-                agent.destination = safePosition;
+                agent.destination = GetSafePosition();
             }
         }
         else
         {
             //if its not on the navmesh get a point normally
-            agent.destination = safePosition;
+            agent.destination = GetSafePosition();
         }
     }
 
