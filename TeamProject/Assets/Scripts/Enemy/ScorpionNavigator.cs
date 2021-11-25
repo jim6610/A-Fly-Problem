@@ -18,6 +18,8 @@ public class ScorpionNavigator : MonoBehaviour
     private float playerSprintAwarenenessDistance;
     [SerializeField]
     private float attackCoolDownTime = 5.0f;
+    [SerializeField]
+    private float debuffDuration = 3.0f;
 
     private NavMeshAgent agent;
     public BoxCollider safeDestination = null;
@@ -31,6 +33,7 @@ public class ScorpionNavigator : MonoBehaviour
     private List<Vector3> safePositions = null;
     private float attackAnimDist = 5.0f;
     private Vector3 previousDest;
+    private float attackDistanceThreshold;
 
     private void Awake()
     {
@@ -47,6 +50,7 @@ public class ScorpionNavigator : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         isDead = false;
         safePositions.Add(transform.position);
+        attackDistanceThreshold = 2.0f;
     }
 
     private Vector3 GetSafePosition()
@@ -233,6 +237,21 @@ public class ScorpionNavigator : MonoBehaviour
             animator.SetBool("animIsStinging", true);
             canAttack = false;
             GetTargetAimlessly(true);
+        }
+    }
+
+    //Trigger no longer activates due to alternate layer, need to check distance manually
+    private void FixedUpdate()
+    {
+        float dist = (player.transform.position - transform.position).magnitude;
+        if(canAttack && dist<attackDistanceThreshold)
+        {
+            animator.SetBool("animIsStinging", true);
+            canAttack = false;
+            GetTargetAimlessly(true);
+            PlayerMovement movement = player.gameObject.GetComponent<PlayerMovement>();
+            if (movement)
+                movement.StartReverseMovement(debuffDuration);
         }
     }
 
