@@ -21,7 +21,7 @@ public class ScorpionDebuff : MonoBehaviour
         {
             PlayerMovement movement = other.gameObject.GetComponent<PlayerMovement>();
             if (movement)
-                StartCoroutine(movement.ApplyMovementReverse(duration));
+                movement.StartReverseMovement(duration);
         }
     }
 }

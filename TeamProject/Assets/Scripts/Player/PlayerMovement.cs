@@ -182,6 +182,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void StartReverseMovement(float time)
+    {
+        StartCoroutine(ApplyMovementReverse(time));
+    }
+
     public IEnumerator ApplyMovementReverse(float time)
     {
         reverseMovment = true;
