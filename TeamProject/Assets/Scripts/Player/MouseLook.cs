@@ -4,15 +4,17 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
     [Header("Mouse Parameters")]
-    [SerializeField] private float mouseSensitivity = 400f;
+    [SerializeField] private float mouseSensitivity = 300f;
     [Header("Game Objects")]
     [SerializeField] private Transform playerBody;
 
     private float xRotation;
+    private float initialMouseSensitivity;
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        initialMouseSensitivity = mouseSensitivity;
     }
 
     void Update()
@@ -37,5 +39,10 @@ public class MouseLook : MonoBehaviour
     public void SetMouseSensitivity(float sensitivity)
     {
         this.mouseSensitivity = sensitivity;
+    }
+
+    public float GetInitialMouseSensitivity()
+    {
+        return initialMouseSensitivity;
     }
 }

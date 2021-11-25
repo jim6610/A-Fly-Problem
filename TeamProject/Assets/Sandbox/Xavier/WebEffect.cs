@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class WebEffect : MonoBehaviour
 {
+    public float timeUntilDestruction = 12f; //web will be detroyed automatically within x number of seconds
 
-    public float debuffDuration = 3.0f;
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(selfDestroy());
@@ -17,19 +16,16 @@ public class WebEffect : MonoBehaviour
         PlayerMovement movement = collider.GetComponentInParent<PlayerMovement>();
         if(movement)
         {
-            /*Debug.Log("web stepped on");*/
-            movement.StartMovementSlowdown(debuffDuration);
+            movement.StartMovementSlowdown();
             Destroy(this.gameObject);
         }                
     }
 
     private IEnumerator selfDestroy()
     {
-        float timeUntilDestruction = 10f; //web will be detroyed automatically 10 seconds after spawning
-
+       
         while (timeUntilDestruction >= 0f)
         {
-            /*Debug.Log(timeUntilDestruction);*/
             yield return new WaitForSeconds(1);
             timeUntilDestruction -= 1f;
         }

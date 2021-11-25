@@ -251,7 +251,7 @@ public class ScorpionNavigator : MonoBehaviour
             GetTargetAimlessly(true);
             PlayerMovement movement = player.gameObject.GetComponent<PlayerMovement>();
             if (movement)
-                movement.StartReverseMovement(debuffDuration);
+                movement.StartReverseMovement();
         }
     }
 

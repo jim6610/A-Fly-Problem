@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ScorpionDebuff : MonoBehaviour
 {
-
-    [SerializeField]
-    private float duration = 3.0f;
-
     private GameObject player;
 
     void Start()
@@ -21,7 +17,7 @@ public class ScorpionDebuff : MonoBehaviour
         {
             PlayerMovement movement = other.gameObject.GetComponent<PlayerMovement>();
             if (movement)
-                movement.StartReverseMovement(duration);
+                movement.StartReverseMovement();
         }
     }
 }

@@ -796,7 +796,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8bbbc6bd8aaa1614b980e094b4dc7d63, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -923,7 +923,7 @@ MonoBehaviour:
   - {fileID: 1776971886881981185}
   - {fileID: 1776971886881981187}
   - {fileID: 1776971886881981189}
-  hidingPieces: []
+  hidePieces: []
   FX: {fileID: 0}
 --- !u!114 &1776971886881981190
 MonoBehaviour:

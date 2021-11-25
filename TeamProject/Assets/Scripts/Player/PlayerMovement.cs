@@ -12,9 +12,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 3f;
-    [SerializeField] private float walkSpeed = 12f;
-    [SerializeField] private float sprintSpeed = 14f;
-    [SerializeField] private float crouchSpeed = 6f;
+    [SerializeField] private float walkSpeed = 6f;
+    [SerializeField] private float sprintSpeed = 10f;
+    [SerializeField] private float crouchSpeed = 2f;
     [SerializeField] private bool canSprint = true;
     
     [Header("Crouch Parameters")]
@@ -29,11 +29,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundDistance = 0.4f;
     [SerializeField] private LayerMask groundMask;
 
-    [Header("Head Bob")] [SerializeField] public float bobAmount;
+    [Header("Head Bob")] 
+    [SerializeField] private float bobAmount;
     [SerializeField] private float crouchBobSpeed = 10f;
     [SerializeField] private float walkBobSpeed = 14f;
     [SerializeField] private float sprintBobSpeed = 16f;
 
+    [Header("Spider Web Debuff Effect")]
+    [SerializeField] private float webDebuffDuration = 3.0f;
+    [SerializeField] private float reducedWalkSpeed = 3f;
+    [SerializeField] private float reducedCrouchSpeed = 1f;
+    [SerializeField] private float reducedLookSpeed = 40f;
+
+    [Header("Scorpion Poison Debuff Effect")]
+    [SerializeField] private float poisonDebuffDuration = 4.0f;
+
+    [Header("FX")]
     [SerializeField] private GameObject poisonOverlay;
     
     private Camera playerCam;
@@ -50,16 +61,16 @@ public class PlayerMovement : MonoBehaviour
     
     public bool IsCrouching { get; private set; }
 
-    private float startingWalkSpeed;
-    private float startingCrouchSpeed;
+    private float initialWalkSpeed;
+    private float initialCrouchSpeed;
 
     private void Start()
     {
         playerCam = GetComponentInChildren<Camera>();
         defaultYPosition = playerCam.transform.localPosition.y;
         reverseMovment = false;
-        startingWalkSpeed = walkSpeed;
-        startingCrouchSpeed = crouchSpeed;
+        initialWalkSpeed = walkSpeed;
+        initialCrouchSpeed = crouchSpeed;
     }
 
     void Update()
@@ -187,9 +198,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void StartReverseMovement(float time)
+    public void StartReverseMovement()
     {
-        StartCoroutine(ApplyMovementReverse(time));
+        StartCoroutine(ApplyMovementReverse(poisonDebuffDuration));
     }
 
     private IEnumerator ApplyMovementReverse(float time)
@@ -201,29 +212,29 @@ public class PlayerMovement : MonoBehaviour
         poisonOverlay.SetActive(false);
     }
 
-    public void StartMovementSlowdown(float time)
+    public void StartMovementSlowdown()
     {
-        StartCoroutine(ApplyMovementSlowdown(time));
+        StartCoroutine(ApplyMovementSlowdown(webDebuffDuration));
     }
 
     private IEnumerator ApplyMovementSlowdown(float time)
     {
-        walkSpeed = startingWalkSpeed/3.0f;
-        crouchSpeed = startingCrouchSpeed/3.0f;
+        walkSpeed = reducedWalkSpeed;
+        crouchSpeed = reducedCrouchSpeed;
         canSprint = false;
 
         MouseLook ml = this.transform.GetComponentInChildren<MouseLook>();
         if(ml)
-            ml.SetMouseSensitivity(50f);
+            ml.SetMouseSensitivity(reducedLookSpeed);
 
         yield return new WaitForSeconds(time);
 
-        walkSpeed = startingWalkSpeed;
-        crouchSpeed = startingCrouchSpeed;
+        walkSpeed = initialWalkSpeed;
+        crouchSpeed = initialCrouchSpeed;
         canSprint = true;
 
         if (ml)
-            ml.SetMouseSensitivity(50f);
+            ml.SetMouseSensitivity(ml.GetInitialMouseSensitivity());
 
 
     }
