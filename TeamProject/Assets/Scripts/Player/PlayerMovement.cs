@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float crouchBobSpeed = 10f;
     [SerializeField] private float walkBobSpeed = 14f;
     [SerializeField] private float sprintBobSpeed = 16f;
+
+    [SerializeField] private GameObject poisonOverlay;
     
     private Camera playerCam;
     
@@ -183,7 +185,9 @@ public class PlayerMovement : MonoBehaviour
     public IEnumerator ApplyMovementReverse(float time)
     {
         reverseMovment = true;
+        poisonOverlay.SetActive(true);
         yield return new WaitForSeconds(time);
         reverseMovment = false;
+        poisonOverlay.SetActive(false);
     }
 }
