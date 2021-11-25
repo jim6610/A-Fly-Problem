@@ -50,11 +50,16 @@ public class PlayerMovement : MonoBehaviour
     
     public bool IsCrouching { get; private set; }
 
+    private float startingWalkSpeed;
+    private float startingCrouchSpeed;
+
     private void Start()
     {
         playerCam = GetComponentInChildren<Camera>();
         defaultYPosition = playerCam.transform.localPosition.y;
         reverseMovment = false;
+        startingWalkSpeed = walkSpeed;
+        startingCrouchSpeed = crouchSpeed;
     }
 
     void Update()
@@ -187,12 +192,39 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(ApplyMovementReverse(time));
     }
 
-    public IEnumerator ApplyMovementReverse(float time)
+    private IEnumerator ApplyMovementReverse(float time)
     {
         reverseMovment = true;
         poisonOverlay.SetActive(true);
         yield return new WaitForSeconds(time);
         reverseMovment = false;
         poisonOverlay.SetActive(false);
+    }
+
+    public void StartMovementSlowdown(float time)
+    {
+        StartCoroutine(ApplyMovementSlowdown(time));
+    }
+
+    private IEnumerator ApplyMovementSlowdown(float time)
+    {
+        walkSpeed = startingWalkSpeed/3.0f;
+        crouchSpeed = startingCrouchSpeed/3.0f;
+        canSprint = false;
+
+        MouseLook ml = this.transform.GetComponentInChildren<MouseLook>();
+        if(ml)
+            ml.SetMouseSensitivity(50f);
+
+        yield return new WaitForSeconds(time);
+
+        walkSpeed = startingWalkSpeed;
+        crouchSpeed = startingCrouchSpeed;
+        canSprint = true;
+
+        if (ml)
+            ml.SetMouseSensitivity(50f);
+
+
     }
 }
