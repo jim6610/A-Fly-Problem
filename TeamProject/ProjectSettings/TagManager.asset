@@ -11,6 +11,7 @@ TagManager:
   - Fire
   - Destructible
   - Breaker
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - FlyNavigator
+  - Navigator
   - Destructible
   - Weapon
   - Player
