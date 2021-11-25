@@ -14,7 +14,7 @@ public class WebEffect : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        PlayerMovement movement = GetComponent<PlayerMovement>();
+        PlayerMovement movement = collider.GetComponentInParent<PlayerMovement>();
         if(movement)
         {
             /*Debug.Log("web stepped on");*/
