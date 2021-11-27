@@ -8,7 +8,7 @@ public class WebEffect : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(selfDestroy());
+        Destroy(gameObject, timeUntilDestruction);
     }
 
     void OnTriggerEnter(Collider collider)
@@ -19,17 +19,5 @@ public class WebEffect : MonoBehaviour
             movement.StartMovementSlowdown();
             Destroy(this.gameObject);
         }                
-    }
-
-    private IEnumerator selfDestroy()
-    {
-       
-        while (timeUntilDestruction >= 0f)
-        {
-            yield return new WaitForSeconds(1);
-            timeUntilDestruction -= 1f;
-        }
-
-        Destroy(this.gameObject);
     }
 }
