@@ -1,9 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 
-/// Rifle ranged weapon
-/// TODO Code not DRY, shares almost all game variables/logic with FlySwatter, can probably use inheritance here
 public class Flamethrower : MonoBehaviour
 {
     [Header("Weapon Parameters")]
@@ -12,14 +11,16 @@ public class Flamethrower : MonoBehaviour
     [SerializeField] private float fireRate = 2f;
     [SerializeField] private float range = 100f;
     [SerializeField] private float reloadTime = 6;
-    [SerializeField] private int ammoRemaining = 3000;
+    [SerializeField] private int totalAmmo = 3000;
 
     [Header("Effects")]
     [SerializeField] private ParticleSystem starterParticles;
     [SerializeField] private ParticleSystem attackParticles;
+
     private AudioManager audioManager;
     private GameObject weaponManager;
     private GameObject selectionManager;
+    private Text ammoDisplay;
 
     private Camera fpsCam;
     private float nextTimeToFire;
@@ -34,8 +35,9 @@ public class Flamethrower : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         weaponManager = GameObject.Find("WeaponHolder");
         selectionManager = GameObject.Find("SelectionManager");
+        ammoDisplay = GameObject.Find("Ammo").GetComponent<Text>();
         fpsCam = Camera.main;
-        currentAmmoClip = ammoRemaining;
+        currentAmmoClip = totalAmmo;
     }
 
     void Update()
@@ -53,10 +55,14 @@ public class Flamethrower : MonoBehaviour
         {
             audioManager.Play("RifleClipEmpty");
         }
-        if(currentAmmoClip == 0)
+        if (currentAmmoClip == 0)
         {
             starterParticles.Stop();
         }
+
+
+        // Update ammo display on HUD
+        ammoDisplay.text = currentAmmoClip + " | 0";
     }
 
 

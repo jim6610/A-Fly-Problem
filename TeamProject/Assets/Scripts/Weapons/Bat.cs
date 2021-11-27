@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bat : MonoBehaviour
 {
@@ -9,11 +8,14 @@ public class Bat : MonoBehaviour
     [SerializeField] private float impactForce = 30f;
     [SerializeField] private float fireRate = 2f;
     [SerializeField] private float range = 5f;
+
     [Header("Effects")]
     [SerializeField] private GameObject impactEffectParticle;
+
     [Header("Animation")]
     [SerializeField] private Animator animator;
     private AudioManager audioManager;
+    private Text ammoDisplay;
 
     private Camera fpsCam;
     private float nextTimeToFire;
@@ -25,7 +27,8 @@ public class Bat : MonoBehaviour
     private void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
-        
+        ammoDisplay = GameObject.Find("Ammo").GetComponent<Text>();
+
         fpsCam = Camera.main;
     }
     
@@ -36,6 +39,9 @@ public class Bat : MonoBehaviour
             nextTimeToFire = Time.time + 1 / fireRate;
             Swat();
         }
+
+        // Update ammo display on HUD
+        ammoDisplay.text = "-- | --";
     }
 
     /// Weapon firing logic

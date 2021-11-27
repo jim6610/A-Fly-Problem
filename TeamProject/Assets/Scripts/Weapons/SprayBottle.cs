@@ -1,27 +1,30 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 
-/// Rifle ranged weapon
-/// TODO Code not DRY, shares almost all game variables/logic with FlySwatter, can probably use inheritance here
 public class SprayBottle : MonoBehaviour
 {
     [Header("Weapon Parameters")]
     [SerializeField] private float fireRate = 2f;
-    [SerializeField] private int ammoRemaining = 15;
+    [SerializeField] private int totalAmmo = 20;
 
     [Header("Effects")]
     [SerializeField] private ParticleSystem particles;
+
+    [Header("Animation")]
+    public Animator animator;
+
     private AudioManager audioManager;
     private GameObject weaponManager;
     private GameObject selectionManager;
-    public Animator animator;
+    private Text ammoDisplay;
+    private CapsuleCollider areaOfEffect;
 
     private Camera fpsCam;
     private float nextTimeToFire;
     private int currentAmmoClip;
     private bool isReloading = false;
-    private CapsuleCollider areaOfEffect;
 
     private bool CanFire => Input.GetButton("Fire1") && Time.time >= nextTimeToFire;
 
@@ -30,8 +33,9 @@ public class SprayBottle : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         weaponManager = GameObject.Find("WeaponHolder");
         selectionManager = GameObject.Find("SelectionManager");
+        ammoDisplay = GameObject.Find("Ammo").GetComponent<Text>();
         fpsCam = Camera.main;
-        currentAmmoClip = ammoRemaining;
+        currentAmmoClip = totalAmmo;
         areaOfEffect = gameObject.GetComponent<CapsuleCollider>();
     }
 
@@ -56,6 +60,9 @@ public class SprayBottle : MonoBehaviour
             nextTimeToFire = Time.time + 1 / fireRate;
             audioManager.Play("RifleClipEmpty");
         }
+
+        // Update ammo display on HUD
+        ammoDisplay.text = currentAmmoClip + " | 0";
     }
 
 

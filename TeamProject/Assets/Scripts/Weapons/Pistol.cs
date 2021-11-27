@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 
@@ -19,10 +20,14 @@ public class Pistol : MonoBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject impactEffectParticle;
     [SerializeField] private GameObject bulletPrefab;
+
+    [Header("Animation")]
+    public Animator animator;
+
     private AudioManager audioManager;
     private GameObject weaponManager;
     private GameObject selectionManager;
-    public Animator animator;
+    private Text ammoDisplay;
 
     private Camera fpsCam;
     private float nextTimeToFire;
@@ -36,6 +41,7 @@ public class Pistol : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         weaponManager = GameObject.Find("WeaponHolder");
         selectionManager = GameObject.Find("SelectionManager");
+        ammoDisplay = GameObject.Find("Ammo").GetComponent<Text>();
         fpsCam = Camera.main;
         currentAmmoClip = clipSize;
     }
@@ -74,6 +80,9 @@ public class Pistol : MonoBehaviour
             nextTimeToFire = Time.time + 1 / fireRate;
             audioManager.Play("PistolClipEmpty");
         }
+
+        // Update ammo display on HUD
+        ammoDisplay.text = currentAmmoClip + " | " + ammoRemaining;
     }
     
     ///  Weapon reload logic
@@ -93,6 +102,7 @@ public class Pistol : MonoBehaviour
         isReloading = false;
         weaponManager.GetComponent<WeaponSwitching>().ToggleWeaponSwitching();
         selectionManager.GetComponent<SelectionManager>().ToggleIsReloading();
+        ammoRemaining -= clipSize;
         currentAmmoClip = clipSize;
     }
 
@@ -103,7 +113,6 @@ public class Pistol : MonoBehaviour
         muzzleFlash.Play();
 
         currentAmmoClip--;
-        ammoRemaining--;
 
         GameObject bulletObj = Instantiate(bulletPrefab);
         bulletObj.transform.position = transform.position;
