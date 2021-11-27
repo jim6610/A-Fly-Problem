@@ -249,18 +249,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 8
   monetaryValue: 4
+  isHanging: 0
+  breakForce: 4
+  explosionForce: 20
+  destroyedPiecesRotation: 5
+  destroyAftertime: 1
+  time: 10
   destroyedPieces:
   - {fileID: 3878049128098703797}
   - {fileID: 3878049128098703799}
   - {fileID: 3878049128098703793}
   - {fileID: 3878049128098703795}
-  hidingPieces: []
-  explosionForce: 20
-  destroyedPiecesRotation: 5
-  breakForce: 4
+  hidePieces: []
   FX: {fileID: 3878049128098703807}
-  destroyAftertime: 1
-  time: 10
+  deductionEffect: {fileID: 1232685445127444239, guid: df19df17d4e707543b6f46f5abaec631, type: 3}
 --- !u!1 &3878049128098703793
 GameObject:
   m_ObjectHideFlags: 0

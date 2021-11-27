@@ -1,10 +1,8 @@
 // Part of the script is from the Destructible Props Pack by Vitaly
 // https://assetstore.unity.com/packages/3d/props/destructible-props-pack-27379
 
-
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Destructible : MonoBehaviour {
     [SerializeField] private float initialHealth;
@@ -18,20 +16,14 @@ public class Destructible : MonoBehaviour {
     [SerializeField] private GameObject[] destroyedPieces;
     [SerializeField] private GameObject[] hidePieces; // list of the objects that will be hidden after the object breaks
     [SerializeField] private GameObject FX; // special effect
+    [SerializeField] private GameObject deductionEffect;
+    private RectTransform deductionPosition;
 
     private float currentHealth;
-    private float currentValue;
-    private bool firstThresholdReached;
-    private bool secondThresholdReached;
-    private bool thirdThresholdReached;
-
     private void Start()
     {
         currentHealth = initialHealth;
-        currentValue = monetaryValue;
-        firstThresholdReached = false;
-        secondThresholdReached = false;
-        thirdThresholdReached = false;
+        deductionPosition = GameObject.Find("Deduction").GetComponent<RectTransform>();
 
         if (GetComponent<AudioSource>())
         {
@@ -45,50 +37,25 @@ public class Destructible : MonoBehaviour {
         if (currentHealth > 0)
         {
             currentHealth -= amount;
-            /*
-            // Less than 25% health will cause player to lose 25% of this object's monetary value. 
-            if (currentHealth <= initialHealth * 0.75 && !firstThresholdReached)
-            {
-                firstThresholdReached = true;
-                LoseQuarterValue();
-            }
-            // Less than 50% health will cause player to lose 25% of this object's monetary value. 
-            if (currentHealth <= initialHealth * 0.50 && !secondThresholdReached)
-            {
-                secondThresholdReached = true;
-                LoseQuarterValue();
-            }
-            // Less than 75% health will cause player to lose 25% of this object's monetary value. 
-            if (currentHealth <= initialHealth * 0.25 && !thirdThresholdReached)
-            {
-                thirdThresholdReached = true;
-                LoseQuarterValue();
-            }
-            */
 
             if (currentHealth <= 0)
             {
                 Shatter();
-                //LoseQuarterValue();
             }
         }
-
     }
 
-    public void LoseQuarterValue()
+    public void LoseMoney()
     {
-        GameManager.ReduceContractValue(monetaryValue * 0.25f);
-        currentValue -= monetaryValue * 0.25f;
-    }
+        GameManager.ReduceContractValue(monetaryValue);
 
-    public void LoseRemainingValue()
-    {
-        GameManager.ReduceContractValue(currentValue);
+        deductionEffect.GetComponent<Text>().text = "-" + monetaryValue.ToString();
+        GameObject effect = Instantiate(deductionEffect, deductionPosition.transform);
     }
 
     void Shatter()
     {
-        LoseRemainingValue();
+        LoseMoney();
 
         // if there were any 
         if (hidePieces.Length != 0)

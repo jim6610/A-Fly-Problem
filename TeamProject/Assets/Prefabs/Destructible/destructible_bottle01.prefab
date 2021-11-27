@@ -796,19 +796,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialHealth: 4
   monetaryValue: 4
+  isHanging: 0
+  breakForce: 3
+  explosionForce: 100
+  destroyedPiecesRotation: 20
+  destroyAftertime: 1
+  time: 10
   destroyedPieces:
   - {fileID: 1532995169342826885}
   - {fileID: 1532995169342826889}
   - {fileID: 1532995169342826883}
   - {fileID: 1532995169342826891}
   - {fileID: 1532995169342826887}
-  hidingPieces: []
-  explosionForce: 100
-  destroyedPiecesRotation: 20
-  breakForce: 3
+  hidePieces: []
   FX: {fileID: 0}
-  destroyAftertime: 1
-  time: 10
+  deductionEffect: {fileID: 1232685445127444239, guid: df19df17d4e707543b6f46f5abaec631, type: 3}
 --- !u!114 &1532995169342826886
 MonoBehaviour:
   m_ObjectHideFlags: 0

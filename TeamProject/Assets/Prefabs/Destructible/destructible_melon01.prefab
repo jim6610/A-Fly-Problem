@@ -244,6 +244,7 @@ MonoBehaviour:
   - {fileID: 8240414569708834544}
   hidePieces: []
   FX: {fileID: 8240414569708834556}
+  deductionEffect: {fileID: 1232685445127444239, guid: df19df17d4e707543b6f46f5abaec631, type: 3}
 --- !u!114 &1532995169342826886
 MonoBehaviour:
   m_ObjectHideFlags: 0
