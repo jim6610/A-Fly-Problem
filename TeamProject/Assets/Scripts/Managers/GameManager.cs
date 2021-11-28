@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     // Difficulty settings
     public static float currentContractValue; // How much money player is getting upon finishing the level. Can be reduced if destructible objects are damaged/destroyed
+    public static float initialContractValue; // initial contract value 
     public static float levelTimer; // Timer for level
     public static int startingNumberOfFlies; // Starting Number of flies for the level
     public static int flyCapacity; // max number of flies in a level at once
@@ -112,6 +113,7 @@ public class GameManager : MonoBehaviour
     private void NormalMode()
     {
         currentContractValue = contractValueNormal;
+        initialContractValue = contractValueNormal;
         levelTimer = levelTimerNormal;
         startingNumberOfFlies = totalNumberOfFliesNormal;
         flyCapacity = flyCapacityNormal;
@@ -127,6 +129,7 @@ public class GameManager : MonoBehaviour
     private void HardMode()
     {
         currentContractValue = contractValueHard;
+        initialContractValue = contractValueHard;
         levelTimer = levelTimerHard;
         startingNumberOfFlies = totalNumberOfFliesHard;
         flyCapacity = flyCapacityHard;
@@ -192,11 +195,11 @@ public class GameManager : MonoBehaviour
         }
 
         //Update Values
-        lcScreen.transform.Find("SheetAndButtons/Sheet/ContractAmount").gameObject.GetComponent<Text>().text = "$" + (currentContractValue);
+        lcScreen.transform.Find("SheetAndButtons/Sheet/ContractAmount").gameObject.GetComponent<Text>().text = "$" + (initialContractValue);
         lcScreen.transform.Find("SheetAndButtons/Sheet/TimeAmount").gameObject.GetComponent<Text>().text = "$" + (levelBonus);
         lcScreen.transform.Find("SheetAndButtons/Sheet/FliesAmount").gameObject.GetComponent<Text>().text = "- $" + (levelPenalty);
         lcScreen.transform.Find("SheetAndButtons/Sheet/DamageAmount").gameObject.GetComponent<Text>().text = "- $" + (totalDamageCosts);
-        lcScreen.transform.Find("SheetAndButtons/Sheet/TotalAmount").gameObject.GetComponent<Text>().text = "$" + (currentContractValue - levelPenalty + levelBonus - totalDamageCosts);
+        lcScreen.transform.Find("SheetAndButtons/Sheet/TotalAmount").gameObject.GetComponent<Text>().text = "$" + (initialContractValue - levelPenalty + levelBonus - totalDamageCosts);
         lcScreen.transform.Find("SheetAndButtons/Sheet/SpiderAmount").gameObject.GetComponent<Text>().text = "Spiders Killed: " + spiderKillCount;
         lcScreen.transform.Find("SheetAndButtons/Sheet/ScorpionAmount").gameObject.GetComponent<Text>().text = "Scorpions Killed: " + scorpionKillCount;
         lcScreen.transform.Find("SheetAndButtons/Sheet/Tip").gameObject.GetComponent<Text>().text = "Tip from the owner: \n \n" + RandomTip();

@@ -23,7 +23,12 @@ public class Destructible : MonoBehaviour {
     private void Start()
     {
         currentHealth = initialHealth;
-        deductionPosition = GameObject.Find("Deduction").GetComponent<RectTransform>();
+
+        if (GameObject.Find("Deduction").GetComponent<RectTransform>())
+        {
+            deductionPosition = GameObject.Find("Deduction").GetComponent<RectTransform>();
+        }
+
 
         if (GetComponent<AudioSource>())
         {
@@ -49,8 +54,12 @@ public class Destructible : MonoBehaviour {
     {
         GameManager.ReduceContractValue(monetaryValue);
 
-        deductionEffect.GetComponent<Text>().text = "-" + monetaryValue.ToString();
-        GameObject effect = Instantiate(deductionEffect, deductionPosition.transform);
+        if (deductionPosition)
+        {
+            deductionEffect.GetComponent<Text>().text = "-" + monetaryValue.ToString();
+            Instantiate(deductionEffect, deductionPosition.transform);
+        }
+
     }
 
     void Shatter()
