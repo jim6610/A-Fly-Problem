@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text moneyDisplay;
     [SerializeField] private Text flyCounterDisplay;
 
-
     // *** Global game variables ***
 
     // Difficulty settings
@@ -149,27 +148,61 @@ public class GameManager : MonoBehaviour
     // If level was completed before timer ended, add bonus money based on how much time was left
     public static void CalculateBonus(int timeRemaining)
     {
-        currentContractValue += timeRemaining;
+        levelBonus = timeRemaining;
     }
 
     // If level ended when timer ran out, deduct money based on how many flies that are alive
     public static void CalculatePenalty()
     {
-        currentContractValue -= flyCount * 4; // each fly will reduce contract value by 4$
+        levelPenalty = (startingNumberOfFlies - flyKillCount) * 4; // each fly will reduce contract value by 4$
     }
 
     public static void LevelOver(int timeRemaining)
     {
+        // Pause the game
+        Cursor.lockState = CursorLockMode.Confined;
+        Time.timeScale = 0;
+
+        // Activate Level Complete Object
+        GameObject hud = GameObject.Find("HUD").gameObject;
+        GameObject lcScreen = hud.transform.Find("Level Complete").gameObject;
+        lcScreen.SetActive(true);
+
+        // Calm down music
+        GameObject.Find("BackgroundMusic").gameObject.GetComponent<AudioSource>().volume = 0.05f;
+        GameObject.Find("BackgroundMusic").gameObject.GetComponent<AudioSource>().pitch = 0.85f;
+
+
+        //Success
         if (GameManager.flyKillCount == GameManager.startingNumberOfFlies)
         {
             CalculateBonus(timeRemaining);
+            lcScreen.transform.Find("Heading").gameObject.GetComponent<Text>().text = "All flies eradicated!";
+            // Play SuccessJig
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Victory");
+
         }
+        //Failure
         else
         {
             CalculatePenalty();
+            lcScreen.transform.Find("Heading").gameObject.GetComponent<Text>().text = "Time is up...";
+            // Play FailureJig
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Failure");
         }
 
-        // TODO: Display the end level screen with stats
+        //Update Values
+        lcScreen.transform.Find("SheetAndButtons/Sheet/ContractAmount").gameObject.GetComponent<Text>().text = "$" + (currentContractValue);
+        lcScreen.transform.Find("SheetAndButtons/Sheet/TimeAmount").gameObject.GetComponent<Text>().text = "$" + (levelBonus);
+        lcScreen.transform.Find("SheetAndButtons/Sheet/FliesAmount").gameObject.GetComponent<Text>().text = "- $" + (levelPenalty);
+        lcScreen.transform.Find("SheetAndButtons/Sheet/DamageAmount").gameObject.GetComponent<Text>().text = "- $" + (totalDamageCosts);
+        lcScreen.transform.Find("SheetAndButtons/Sheet/TotalAmount").gameObject.GetComponent<Text>().text = "$" + (currentContractValue - levelPenalty + levelBonus - totalDamageCosts);
+        lcScreen.transform.Find("SheetAndButtons/Sheet/SpiderAmount").gameObject.GetComponent<Text>().text = "Spiders Killed: " + spiderKillCount;
+        lcScreen.transform.Find("SheetAndButtons/Sheet/ScorpionAmount").gameObject.GetComponent<Text>().text = "Scorpions Killed: " + scorpionKillCount;
+        lcScreen.transform.Find("SheetAndButtons/Sheet/Tip").gameObject.GetComponent<Text>().text = "Tip from the owner: \n \n" + RandomTip();
+
+
+        // TODO: add (currentContractValue - levelPenalty + levelBonus - totalDamageCosts) to player money
     }
 
 
@@ -184,6 +217,15 @@ public class GameManager : MonoBehaviour
         totalDamageCosts += penalty;
     }
 
+    // Return a tip from the tip list
+    public static String RandomTip()
+    {
+        String[] tipList = {
+            "Spraying a fly multiple times in a row will make it stay still for a few seconds.",
+            "I will task myself with eriting more tips, but if you have ideas throw them in here."
+        };
+        return tipList[UnityEngine.Random.Range(0, tipList.Length)];
+    }
 
     // Enemy counter increment/decrement functions
     public static Action IncrementFlyCount = () => flyCount++;
