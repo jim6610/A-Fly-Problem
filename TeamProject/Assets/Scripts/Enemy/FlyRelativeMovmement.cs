@@ -35,7 +35,7 @@ public class FlyRelativeMovmement : MonoBehaviour
     
 
     private float targetHeight;
-    private float targetHeightMin = 1.0f;
+    private float targetHeightMin = 0.25f;
     private float targetHeightTimer;
     private float targetHeightTime;
 
