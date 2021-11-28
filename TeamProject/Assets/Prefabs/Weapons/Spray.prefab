@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2
-  ammoRemaining: 10
+  totalAmmo: 30
   particles: {fileID: 3497871254577961624}
   animator: {fileID: 4548270374117829176}
 --- !u!136 &2375213762982663921

@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
         lcScreen.SetActive(true);
 
         // Calm down music
-        GameObject.Find("BackgroundMusic").gameObject.GetComponent<AudioSource>().volume = 0.05f;
+        GameObject.Find("BackgroundMusic").gameObject.GetComponent<AudioSource>().volume = 0.2f;
         GameObject.Find("BackgroundMusic").gameObject.GetComponent<AudioSource>().pitch = 0.85f;
 
 
@@ -228,6 +228,8 @@ public class GameManager : MonoBehaviour
     {
         String[] tipList = {
             "Spraying a fly multiple times in a row will make it stay still for a few seconds.",
+            "Try not to break things, cost in damages will come out of your pocket.",
+            "Shutting off the breakers turn off all the lights, lowering your visibilty but decrease speed of the flies.",
             "I will task myself with eriting more tips, but if you have ideas throw them in here."
         };
         return tipList[UnityEngine.Random.Range(0, tipList.Length)];

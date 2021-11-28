@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1249221280391052296}
   m_Layer: 0
   m_Name: SpiderWeb
-  m_TagString: Untagged
+  m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5338e85886b7c044c9ec1526083af3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeUntilDestruction: 12
 --- !u!54 &3784767045401219288
 Rigidbody:
   m_ObjectHideFlags: 0

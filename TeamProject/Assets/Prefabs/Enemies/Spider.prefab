@@ -81,7 +81,7 @@ MonoBehaviour:
   minimumStoppingTime: 1
   maximumStoppingTime: 3
   safeDestination: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 3615730693820101910, guid: 5db9a86ed4e49c641ba8ea0196f366e0, type: 3}
 --- !u!65 &8406351591685814947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a5943ff0837e243a38f2882d9b943e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 6
 --- !u!114 &9112344323392529718
 MonoBehaviour:
   m_ObjectHideFlags: 0

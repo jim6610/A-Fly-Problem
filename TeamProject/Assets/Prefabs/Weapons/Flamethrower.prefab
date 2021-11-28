@@ -4922,7 +4922,7 @@ MonoBehaviour:
   fireRate: 2
   range: 100
   reloadTime: 6
-  ammoRemaining: 3000
+  totalAmmo: 2000
   starterParticles: {fileID: 9079815486842283998}
   attackParticles: {fileID: 2973006488459901776}
 --- !u!1 &6937028890209206517

@@ -75,7 +75,7 @@ MonoBehaviour:
   playerAwarenessDistance: 10
   playerSneakAwarenessDistance: 2
   playerSprintAwarenenessDistance: 15
-  player: {fileID: 0}
+  player: {fileID: 3615730693820101910, guid: 5db9a86ed4e49c641ba8ea0196f366e0, type: 3}
 --- !u!114 &-1012556075458332199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debuffTime: 3
   spraySlowRate: 3
-  lightSlowRate: 3
+  lightSlowRate: 2
 --- !u!1 &1223799789528521296
 GameObject:
   m_ObjectHideFlags: 0

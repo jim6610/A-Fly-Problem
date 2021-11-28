@@ -74,9 +74,9 @@ MonoBehaviour:
   playerSneakAwarenessDistance: 2
   playerSprintAwarenenessDistance: 12
   attackCoolDownTime: 15
-  debuffDuration: 3
+  debuffDuration: 2.5
   safeDestination: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 3615730693820101910, guid: 5db9a86ed4e49c641ba8ea0196f366e0, type: 3}
 --- !u!65 &2792229732287106154
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a5943ff0837e243a38f2882d9b943e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 8
 --- !u!95 &2792229731317196014
 Animator:
   serializedVersion: 3

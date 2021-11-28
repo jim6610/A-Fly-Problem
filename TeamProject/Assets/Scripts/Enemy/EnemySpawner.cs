@@ -48,7 +48,8 @@ public class EnemySpawner : MonoBehaviour
         {
             float specialChance = Random.Range(0.0f, 1.0f);
             specialEnemiesCount = GameManager.scorpionCount + GameManager.spiderCount;
-            if (specialEnemiesCount <= GameManager.maxNumberOfSpecials && specialChance <= specialEnemeyChance)
+
+            if (specialEnemiesCount < GameManager.maxNumberOfSpecials && specialChance <= specialEnemeyChance)
             {
                 if (specialChance < specialEnemeyChance * 0.5f)
                 {
