@@ -24,7 +24,7 @@ public class Destructible : MonoBehaviour {
     {
         currentHealth = initialHealth;
 
-        if (GameObject.Find("Deduction").GetComponent<RectTransform>())
+        if (GameObject.Find("Deduction").GetComponent<RectTransform>() != null)
         {
             deductionPosition = GameObject.Find("Deduction").GetComponent<RectTransform>();
         }
