@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float enemySpeedModifierNormal = 1.0f;
     [SerializeField] private float spawnChanceModifierNormal = 1.0f;
     [SerializeField] private float moneyPenaltyModifierNormal = 1.0f;
+    [SerializeField] private float ceilingHeightNormal;
 
     [Header("Hard Mode Variables")]
     [SerializeField] private float contractValueHard;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float enemySpeedModifierHard;
     [SerializeField] private float spawnChanceModifierHard;
     [SerializeField] private float moneyPenaltyModifierHard;
+    [SerializeField] private float ceilingHeightHard;
 
     [Header("HUD Text Objects")]
     [SerializeField] private Text moneyDisplay;
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
     public static float enemySpeedModifier;
     public static float spawnChanceModifier;
     public static float moneyPenaltyModifier;
+    public static float ceilingHeight;
 
     // Number of enemies remaining on level
     public static int flyCount;

@@ -136,7 +136,8 @@ PrefabInstance:
       propertyPath: m_CarveOnlyStationary
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 208242074959227788, guid: 14e4e479b0ada4d49bfe66d6f080bb7c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 14e4e479b0ada4d49bfe66d6f080bb7c, type: 3}
 --- !u!4 &5214109693708064310 stripped
 Transform:
@@ -190,7 +191,12 @@ PrefabInstance:
       propertyPath: m_CarveOnlyStationary
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2306616994445362703, guid: 247e5b33a1b1dba43a82e14ad7191756, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 208023689436662644, guid: 247e5b33a1b1dba43a82e14ad7191756, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 247e5b33a1b1dba43a82e14ad7191756, type: 3}
 --- !u!4 &5207176846330413267 stripped
 Transform:
@@ -235,6 +241,34 @@ PrefabInstance:
     - target: {fileID: 4037808199842474, guid: 1311ead9e03725440bcd145a4ddd5518, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208603080304223406, guid: 1311ead9e03725440bcd145a4ddd5518, type: 3}
+      propertyPath: m_Carve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 208603080304223406, guid: 1311ead9e03725440bcd145a4ddd5518, type: 3}
+      propertyPath: m_Center.x
+      value: -0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 208603080304223406, guid: 1311ead9e03725440bcd145a4ddd5518, type: 3}
+      propertyPath: m_Center.z
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 208603080304223406, guid: 1311ead9e03725440bcd145a4ddd5518, type: 3}
+      propertyPath: m_Extents.x
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 208603080304223406, guid: 1311ead9e03725440bcd145a4ddd5518, type: 3}
+      propertyPath: m_Extents.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 208603080304223406, guid: 1311ead9e03725440bcd145a4ddd5518, type: 3}
+      propertyPath: m_Extents.z
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 208603080304223406, guid: 1311ead9e03725440bcd145a4ddd5518, type: 3}
+      propertyPath: m_CarveOnlyStationary
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1311ead9e03725440bcd145a4ddd5518, type: 3}
