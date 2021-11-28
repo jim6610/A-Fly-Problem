@@ -86,8 +86,7 @@ public class SprayBottle : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            other.GetComponentInParent<FlySprayDebuff>().Sprayed();
-            Debug.Log("hit");
+            other.GetComponentInParent<FlyDebuff>().Sprayed();
         }
     }
 

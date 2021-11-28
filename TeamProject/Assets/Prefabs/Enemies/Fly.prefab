@@ -89,7 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debuffTime: 3
-  slowdown: 3
+  spraySlowRate: 3
+  lightSlowRate: 3
 --- !u!1 &1223799789528521296
 GameObject:
   m_ObjectHideFlags: 0

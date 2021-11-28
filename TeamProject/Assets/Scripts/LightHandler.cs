@@ -9,6 +9,10 @@ public class LightHandler : MonoBehaviour
     
     private AudioSource _toggleSound;
 
+    private bool _lightOn = true;
+
+    public bool LightOn => _lightOn;
+
     private void Awake()
     {
         _toggleSound = GetComponent<AudioSource>();
@@ -23,6 +27,8 @@ public class LightHandler : MonoBehaviour
     public void ToggleLight()
     {
         _toggleSound.Play();
+
+        _lightOn = !_lightOn;
         
         foreach (var lightSource in lightSources)
         {
