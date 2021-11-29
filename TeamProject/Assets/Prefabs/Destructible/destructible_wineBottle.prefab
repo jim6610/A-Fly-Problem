@@ -996,7 +996,7 @@ MonoBehaviour:
   - {fileID: 7971142386492294540}
   - {fileID: 980078988035773810}
   FX: {fileID: 0}
-  deductionEffect: {fileID: 1232685445127444239, guid: df19df17d4e707543b6f46f5abaec631, type: 3}
+  moneyDeductionAnimation: {fileID: 1232685445127444239, guid: df19df17d4e707543b6f46f5abaec631, type: 3}
 --- !u!114 &6066445547076732441
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,17 +16,17 @@ public class Destructible : MonoBehaviour {
     [SerializeField] private GameObject[] destroyedPieces;
     [SerializeField] private GameObject[] hidePieces; // list of the objects that will be hidden after the object breaks
     [SerializeField] private GameObject FX; // special effect
-    [SerializeField] private GameObject deductionEffect;
-    private RectTransform deductionPosition;
+    [SerializeField] private GameObject moneyDeductionAnimation;
+    private RectTransform moneyCounterPosition;
 
     private float currentHealth;
     private void Start()
     {
         currentHealth = initialHealth;
 
-        if (GameObject.Find("Deduction").GetComponent<RectTransform>() != null)
+        if (GameObject.Find("MoneyCounterPosition").GetComponent<RectTransform>() != null)
         {
-            deductionPosition = GameObject.Find("Deduction").GetComponent<RectTransform>();
+            moneyCounterPosition = GameObject.Find("MoneyCounterPosition").GetComponent<RectTransform>();
         }
 
 
@@ -54,10 +54,10 @@ public class Destructible : MonoBehaviour {
     {
         GameManager.ReduceContractValue(monetaryValue);
 
-        if (deductionPosition)
+        if (moneyCounterPosition)
         {
-            deductionEffect.GetComponent<Text>().text = "-" + monetaryValue.ToString();
-            Instantiate(deductionEffect, deductionPosition.transform);
+            moneyDeductionAnimation.GetComponent<Text>().text = "-" + monetaryValue.ToString();
+            Instantiate(moneyDeductionAnimation, moneyCounterPosition.transform);
         }
 
     }
