@@ -133,6 +133,7 @@ MonoBehaviour:
   impactForce: 40
   fireRate: 2.5
   range: 7
+  bulletHole: {fileID: 1261134218634199668, guid: f15470db984383a4ebc3dcd031391931, type: 3}
   impactEffectParticle: {fileID: 5664843490233245664, guid: 56e770bd298d3bb479274a83c09669ed, type: 3}
   animator: {fileID: 9112659765001482662}
 --- !u!114 &4573190726315871854

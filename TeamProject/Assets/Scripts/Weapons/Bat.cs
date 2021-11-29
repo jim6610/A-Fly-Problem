@@ -9,6 +9,8 @@ public class Bat : MonoBehaviour
     [SerializeField] private float fireRate = 2f;
     [SerializeField] private float range = 5f;
 
+    [SerializeField] private GameObject bulletHole;
+
     [Header("Effects")]
     [SerializeField] private GameObject impactEffectParticle;
 
@@ -86,7 +88,9 @@ public class Bat : MonoBehaviour
 
             // Impact effect
             GameObject impactEffect = Instantiate(impactEffectParticle, hit.point, Quaternion.LookRotation(hit.normal));
+            GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactEffect, 1);
+            Destroy(bulletDecal, 5f);
         }
     }
 }
