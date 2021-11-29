@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  decrementFlyCounterAnimation: {fileID: 4936063803065508739, guid: 34534b8a091b0a944bbcfb543ce4ddad, type: 3}
 --- !u!95 &8190977271511966433
 Animator:
   serializedVersion: 3

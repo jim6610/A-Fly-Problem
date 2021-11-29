@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -6,6 +7,9 @@ public class EnemyHealth : MonoBehaviour
 
     private AudioManager _audioManager;
     private bool dead;
+
+    [SerializeField] private GameObject decrementFlyCounterAnimation;
+    private RectTransform flyCounterPosition;
 
     private void Awake()
     {
@@ -16,6 +20,12 @@ public class EnemyHealth : MonoBehaviour
     {
         health *= GameManager.enemyHealthModifier; // Depending on difficulty, health will be adjusted
         dead = false;
+
+        if (GameObject.Find("FlyCounterPosition").GetComponent<RectTransform>() != null)
+        {
+            flyCounterPosition = GameObject.Find("FlyCounterPosition").GetComponent<RectTransform>();
+        }
+
     }
 
     void Update()
@@ -46,6 +56,11 @@ public class EnemyHealth : MonoBehaviour
                 frm.SetFlyMode(FlyMode.DEATH);
                 GameManager.DecrementFlyCount();
                 GameManager.IncrementFlyKillCount();
+
+                if (flyCounterPosition)
+                {
+                    Instantiate(decrementFlyCounterAnimation, flyCounterPosition.transform);
+                }
             }
 
             SpiderNavigator spn = GetComponent<SpiderNavigator>();

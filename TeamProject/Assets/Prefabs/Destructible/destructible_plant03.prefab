@@ -244,7 +244,7 @@ MonoBehaviour:
   - {fileID: 5034564016946145792}
   hidePieces: []
   FX: {fileID: 5034564016946145800}
-  deductionEffect: {fileID: 1232685445127444239, guid: df19df17d4e707543b6f46f5abaec631, type: 3}
+  moneyDeductionAnimation: {fileID: 1232685445127444239, guid: df19df17d4e707543b6f46f5abaec631, type: 3}
 --- !u!114 &1532995169342826886
 MonoBehaviour:
   m_ObjectHideFlags: 0
