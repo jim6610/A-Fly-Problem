@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    private List<Transform> inventorySlots = new List<Transform>(5);
+    private List<Transform> inventorySlots = new List<Transform>(3);
 
     private WeaponSwitching weaponHolder;
 
