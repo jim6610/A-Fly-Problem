@@ -22,17 +22,22 @@ By:
 - Stealth
 	- Crouching will reduce the player detection range on the flies as well as turning off the lights. This will allow the player to get closer to the fly before it
 	  detects the player and flies away.
-	- Turning off the lights will also reduce the player's visibilty.
-- Shooting
-	- Player can aim and shoot with the weapons bought from the shop menu.
+	- Turning off the lights will also reduce the player's visibilty but will also reduce the speed of the flies.
 - Shop 
 	- The shop menu allows the player to purchase new weapons and decide what to equip for the level.
 
 
 ----- Enemy Types -----
 - Fly
+	- Will fly around the map and can land for a few seconds.
+	- Will fly away if player approaches
+	- Can be 
 - Spider
+	- Will wander around the map and spawn webs after a set amount of time.
+	- If the player walks over the web, their movement and look speed will be reduced momentarily. 
 - Scorpion
+	- Will target the player and poison them. Poison will cause player's movements to be inverted for a few seconds.
+	- Scorpion will attack again when its attack cooldown is over. 
 
 
 ----- Controls -----
@@ -44,6 +49,7 @@ By:
 - Run                     hold shift
 - Toggle Crouch           l-ctrl
 - Attack                  left mouse click
+- Switch weapons          mouse wheel or [1-4]
 
 
 ----- Sources -----
