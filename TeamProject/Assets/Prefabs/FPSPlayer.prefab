@@ -456,6 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3727839038984813187}
   - component: {fileID: 3727839038984813186}
+  - component: {fileID: 5771794802592626667}
   m_Layer: 10
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -489,3 +490,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8aa51c115fd86444b0782afb5d9fcfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5771794802592626667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3727839038984813196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1568c275656844d944700165c5f090, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 3980349170530774325, guid: 161d9346d75084a4fb7356c1ec7c197c, type: 3}
+  - {fileID: 2498292627266026353, guid: 8ce43d2b28398cf438d81ace963f556d, type: 3}
+  - {fileID: 209068489610179062, guid: b7ac887c6a4b57d448f1e9a521440faa, type: 3}
+  - {fileID: 7947948147216892747, guid: 165f5fba16787004897f8320f1550c94, type: 3}
+  - {fileID: 126785457160975063, guid: f97f7807931c2e4499df8b9d4d9b26c3, type: 3}
+  - {fileID: 4431509750902941255, guid: 0035c33e3e4995843809fb4071723f97, type: 3}

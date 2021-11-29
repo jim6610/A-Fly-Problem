@@ -34,7 +34,7 @@ public class WeaponShop : MonoBehaviour
         }
         else
         {
-            money = 10000f;
+            money = 0f;
             PlayerPrefs.SetFloat("money", money);
         }
 
@@ -164,7 +164,7 @@ public class WeaponShop : MonoBehaviour
 
     public void startLevel()
     {
-        if(loadout.Length > 0 && loadoutCounter > 0 && loadoutCounter <= 3)
+        if(loadout.Length > 0 && loadoutCounter > 0 && loadoutCounter <= 4)
         {
             loadout = loadout.Remove(loadout.Length - 1, 1);
             PlayerPrefs.SetString("loadout", loadout);

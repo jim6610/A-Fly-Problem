@@ -209,6 +209,10 @@ public class GameManager : MonoBehaviour
 
 
         // TODO: add (currentContractValue - levelPenalty + levelBonus - totalDamageCosts) to player money
+        float money = PlayerPrefs.GetFloat("money");
+        money += (currentContractValue - levelPenalty + levelBonus - totalDamageCosts);
+        PlayerPrefs.SetFloat("money", money);
+        PlayerPrefs.Save();
     }
 
 
