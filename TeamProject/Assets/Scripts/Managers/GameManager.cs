@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
     // If level ended when timer ran out, deduct money based on how many flies that are alive
     public static void CalculatePenalty()
     {
-        levelPenalty = (startingNumberOfFlies - flyKillCount) * 4; // each fly will reduce contract value by 4$
+        levelPenalty = (initialContractValue/startingNumberOfFlies) * (startingNumberOfFlies - flyKillCount); // This penalty will ensure that the player will get 0$ if no flies are killed in the level
     }
 
     public static void LevelOver(int timeRemaining)

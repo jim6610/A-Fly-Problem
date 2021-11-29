@@ -31,7 +31,6 @@ By:
 - Fly
 	- Will fly around the map and can land for a few seconds.
 	- Will fly away if player approaches
-	- Can be 
 - Spider
 	- Will wander around the map and spawn webs after a set amount of time.
 	- If the player walks over the web, their movement and look speed will be reduced momentarily. 
@@ -41,15 +40,15 @@ By:
 
 
 ----- Controls -----
-- Strafe Forward          W
-- Strafe Left             A
-- Strafe Backward         S
-- Strafe Left             D
-- Pick up/throw object    E
-- Run                     hold shift
-- Toggle Crouch           l-ctrl
-- Attack                  left mouse click
-- Switch weapons          mouse wheel or [1-4]
+- Strafe Forward                   W
+- Strafe Left                      A
+- Strafe Backward                  S
+- Strafe Left                      D
+- Pick up/throw object/interact    E
+- Run                              hold L-SHIFT
+- Toggle Crouch                    L-CTRL
+- Attack                           LMB
+- Switch weapons                   mouse wheel or number keys [1-4]
 
 
 ----- Sources -----

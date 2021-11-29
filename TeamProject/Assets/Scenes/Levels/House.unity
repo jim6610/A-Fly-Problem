@@ -5768,7 +5768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hardMode: 0
-  contractValueNormal: 400
+  contractValueNormal: 300
   levelTimerNormal: 240
   totalNumberOfFliesNormal: 30
   flyCapacityNormal: 10
@@ -25881,6 +25881,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3121057203786646662, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057203786646662, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057203786646662, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057203786646662, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057203849136391, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057203849136391, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057203849136391, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057203849136391, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057204513217878, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057204513217878, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057204513217878, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121057204513217878, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3121057204744704955, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -25968,6 +26016,30 @@ PrefabInstance:
     - target: {fileID: 3121057204744704959, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 4632147513503821646, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194547898245573050, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194547898245573050, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194547898245573050, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194547898245573050, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945792447576322934, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
