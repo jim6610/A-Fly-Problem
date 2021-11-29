@@ -53,6 +53,9 @@ public class PauseMenu : MonoBehaviour
     
     public void Quit()
     {
+        PlayerPrefs.DeleteKey("money");
+        PlayerPrefs.DeleteKey("inventory");
+        PlayerPrefs.Save();
         Application.Quit();
     }
 }
