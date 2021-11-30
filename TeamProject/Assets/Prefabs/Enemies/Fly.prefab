@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrustForce: 0.5
-  targetHeightRange: 4
+  targetHeightRange: 6
   ceilingAwareness: 0
   maxSpeed: 8
   stationaryWaitTime: 4
