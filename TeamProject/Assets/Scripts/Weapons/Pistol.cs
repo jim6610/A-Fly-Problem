@@ -20,6 +20,7 @@ public class Pistol : MonoBehaviour
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject impactEffectParticle;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject bulletHole;
 
     [Header("Animation")]
     public Animator animator;
@@ -153,6 +154,9 @@ public class Pistol : MonoBehaviour
             // Impact effect
             GameObject impactEffect = Instantiate(impactEffectParticle, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactEffect, 1);
+            
+            GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(bulletDecal, 5f);
         }
     }
 }
