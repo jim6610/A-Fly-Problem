@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
         UpdateHUD();
     }
 
+    /* TO DELETE
     private void SetupLevel()
     {
         // SetDifficulty(); USE THIS WHEN MAIN MENU IS RUNNING
@@ -100,8 +101,9 @@ public class GameManager : MonoBehaviour
         else if (difficulty == "hard")
             HardMode();
     }
+    */
 
-    private void SetDifficulty()
+    private void SetupLevel()
     {
         difficulty = PlayerPrefs.GetString("difficulty");
 
@@ -110,7 +112,11 @@ public class GameManager : MonoBehaviour
         {
             difficulty = "normal";
         }
-        Debug.Log(difficulty); // TO DELETE
+
+        if (difficulty == "normal")
+            NormalMode();
+        else if (difficulty == "hard")
+            HardMode();
     }
 
     private void NormalMode()
