@@ -49,6 +49,8 @@ public class Bat : MonoBehaviour
     /// Weapon firing logic
     void Swat()
     {
+        var hitObject = false;
+        
         audioManager.Play("Swat");
         
         animator.SetTrigger(Attack); //trigger our animation
@@ -66,6 +68,7 @@ public class Bat : MonoBehaviour
                 if (target != null)
                 {
                     target.TakeDamage(damage);
+                    hitObject = true;
                 }
             }
             // Damage enemy
@@ -75,6 +78,7 @@ public class Bat : MonoBehaviour
                 if (target != null)
                 {
                     target.TakeDamage(damage);
+                    hitObject = true;
                 }
             }
 
@@ -88,9 +92,13 @@ public class Bat : MonoBehaviour
 
             // Impact effect
             GameObject impactEffect = Instantiate(impactEffectParticle, hit.point, Quaternion.LookRotation(hit.normal));
-            GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactEffect, 1);
-            Destroy(bulletDecal, 5f);
+            
+            if (!hitObject)
+            {
+                GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal)); 
+                Destroy(bulletDecal, 5f); 
+            }
         }
     }
 }

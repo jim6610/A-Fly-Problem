@@ -110,6 +110,8 @@ public class Rifle : MonoBehaviour
     /// Weapon firing logic
     void Shoot()
     {
+        var hitObject = false;
+        
         audioManager.Play("GunShot");
         muzzleFlash.Play();
 
@@ -131,6 +133,7 @@ public class Rifle : MonoBehaviour
                 if (target != null)
                 {
                     target.TakeDamage(damage);
+                    hitObject = true;
                 }
             }
             // Damage enemy
@@ -141,6 +144,7 @@ public class Rifle : MonoBehaviour
                 if (target != null)
                 {
                     target.TakeDamage(damage);
+                    hitObject = true;
                 }
             }
 
@@ -155,8 +159,11 @@ public class Rifle : MonoBehaviour
             GameObject impactEffect = Instantiate(impactEffectParticle, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactEffect, 1);
             
-            GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(bulletDecal, 5f);
+            if (!hitObject)
+            {
+                GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal)); 
+                Destroy(bulletDecal, 5f); 
+            }
         }
     }
 }
