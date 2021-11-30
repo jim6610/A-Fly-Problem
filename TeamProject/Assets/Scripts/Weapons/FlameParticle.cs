@@ -33,6 +33,9 @@ public class FlameParticle : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
+            var effect = Instantiate(fireRemnantParticles, other.transform.position, Quaternion.Euler(-90, 0, 0), other.transform);
+            Destroy(effect, 2.5f);
+            
             return;
         }
 
