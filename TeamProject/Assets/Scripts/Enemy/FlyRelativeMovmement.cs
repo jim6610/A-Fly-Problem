@@ -51,7 +51,7 @@ public class FlyRelativeMovmement : MonoBehaviour
         collider = GetComponent<BoxCollider>();
         waitTimer = 0.0f;
         takeOffTime = 0.5f;
-        targetHeightTime = 0.25f;
+        targetHeightTime = 1.75f;
         targetHeight = Random.Range(targetHeightMin, targetHeightRange);
         animator = GetComponentInChildren<Animator>();
     }
@@ -79,7 +79,7 @@ public class FlyRelativeMovmement : MonoBehaviour
                 normalTrajectory = true;
         }
 
-        print("target height: " + targetHeight);
+        //print("target height: " + targetHeight);
         if (normalTrajectory)
         {
             if (Mathf.Abs(targetHeight - transform.localPosition.y) > 0.5f)
