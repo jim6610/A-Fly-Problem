@@ -26017,10 +26017,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 4632147513503821646, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5194547898245573050, guid: cb1c0fb180aed4e4ea1ebcd6a5591971, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
