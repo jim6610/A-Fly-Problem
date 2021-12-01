@@ -9,7 +9,7 @@ public class Bat : MonoBehaviour
     [SerializeField] private float fireRate = 2f;
     [SerializeField] private float range = 5f;
 
-    [SerializeField] private GameObject bulletHole;
+    //[SerializeField] private GameObject bulletHole;
 
     [Header("Effects")]
     [SerializeField] private GameObject impactEffectParticle;
@@ -59,7 +59,6 @@ public class Bat : MonoBehaviour
         if (Physics.SphereCast(fpsCam.transform.position, 0.1f, fpsCam.transform.forward, out var hit, range))
         {
             audioManager.Play("BatHit");
-            
             // Damage destructible objects
             if (hit.transform.CompareTag("Destructible"))
             {
@@ -96,8 +95,8 @@ public class Bat : MonoBehaviour
             
             if (!hitObject)
             {
-                GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal)); 
-                Destroy(bulletDecal, 5f); 
+                //GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal)); 
+                //Destroy(bulletDecal, 5f); 
             }
         }
     }

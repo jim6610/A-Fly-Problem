@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("TEMP")]
-    [SerializeField] bool hardMode; // temporary. for testing purposes. TO DELETE
-
     [Header("Normal Mode Variables")]
     [SerializeField] private float contractValueNormal;
     [SerializeField] private float levelTimerNormal;
@@ -89,22 +86,10 @@ public class GameManager : MonoBehaviour
         UpdateHUD();
     }
 
-    /* TO DELETE
     private void SetupLevel()
     {
-        // SetDifficulty(); USE THIS WHEN MAIN MENU IS RUNNING
+        Reset(); // reset certain values back to 0 at start of level
 
-        difficulty = (hardMode) ? "hard" : "normal"; // temporary. for testing purposes. TO DELETE
-
-        if (difficulty == "normal")
-            NormalMode();
-        else if (difficulty == "hard")
-            HardMode();
-    }
-    */
-
-    private void SetupLevel()
-    {
         difficulty = PlayerPrefs.GetString("difficulty");
 
         // null check on difficulty. default to normal
@@ -117,6 +102,21 @@ public class GameManager : MonoBehaviour
             NormalMode();
         else if (difficulty == "hard")
             HardMode();
+    }
+
+    private void Reset()
+    {
+        flyCount = 0;
+        spiderCount = 0;
+        scorpionCount = 0;
+
+        flyKillCount = 0;
+        spiderKillCount = 0;
+        scorpionKillCount = 0;
+
+        levelBonus = 0;
+        levelPenalty = 0;
+        totalDamageCosts = 0; 
     }
 
     private void NormalMode()

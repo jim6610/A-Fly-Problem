@@ -100,7 +100,10 @@ Audio
 	- https://freesound.org/people/michorvath/sounds/427603/
 	Pistol Clip Empty
 	- https://freesound.org/people/Sophia_C/sounds/467183/
-
+	Equip Sound
+	- https://freesound.org/people/mrickey13/sounds/518850/
+	Buy Sound
+	- https://freesound.org/people/williamornelas/sounds/525147/
 
 Tutorials
 SHATTER / DESTRUCTION
