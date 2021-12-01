@@ -5551,7 +5551,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 536a6a49e8d1b784c99ba7642fce0d3c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -16089,7 +16089,7 @@ MonoBehaviour:
   contractValueNormal: 400
   levelTimerNormal: 270
   totalNumberOfFliesNormal: 40
-  flyCapacityNormal: 15
+  flyCapacityNormal: 12
   flySpawnRateNormal: 5
   maxNumberOfSpecialsNormal: 3
   specialSpawnRateNormal: 30
@@ -16101,7 +16101,7 @@ MonoBehaviour:
   contractValueHard: 600
   levelTimerHard: 330
   totalNumberOfFliesHard: 50
-  flyCapacityHard: 15
+  flyCapacityHard: 12
   flySpawnRateHard: 5
   maxNumberOfSpecialsHard: 4
   specialSpawnRateHard: 30

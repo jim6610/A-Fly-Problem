@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
-    public AudioSource walkSoundEffect;
     private bool ShouldCrouch => Input.GetKeyDown(KeyCode.LeftControl) && !duringCrouchAnimation && isGrounded;
     public bool IsSprinting => canSprint && Input.GetKey(KeyCode.LeftShift) && isGrounded;
 
@@ -48,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject poisonOverlay;
     
     private Camera playerCam;
-    
+    private AudioManager audioManager;
+
     private float timer;
     private float defaultYPosition;
     private bool reverseMovment;
@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerCam = GetComponentInChildren<Camera>();
+        audioManager = FindObjectOfType<AudioManager>();
         defaultYPosition = playerCam.transform.localPosition.y;
         reverseMovment = false;
         initialWalkSpeed = walkSpeed;
@@ -82,8 +83,6 @@ public class PlayerMovement : MonoBehaviour
         HandleCrouch();
 
         HeadBobHandler();
-
-        //WalkSound();
     }
 
     /// Handle moving the player based on the directional keys pressed
@@ -190,16 +189,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void WalkSound()
-    {
-        if (controller.isGrounded == true && controller.velocity.magnitude > 0 && walkSoundEffect.isPlaying == false)
-        {
-            walkSoundEffect.Play();
-        }
-    }
 
     public void StartReverseMovement()
     {
+        audioManager.Play("Hurt");
         StartCoroutine(ApplyMovementReverse(poisonDebuffDuration));
     }
 
@@ -214,6 +207,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void StartMovementSlowdown()
     {
+        audioManager.Play("Webbed");
         StartCoroutine(ApplyMovementSlowdown(webDebuffDuration));
     }
 
@@ -235,7 +229,5 @@ public class PlayerMovement : MonoBehaviour
 
         if (ml)
             ml.SetMouseSensitivity(ml.GetInitialMouseSensitivity());
-
-
     }
 }

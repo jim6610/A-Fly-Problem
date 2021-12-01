@@ -7618,6 +7618,8 @@ MonoBehaviour:
   ammount: {fileID: 849756023}
   equipWarn: {fileID: 999428446}
   moneyWarn: {fileID: 663484724}
+  customMoney: 0
+  clearInventory: 0
 --- !u!114 &622916706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17077,7 +17079,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1385941090}
-  walkSoundEffect: {fileID: 1385941088}
   gravity: -19.62
   jumpHeight: 2
   walkSpeed: 6
@@ -24108,7 +24109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeDisplay: {fileID: 664647073}
-  levelTime: 300
   startImmediately: 1
 --- !u!4 &1864841824 stripped
 Transform:
@@ -25470,9 +25470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7988349420b95be42995ee78bb4e9214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hardMode: 0
   contractValueNormal: 1000
-  levelTimerNormal: 300
+  levelTimerNormal: 1000
   totalNumberOfFliesNormal: 40
   flyCapacityNormal: 10
   flySpawnRateNormal: 5

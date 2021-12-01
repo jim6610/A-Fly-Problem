@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float spawnChanceModifierHard;
     [SerializeField] private float moneyPenaltyModifierHard;
     [SerializeField] private float ceilingHeightHard;
-
+    
     [Header("HUD Text Objects")]
     [SerializeField] private Text moneyDisplay;
     [SerializeField] private Text flyCounterDisplay;

@@ -123,7 +123,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BatHit
     clip: {fileID: 8300000, guid: 65bd2df4a21dc2648b6e0c0dc1bc4942, type: 3}
-    volume: 0.2
+    volume: 0.1
     pitch: 1
     spatialBlend: 0
     loop: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: DamageHit
     clip: {fileID: 8300000, guid: 85f4b336cc35c264581c3abe0bacf48b, type: 3}
-    volume: 0.4
+    volume: 0.35
     pitch: 1
     spatialBlend: 0
     loop: 0
@@ -173,6 +173,20 @@ MonoBehaviour:
   - name: Equip
     clip: {fileID: 8300000, guid: fba4bab5cfa42b642af8ded6ed41b8ff, type: 3}
     volume: 0.6
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Hurt
+    clip: {fileID: 8300000, guid: 07288a84307094d42a9c9a7ba236bbc1, type: 3}
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Webbed
+    clip: {fileID: 8300000, guid: 2faedbe343c397a46bad701929675b59, type: 3}
+    volume: 0.4
     pitch: 1
     spatialBlend: 0
     loop: 0

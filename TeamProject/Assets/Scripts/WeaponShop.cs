@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class WeaponShop : MonoBehaviour
 {
+    [Header("Shop")]
     [SerializeField] private GameObject levelSelect;
     [SerializeField] private GameObject[] buyButtons;
     [SerializeField] private GameObject[] equipdButtons;
@@ -14,6 +15,14 @@ public class WeaponShop : MonoBehaviour
     [SerializeField] private Text ammount;
     [SerializeField] private Text equipWarn;
     [SerializeField] private Text moneyWarn;
+
+    [Header("Override Shop")]
+    public float customMoney = 0;
+    public bool clearInventory = false;
+    public static bool overrideExecuted = false;
+
+    private GameManager gameManager;
+    private AudioManager audioManager;
 
     private float timeToAppear = 2f;
     private float timeWhenDisappearEquip;
@@ -28,35 +37,55 @@ public class WeaponShop : MonoBehaviour
 
     private void Awake()
     {
-        if (PlayerPrefs.HasKey("money"))
+        gameManager = FindObjectOfType<GameManager>();
+
+        if (!overrideExecuted && customMoney != 0)
         {
-            money = PlayerPrefs.GetFloat("money");
+            Debug.Log("You are overriding the shop and using a custom amount of money");
+            money = customMoney;
         }
         else
         {
-            money = 0f;
-            PlayerPrefs.SetFloat("money", money);
+            if (PlayerPrefs.HasKey("money"))
+            {
+                money = PlayerPrefs.GetFloat("money");
+            }
+            else
+            {
+                money = 0f;
+                PlayerPrefs.SetFloat("money", money);
+            }
         }
 
-        if (PlayerPrefs.HasKey("inventory"))
+        if (!overrideExecuted && clearInventory)
         {
-            inventory = PlayerPrefs.GetString("inventory");
-        }
-        else
-        {
+            Debug.Log("You are overriding the shop and clearing the inventory");
             inventory = "";
-            PlayerPrefs.SetString("inventory", inventory);
         }
-        PlayerPrefs.Save();
-
-
+        else
+        {
+            if (PlayerPrefs.HasKey("inventory"))
+            {
+                inventory = PlayerPrefs.GetString("inventory");
+            }
+            else
+            {
+                inventory = "";
+                PlayerPrefs.SetString("inventory", inventory);
+            }
+            PlayerPrefs.Save();
+        }
+   
         loadout = "";
         loadoutCounter = 0;
+
+        overrideExecuted = true;
     }
 
 
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         checkInventory();
     }
 
@@ -97,42 +126,42 @@ public class WeaponShop : MonoBehaviour
             {
                 buyButtons[0].SetActive(false);
                 equipdButtons[0].SetActive(true);
-                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
+                audioManager.Play("Buy");
             }
 
             else if (item == "bat")
             {
                 buyButtons[1].SetActive(false);
                 equipdButtons[1].SetActive(true);
-                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
+                audioManager.Play("Buy");
             }
 
             else if (item == "spray")
             {
                 buyButtons[2].SetActive(false);
                 equipdButtons[2].SetActive(true);
-                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
+                audioManager.Play("Buy");
             }
 
             else if (item == "gun")
             {
                 buyButtons[3].SetActive(false);
                 equipdButtons[3].SetActive(true);
-                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
+                audioManager.Play("Buy");
             }
 
             else if (item == "rifle")
             {
                 buyButtons[4].SetActive(false);
                 equipdButtons[4].SetActive(true);
-                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
+                audioManager.Play("Buy");
             }
 
             else if (item == "flame")
             {
                 buyButtons[5].SetActive(false);
                 equipdButtons[5].SetActive(true);
-                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
+                audioManager.Play("Buy");
             }
 
         }
@@ -147,7 +176,7 @@ public class WeaponShop : MonoBehaviour
     {
         loadout += a + ',';
         loadoutCounter++;
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Equip");
+        audioManager.Play("Equip");
     }
 
     public void unequipWeapon(string a)
