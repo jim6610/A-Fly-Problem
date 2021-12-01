@@ -54,6 +54,7 @@ public class EnemyHealth : MonoBehaviour
             if (frm)
             {
                 frm.SetFlyMode(FlyMode.DEATH);
+                _audioManager.Play("InsectDie");
                 GameManager.DecrementFlyCount();
                 GameManager.IncrementFlyKillCount();
 
@@ -67,6 +68,7 @@ public class EnemyHealth : MonoBehaviour
             if (spn)
             {
                 spn.SetDead();
+                _audioManager.Play("InsectDie");
                 GameManager.DecrementSpiderCount();
                 GameManager.IncrementSpiderKillCount();
             }
@@ -75,6 +77,7 @@ public class EnemyHealth : MonoBehaviour
             if (scn)
             {
                 scn.SetDead();
+                _audioManager.Play("InsectDie");
                 GameManager.DecrementScorpionCount();
                 GameManager.IncrementScorpionKillCount();
             }

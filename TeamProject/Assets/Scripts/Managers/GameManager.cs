@@ -209,12 +209,13 @@ public class GameManager : MonoBehaviour
         lcScreen.transform.Find("SheetAndButtons/Sheet/FliesAmount").gameObject.GetComponent<Text>().text = "- $" + (levelPenalty);
         lcScreen.transform.Find("SheetAndButtons/Sheet/DamageAmount").gameObject.GetComponent<Text>().text = "- $" + (totalDamageCosts);
         lcScreen.transform.Find("SheetAndButtons/Sheet/TotalAmount").gameObject.GetComponent<Text>().text = "$" + (initialContractValue - levelPenalty + levelBonus - totalDamageCosts);
-        lcScreen.transform.Find("SheetAndButtons/Sheet/SpiderAmount").gameObject.GetComponent<Text>().text = "Spiders Killed: " + spiderKillCount;
-        lcScreen.transform.Find("SheetAndButtons/Sheet/ScorpionAmount").gameObject.GetComponent<Text>().text = "Scorpions Killed: " + scorpionKillCount;
+        lcScreen.transform.Find("SheetAndButtons/Sheet/FlyKillCount").gameObject.GetComponent<Text>().text = "Flies Killed: " + flyKillCount;
+        lcScreen.transform.Find("SheetAndButtons/Sheet/SpiderKillCount").gameObject.GetComponent<Text>().text = "Spiders Killed: " + spiderKillCount;
+        lcScreen.transform.Find("SheetAndButtons/Sheet/ScorpionKillCount").gameObject.GetComponent<Text>().text = "Scorpions Killed: " + scorpionKillCount;
         lcScreen.transform.Find("SheetAndButtons/Sheet/Tip").gameObject.GetComponent<Text>().text = "Tip from the owner: \n \n" + RandomTip();
 
 
-        // TODO: add (currentContractValue - levelPenalty + levelBonus - totalDamageCosts) to player money
+        // Add money to player
         float money = PlayerPrefs.GetFloat("money");
         money += (currentContractValue - levelPenalty + levelBonus - totalDamageCosts);
         PlayerPrefs.SetFloat("money", money);
@@ -240,7 +241,8 @@ public class GameManager : MonoBehaviour
             "Spraying a fly multiple times in a row will make it stay still for a few seconds.",
             "Try not to break things, cost in damages will come out of your pocket.",
             "Shutting off the breakers turn off all the lights, lowering your visibilty but decrease speed of the flies.",
-            "I will task myself with eriting more tips, but if you have ideas throw them in here."
+            "Webs will reduce your movement and look speed for a few seconds.",
+            "Scorpions will poison you which will invert your movement direction for a few seconds."
         };
         return tipList[UnityEngine.Random.Range(0, tipList.Length)];
     }

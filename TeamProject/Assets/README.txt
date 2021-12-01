@@ -104,6 +104,12 @@ Audio
 	- https://freesound.org/people/mrickey13/sounds/518850/
 	Buy Sound
 	- https://freesound.org/people/williamornelas/sounds/525147/
+	Fly loop
+	- https://freesound.org/people/acclivity/sounds/20797/
+	Bat sound
+	- https://freesound.org/people/Kane53126/sounds/257929/
+	Insect Death
+	- https://freesound.org/people/EminYILDIRIM/sounds/570767/
 
 Tutorials
 SHATTER / DESTRUCTION

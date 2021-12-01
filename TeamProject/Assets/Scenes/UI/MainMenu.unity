@@ -3243,6 +3243,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4936632013191065539, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
+      propertyPath: sounds.Array.data[23].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e6ecfddee67295a41b0562eb4366a518, type: 3}
+    - target: {fileID: 4936632013191065539, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
+      propertyPath: sounds.Array.data[23].name
+      value: FlyLoop
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936632013191065539, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
+      propertyPath: sounds.Array.data[23].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936632013191065539, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
+      propertyPath: sounds.Array.data[23].volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4936632013191065541, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
       propertyPath: m_Name
       value: AudioManager

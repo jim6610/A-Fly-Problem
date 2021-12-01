@@ -191,3 +191,17 @@ MonoBehaviour:
     spatialBlend: 0
     loop: 0
     source: {fileID: 0}
+  - name: Bat
+    clip: {fileID: 8300000, guid: 5040506ac5230d143b6dca26c794c4d4, type: 3}
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: InsectDie
+    clip: {fileID: 8300000, guid: 4fe33d5d36390d549a3c076f85eecc43, type: 3}
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
