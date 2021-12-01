@@ -93,7 +93,7 @@ MonoBehaviour:
   reducedCrouchSpeed: 1
   reducedLookSpeed: 40
   poisonDebuffDuration: 4
-  poisonOverlay: {fileID: 0}
+  poisonOverlay: {fileID: 1575665947756891475, guid: 1df954dbc9dfe0540a3b249f5178be65, type: 3}
 --- !u!82 &3727839039283335878
 AudioSource:
   m_ObjectHideFlags: 0

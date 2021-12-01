@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class GameTimer : MonoBehaviour
 {
     [SerializeField] private Text timeDisplay;
-    [SerializeField] [Description("Time to complete the level in seconds")] private float levelTime;
     [SerializeField] private bool startImmediately;
 
     private bool _startTimer;

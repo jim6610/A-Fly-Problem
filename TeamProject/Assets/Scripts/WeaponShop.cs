@@ -97,36 +97,42 @@ public class WeaponShop : MonoBehaviour
             {
                 buyButtons[0].SetActive(false);
                 equipdButtons[0].SetActive(true);
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
             }
 
             else if (item == "bat")
             {
                 buyButtons[1].SetActive(false);
                 equipdButtons[1].SetActive(true);
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
             }
 
             else if (item == "spray")
             {
                 buyButtons[2].SetActive(false);
                 equipdButtons[2].SetActive(true);
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
             }
 
             else if (item == "gun")
             {
                 buyButtons[3].SetActive(false);
                 equipdButtons[3].SetActive(true);
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
             }
 
             else if (item == "rifle")
             {
                 buyButtons[4].SetActive(false);
                 equipdButtons[4].SetActive(true);
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
             }
 
             else if (item == "flame")
             {
                 buyButtons[5].SetActive(false);
                 equipdButtons[5].SetActive(true);
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Buy");
             }
 
         }
@@ -141,6 +147,7 @@ public class WeaponShop : MonoBehaviour
     {
         loadout += a + ',';
         loadoutCounter++;
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Equip");
     }
 
     public void unequipWeapon(string a)
