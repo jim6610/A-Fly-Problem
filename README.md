@@ -1,4 +1,5 @@
-# COMP376_Project
+# A Fly Problem
+## Team JJKLSX
  
 ## Music used
 - Main Menu: Mark Hutson - Ancient Trials
