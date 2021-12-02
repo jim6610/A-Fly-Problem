@@ -749,7 +749,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: rifle,200
+          m_StringArgument: rifle,1200
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &69558618
@@ -3242,22 +3242,6 @@ PrefabInstance:
     - target: {fileID: 4936632013191065538, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936632013191065539, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
-      propertyPath: sounds.Array.data[23].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e6ecfddee67295a41b0562eb4366a518, type: 3}
-    - target: {fileID: 4936632013191065539, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
-      propertyPath: sounds.Array.data[23].name
-      value: FlyLoop
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936632013191065539, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
-      propertyPath: sounds.Array.data[23].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4936632013191065539, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
-      propertyPath: sounds.Array.data[23].volume
-      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4936632013191065541, guid: 0287704bdbcdeee4290e48594dfafdda, type: 3}
       propertyPath: m_Name
@@ -6622,7 +6606,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rifle - $200
+  m_Text: Rifle - $1200
 --- !u!222 &542128080
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8967,7 +8951,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: spray - $15
+  m_Text: spray - $250
 --- !u!222 &717949910
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11364,7 +11348,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bat - $5
+  m_Text: Bat - $500
 --- !u!222 &942168434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12171,7 +12155,7 @@ MonoBehaviour:
   m_Text: 'Description:     Melee weapon used to kills flies
 
     Stats:                  
-    Damage: 2   -   Fire Rate: 1.5   -   Range: 5'
+    Damage: 2   -   Fire Rate: 1.5   -   Range: 6'
 --- !u!222 &973228521
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15331,7 +15315,7 @@ MonoBehaviour:
   m_Text: 'Description:     Ranged weapon used to kills flies
 
     Stats:                  
-    Damage: 6   -   Fire Rate: 3   -   Range: 100   -   Ammo: 6 | 48'
+    Damage: 6   -   Fire Rate: 2.8   -   Range: 100   -   Ammo: 6 | 48'
 --- !u!222 &1199479783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16665,7 +16649,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: flame,1000
+          m_StringArgument: flame,1600
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1345244022
@@ -17422,7 +17406,7 @@ MonoBehaviour:
   m_Text: 'Description:     Ranged weapon used to kills flies
 
     Stats:                  
-    Damage: 4   -   Fire Rate: 6   -   Range: 100   -   Ammo: 20 | 80'
+    Damage: 4   -   Fire Rate: 5.5   -   Range: 100   -   Ammo: 20 | 80'
 --- !u!222 &1415030442
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22700,7 +22684,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Flame Thrower - $1000
+  m_Text: Flame Thrower - $1600
 --- !u!222 &1715847686
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24203,7 +24187,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: gun,100
+          m_StringArgument: gun,750
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1867684589
@@ -24931,7 +24915,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: bat,5
+          m_StringArgument: bat,500
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1925282446
@@ -25701,7 +25685,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: spray,15
+          m_StringArgument: spray,250
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1986532319
@@ -26935,7 +26919,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gun - $100
+  m_Text: Gun - $750
 --- !u!222 &2109941288
 CanvasRenderer:
   m_ObjectHideFlags: 0

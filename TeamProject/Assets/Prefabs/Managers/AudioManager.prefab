@@ -151,14 +151,14 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Victory
     clip: {fileID: 8300000, guid: 739d062159200ec4ebb2a3898276509f, type: 3}
-    volume: 0.3
+    volume: 0.5
     pitch: 1
     spatialBlend: 0
     loop: 0
     source: {fileID: 0}
   - name: Failure
     clip: {fileID: 8300000, guid: 55293703140fcf745b11375649187319, type: 3}
-    volume: 0.3
+    volume: 0.5
     pitch: 1
     spatialBlend: 0
     loop: 0
@@ -200,6 +200,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: InsectDie
     clip: {fileID: 8300000, guid: 4fe33d5d36390d549a3c076f85eecc43, type: 3}
+    volume: 0.3
+    pitch: 1
+    spatialBlend: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: RifleShot
+    clip: {fileID: 8300000, guid: 6013aec1b4e1ed943be94cb7e9f0a282, type: 3}
     volume: 0.3
     pitch: 1
     spatialBlend: 0

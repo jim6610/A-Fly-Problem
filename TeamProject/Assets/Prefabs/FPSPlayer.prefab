@@ -162,9 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 3727839039283335876}
   gravity: -19.62
-  jumpHeight: 2
-  walkSpeed: 6
-  sprintSpeed: 10
+  jumpHeight: 1.5
+  walkSpeed: 4.5
+  sprintSpeed: 8
   crouchSpeed: 2
   canSprint: 1
   crouchingHeight: 2
@@ -179,8 +179,8 @@ MonoBehaviour:
     m_Bits: 64
   bobAmount: 0.15
   crouchBobSpeed: 4
-  walkBobSpeed: 9
-  sprintBobSpeed: 14
+  walkBobSpeed: 6
+  sprintBobSpeed: 12
   webDebuffDuration: 3
   reducedWalkSpeed: 2
   reducedCrouchSpeed: 1

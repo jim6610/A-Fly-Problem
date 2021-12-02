@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1249221280391052296}
   m_Layer: 0
   m_Name: SpiderWeb
-  m_TagString: Destructible
+  m_TagString: Web
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,10 +44,10 @@ GameObject:
   - component: {fileID: 376967881309726601}
   - component: {fileID: 8141385768458890386}
   - component: {fileID: 3784767045401219288}
-  - component: {fileID: 5257029363840816396}
+  - component: {fileID: 9018599401133354521}
   m_Layer: 0
   m_Name: Cobweb_A
-  m_TagString: Untagged
+  m_TagString: Web
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!135 &5257029363840816396
+--- !u!135 &9018599401133354521
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

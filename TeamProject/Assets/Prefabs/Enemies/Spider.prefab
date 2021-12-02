@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 6
+  decrementFlyCounterAnimation: {fileID: 0}
 --- !u!114 &9112344323392529718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   web: {fileID: 1881924713549227698, guid: 7b2baaf51c2cd154b905a85814c9165d, type: 3}
   spawnPos: {fileID: 6764923713869373566}
-  spawnInterval: 15
+  spawnInterval: 12
 --- !u!1 &8633340929133714623
 GameObject:
   m_ObjectHideFlags: 0

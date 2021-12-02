@@ -74,7 +74,7 @@ MonoBehaviour:
   damage: 2
   impactForce: 30
   fireRate: 1.5
-  range: 5
+  range: 6
   impactEffectParticle: {fileID: 5664843490233245664, guid: 56e770bd298d3bb479274a83c09669ed, type: 3}
   animator: {fileID: 4322439327435187023}
 --- !u!222 &4279021193490360276

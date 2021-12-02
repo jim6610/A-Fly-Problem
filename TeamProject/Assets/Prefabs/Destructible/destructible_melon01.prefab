@@ -232,7 +232,7 @@ MonoBehaviour:
   initialHealth: 8
   monetaryValue: 4
   isHanging: 0
-  breakForce: 8
+  breakForce: 6
   explosionForce: 20
   destroyedPiecesRotation: 5
   destroyAftertime: 1

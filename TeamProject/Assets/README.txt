@@ -92,6 +92,8 @@ Audio
 	- https://freesound.org/people/Pablobd/sounds/502999/
 	Gun shot
 	- https://freesound.org/people/schots/sounds/382735/
+	Rifle Shot
+	- https://freesound.org/people/SuperPhat/sounds/404562/
 	Rife Reload
 	- https://freesound.org/people/GFL7/sounds/276963/
 	Pistol Reload

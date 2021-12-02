@@ -977,9 +977,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHealth: 6
-  monetaryValue: 15
+  monetaryValue: 10
   isHanging: 0
-  breakForce: 5
+  breakForce: 3
   explosionForce: 100
   destroyedPiecesRotation: 20
   destroyAftertime: 1
@@ -1027,7 +1027,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 99f1ed0fa8451964195ad9a9709d63c0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

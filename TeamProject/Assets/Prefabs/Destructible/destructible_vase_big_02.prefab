@@ -236,10 +236,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819ee0d79a7b6ac4cbd9381cd1eea810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHealth: 10
-  monetaryValue: 25
+  initialHealth: 8
+  monetaryValue: 20
   isHanging: 0
-  breakForce: 6
+  breakForce: 4
   explosionForce: 120
   destroyedPiecesRotation: 20
   destroyAftertime: 1

@@ -74,7 +74,7 @@ MonoBehaviour:
   landCoolDown: 6
   sightDistance: 3
   playerAwarenessDistance: 10
-  playerSneakAwarenessDistance: 2
+  playerSneakAwarenessDistance: 6
   playerSprintAwarenenessDistance: 15
   player: {fileID: 3615730693820101910, guid: 5db9a86ed4e49c641ba8ea0196f366e0, type: 3}
 --- !u!114 &-1012556075458332199
@@ -104,7 +104,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e6ecfddee67295a41b0562eb4366a518, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

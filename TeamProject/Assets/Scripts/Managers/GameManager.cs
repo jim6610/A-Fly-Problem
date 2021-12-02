@@ -78,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 60;
         SetupLevel();
     }
 
@@ -181,7 +182,7 @@ public class GameManager : MonoBehaviour
         lcScreen.SetActive(true);
 
         // Calm down music
-        GameObject.Find("BackgroundMusic").gameObject.GetComponent<AudioSource>().volume = 0.2f;
+        GameObject.Find("BackgroundMusic").gameObject.GetComponent<AudioSource>().volume = 0.1f;
         GameObject.Find("BackgroundMusic").gameObject.GetComponent<AudioSource>().pitch = 0.85f;
 
 
@@ -203,12 +204,14 @@ public class GameManager : MonoBehaviour
             GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Failure");
         }
 
+        float profit = initialContractValue - levelPenalty + levelBonus - totalDamageCosts;
+
         //Update Values
         lcScreen.transform.Find("SheetAndButtons/Sheet/ContractAmount").gameObject.GetComponent<Text>().text = "$" + (initialContractValue);
         lcScreen.transform.Find("SheetAndButtons/Sheet/TimeAmount").gameObject.GetComponent<Text>().text = "$" + (levelBonus);
         lcScreen.transform.Find("SheetAndButtons/Sheet/FliesAmount").gameObject.GetComponent<Text>().text = "- $" + (levelPenalty);
         lcScreen.transform.Find("SheetAndButtons/Sheet/DamageAmount").gameObject.GetComponent<Text>().text = "- $" + (totalDamageCosts);
-        lcScreen.transform.Find("SheetAndButtons/Sheet/TotalAmount").gameObject.GetComponent<Text>().text = "$" + (initialContractValue - levelPenalty + levelBonus - totalDamageCosts);
+        lcScreen.transform.Find("SheetAndButtons/Sheet/TotalAmount").gameObject.GetComponent<Text>().text = "$" + (profit);
         lcScreen.transform.Find("SheetAndButtons/Sheet/FlyKillCount").gameObject.GetComponent<Text>().text = "Flies Killed: " + flyKillCount;
         lcScreen.transform.Find("SheetAndButtons/Sheet/SpiderKillCount").gameObject.GetComponent<Text>().text = "Spiders Killed: " + spiderKillCount;
         lcScreen.transform.Find("SheetAndButtons/Sheet/ScorpionKillCount").gameObject.GetComponent<Text>().text = "Scorpions Killed: " + scorpionKillCount;
@@ -217,7 +220,10 @@ public class GameManager : MonoBehaviour
 
         // Add money to player
         float money = PlayerPrefs.GetFloat("money");
-        money += (currentContractValue - levelPenalty + levelBonus - totalDamageCosts);
+        if (profit > 0)
+        {
+            money += profit;
+        }
         PlayerPrefs.SetFloat("money", money);
         PlayerPrefs.Save();
     }

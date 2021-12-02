@@ -19,6 +19,7 @@ public class Rifle : MonoBehaviour
     [Header("Effects")]
     [SerializeField] private ParticleSystem muzzleFlash;
     [SerializeField] private GameObject impactEffectParticle;
+    [SerializeField] private GameObject emitter;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject bulletHole;
 
@@ -112,13 +113,13 @@ public class Rifle : MonoBehaviour
     {
         var hitObject = false;
         
-        audioManager.Play("GunShot");
+        audioManager.Play("RifleShot");
         muzzleFlash.Play();
 
         currentAmmoClip--;
 
-        GameObject bulletObj = Instantiate(bulletPrefab);
-        bulletObj.transform.position = transform.position;
+        // Bullet logic
+        GameObject bulletObj = Instantiate(bulletPrefab, emitter.transform.position, emitter.transform.rotation);
 
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.SetDirection(fpsCam.transform.forward);
@@ -158,8 +159,8 @@ public class Rifle : MonoBehaviour
             // Impact effect
             GameObject impactEffect = Instantiate(impactEffectParticle, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactEffect, 1);
-            
-            if (!hitObject)
+
+            if (!hitObject && !hit.transform.CompareTag("Web"))
             {
                 GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal)); 
                 Destroy(bulletDecal, 5f); 

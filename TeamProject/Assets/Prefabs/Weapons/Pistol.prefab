@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3274066612433420603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3198720499403749225}
+  m_Layer: 0
+  m_Name: GunBarrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3198720499403749225
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3274066612433420603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1331}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7961019390441732672}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0006, y: 0.075}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7946648321801762376
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +66,7 @@ Transform:
   m_Children:
   - {fileID: 7946648321874465560}
   m_Father: {fileID: 7961019390441732672}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &7946648323015904496
 ParticleSystem:
@@ -5249,6 +5284,7 @@ RectTransform:
   - {fileID: 7946244138813716203}
   - {fileID: 7946390624668322359}
   - {fileID: 7951264250548126921}
+  - {fileID: 3198720499403749225}
   - {fileID: 7946648321801762377}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -5272,13 +5308,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 6
   impactForce: 75
-  fireRate: 3
+  fireRate: 2.8
   range: 100
   reloadTime: 2.3
   clipSize: 6
   ammoRemaining: 48
   muzzleFlash: {fileID: 7946648323015904496}
   impactEffectParticle: {fileID: 8513659319318470114, guid: 5499830e123f2fe438dda654abf3fdbd, type: 3}
+  emitter: {fileID: 3274066612433420603}
   bulletPrefab: {fileID: 5071994949306533872, guid: 9a7e81f347d534e47b258b2076c2d06a, type: 3}
   bulletHole: {fileID: 1261134218634199668, guid: f15470db984383a4ebc3dcd031391931, type: 3}
   animator: {fileID: 7748240364179863431}
