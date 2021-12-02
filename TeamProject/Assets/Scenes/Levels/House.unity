@@ -5785,9 +5785,9 @@ MonoBehaviour:
   flySpawnRateHard: 4
   maxNumberOfSpecialsHard: 3
   specialSpawnRateHard: 20
-  enemyHealthModifierHard: 1.5
-  enemySpeedModifierHard: 1.2
-  spawnChanceModifierHard: 1.25
+  enemyHealthModifierHard: 1.25
+  enemySpeedModifierHard: 1.3
+  spawnChanceModifierHard: 1
   moneyPenaltyModifierHard: 1.5
   ceilingHeightHard: 0
   moneyDisplay: {fileID: 1966967580889256032}

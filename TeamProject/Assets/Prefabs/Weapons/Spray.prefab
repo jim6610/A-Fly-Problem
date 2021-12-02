@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2
-  totalAmmo: 30
+  totalAmmo: 60
   particles: {fileID: 3497871254577961624}
   animator: {fileID: 4548270374117829176}
 --- !u!136 &2375213762982663921
@@ -175,10 +175,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 0
-  m_Radius: 160
-  m_Height: 508.45
+  m_Radius: 184.76639
+  m_Height: 557.18604
   m_Direction: 2
-  m_Center: {x: 4.100001, y: 130.72163, z: 295}
+  m_Center: {x: 13.526716, y: 146.06088, z: 319.36945}
 --- !u!1 &5356875433371629051
 GameObject:
   m_ObjectHideFlags: 0

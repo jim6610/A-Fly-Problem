@@ -988,7 +988,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: rifle,1200
+          m_StringArgument: rifle,850
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &69558618
@@ -7004,7 +7004,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rifle - $1200
+  m_Text: Rifle - $850
 --- !u!222 &542128080
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8111,8 +8111,8 @@ MonoBehaviour:
   ammount: {fileID: 849756023}
   equipWarn: {fileID: 999428446}
   moneyWarn: {fileID: 663484724}
-  customMoney: 0
-  clearInventory: 0
+  customMoney: 10000
+  clearInventory: 1
 --- !u!114 &622916706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9605,7 +9605,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: spray - $250
+  m_Text: spray - $200
 --- !u!222 &717949910
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12306,7 +12306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bat - $500
+  m_Text: Bat - $400
 --- !u!222 &942168434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17802,7 +17802,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: flame,1600
+          m_StringArgument: flame,1200
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1345244022
@@ -23840,7 +23840,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Flame Thrower - $1600
+  m_Text: Flame Thrower - $1250
 --- !u!222 &1715847686
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25343,7 +25343,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: gun,750
+          m_StringArgument: gun,600
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1867684589
@@ -26071,7 +26071,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: bat,500
+          m_StringArgument: bat,400
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1925282446
@@ -26841,7 +26841,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: spray,250
+          m_StringArgument: spray,200
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1986532319
@@ -28075,7 +28075,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gun - $750
+  m_Text: Gun - $600
 --- !u!222 &2109941288
 CanvasRenderer:
   m_ObjectHideFlags: 0

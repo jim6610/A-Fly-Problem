@@ -8,7 +8,7 @@ public class WebEffect : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, timeUntilDestruction);
+        Destroy(transform.parent.gameObject, timeUntilDestruction);
     }
 
     void OnTriggerEnter(Collider collider)
