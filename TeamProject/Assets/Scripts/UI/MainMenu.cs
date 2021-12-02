@@ -66,4 +66,10 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetString("difficulty", diff);
     }
+
+    public void ResetStats()
+    {
+        PlayerPrefs.SetFloat("money", 0);
+        PlayerPrefs.SetString("inventory", "");
+    }
 }

@@ -49,6 +49,7 @@ By:
 - Toggle Crouch                    L-CTRL
 - Attack                           LMB
 - Switch weapons                   mouse wheel or number keys [1-4]
+- Pause Menu                       esc
 
 
 ----- Sources -----
