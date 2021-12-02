@@ -247,8 +247,12 @@ public class GameManager : MonoBehaviour
             "Spraying a fly multiple times in a row will make it stay still for a few seconds.",
             "Try not to break things, cost in damages will come out of your pocket.",
             "Shutting off the breakers turn off all the lights, lowering your visibilty but decrease speed of the flies.",
-            "Webs will reduce your movement and look speed for a few seconds.",
-            "Scorpions will poison you which will invert your movement direction for a few seconds."
+            "Webs will reduce your movement and look speed for a few seconds. Jump over them if you can.",
+            "Scorpions will poison you which will invert your movement direction for a few seconds.",
+            "The hallways in the office are great for chasing flies in a straight line.",
+            "If you see a scorpion crawling towards you, back up and kill it.",
+            "Spraying flies works best when they are cornered."
+            
         };
         return tipList[UnityEngine.Random.Range(0, tipList.Length)];
     }
