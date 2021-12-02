@@ -8111,8 +8111,8 @@ MonoBehaviour:
   ammount: {fileID: 849756023}
   equipWarn: {fileID: 999428446}
   moneyWarn: {fileID: 663484724}
-  customMoney: 10000
-  clearInventory: 1
+  customMoney: 0
+  clearInventory: 0
 --- !u!114 &622916706
 MonoBehaviour:
   m_ObjectHideFlags: 0
