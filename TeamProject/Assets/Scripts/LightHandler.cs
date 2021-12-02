@@ -8,7 +8,7 @@ public class LightHandler : MonoBehaviour
     [SerializeField] private List<GameObject> lightSources;
     
     private AudioSource _toggleSound;
-    private Light _playerLight;
+    private PlayerMovement _player;
 
     private bool _lightOn = true;
 
@@ -16,7 +16,7 @@ public class LightHandler : MonoBehaviour
 
     private void Awake()
     {
-        _playerLight = FindObjectOfType<PlayerMovement>().GetComponentInChildren<Light>();
+        _player = FindObjectOfType<PlayerMovement>();
         _toggleSound = GetComponent<AudioSource>();
         
         // Turn on every light on awake to avoid potential problems
@@ -29,10 +29,10 @@ public class LightHandler : MonoBehaviour
     public void ToggleLight()
     {
         _toggleSound.Play();
-
-        _lightOn = !_lightOn;
-        _playerLight.enabled = !_lightOn;
         
+        _lightOn = !_lightOn;
+        _player.ToggleLight();
+
         foreach (var lightSource in lightSources)
         {
             lightSource.SetActive(!lightSource.activeSelf);

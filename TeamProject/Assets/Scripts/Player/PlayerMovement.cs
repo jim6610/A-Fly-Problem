@@ -64,8 +64,11 @@ public class PlayerMovement : MonoBehaviour
     private float initialWalkSpeed;
     private float initialCrouchSpeed;
 
+    private Light playerLight;
+
     private void Start()
     {
+        playerLight = GetComponentInChildren<Light>();
         playerCam = GetComponentInChildren<Camera>();
         audioManager = FindObjectOfType<AudioManager>();
         defaultYPosition = playerCam.transform.localPosition.y;
@@ -229,5 +232,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (ml)
             ml.SetMouseSensitivity(ml.GetInitialMouseSensitivity());
+    }
+
+    public void ToggleLight()
+    {
+        playerLight.enabled = !playerLight.enabled;
     }
 }
