@@ -16087,24 +16087,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contractValueNormal: 400
-  levelTimerNormal: 270
+  levelTimerNormal: 240
   totalNumberOfFliesNormal: 40
   flyCapacityNormal: 12
   flySpawnRateNormal: 5
   maxNumberOfSpecialsNormal: 3
-  specialSpawnRateNormal: 30
+  specialSpawnRateNormal: 25
   enemyHealthModifierNormal: 1
   enemySpeedModifierNormal: 1
   spawnChanceModifierNormal: 1
   moneyPenaltyModifierNormal: 1
   ceilingHeightNormal: 0
   contractValueHard: 600
-  levelTimerHard: 330
+  levelTimerHard: 300
   totalNumberOfFliesHard: 50
   flyCapacityHard: 12
   flySpawnRateHard: 5
   maxNumberOfSpecialsHard: 4
-  specialSpawnRateHard: 30
+  specialSpawnRateHard: 20
   enemyHealthModifierHard: 1.5
   enemySpeedModifierHard: 1.2
   spawnChanceModifierHard: 1.25

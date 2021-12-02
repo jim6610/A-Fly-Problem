@@ -7,15 +7,11 @@ public class Bullet : MonoBehaviour
     public float speed;
     public Rigidbody rb;
     public float expirationTime;
-    float timer = 0;
 
-    void Update()
+
+    private void Start()
     {
-        timer += Time.deltaTime;
-        if (timer >= expirationTime)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject, expirationTime);
     }
 
     void Awake()
