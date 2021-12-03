@@ -4510,7 +4510,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 158.09, y: -188}
-  m_SizeDelta: {x: 371.9, y: 59.6535}
+  m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &353291317
 MonoBehaviour:
@@ -4534,10 +4534,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b844508c15972034cac7cfff5f9f53c0, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4545,7 +4545,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jahrel Stewart, 40115728
+  m_Text: 'Jahrel Stewart (40115728)
+
+    level design, enemy design'
 --- !u!222 &353291318
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12155,8 +12157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.08998, y: -575}
-  m_SizeDelta: {x: 371.9, y: 58.0919}
+  m_AnchoredPosition: {x: 158.08998, y: -596.5512}
+  m_SizeDelta: {x: 400, y: 61.3269}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &923295862
 MonoBehaviour:
@@ -12180,10 +12182,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b844508c15972034cac7cfff5f9f53c0, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -12191,7 +12193,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Xavier Knoll, 40132134
+  m_Text: 'Xavier Knoll, 40132134
+
+    AI design, Enemy design'
 --- !u!222 &923295863
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14508,7 +14512,7 @@ MonoBehaviour:
     in range
 
     Stats:                   Damage: 0   -   Fire Rate: 2   -   Range:
-    N/A   -   Ammo: 30 | 0'
+    N/A   -   Ammo: 60 | 0'
 --- !u!222 &1039480112
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19168,8 +19172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.08998, y: -343}
-  m_SizeDelta: {x: 371.9, y: 63}
+  m_AnchoredPosition: {x: 158.08998, y: -351.6316}
+  m_SizeDelta: {x: 400, y: 66.5083}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1441625615
 MonoBehaviour:
@@ -19193,10 +19197,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b844508c15972034cac7cfff5f9f53c0, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -19204,7 +19208,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Kevin Brousseau, 4006054
+  m_Text: 'Kevin Brousseau, 4006054
+
+    Sound design, weapon design'
 --- !u!222 &1441625616
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22267,8 +22273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.09, y: -259}
-  m_SizeDelta: {x: 371.9049, y: 69}
+  m_AnchoredPosition: {x: 158.09, y: -262.95386}
+  m_SizeDelta: {x: 400, y: 72.8425}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1598191631
 MonoBehaviour:
@@ -22292,10 +22298,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b844508c15972034cac7cfff5f9f53c0, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -22303,7 +22309,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Jimmy Wong, 26649815
+  m_Text: 'Jimmy Wong (26649815)
+
+    Level Design, Weapon design, UI Design, SFX'
 --- !u!222 &1598191632
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22714,7 +22722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1636814653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25844,8 +25852,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.09001, y: -496.15}
-  m_SizeDelta: {x: 371.9, y: 57.8508}
+  m_AnchoredPosition: {x: 158.09001, y: -513.3102}
+  m_SizeDelta: {x: 400, y: 61.0724}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1909580089
 MonoBehaviour:
@@ -25869,10 +25877,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b844508c15972034cac7cfff5f9f53c0, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -25880,7 +25888,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Steven Labelle, 40005118
+  m_Text: 'Steven Labelle (40005118)
+
+    weapon design, Lighting Design, UI Design'
 --- !u!222 &1909580090
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26333,8 +26343,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 158.08998, y: -422}
-  m_SizeDelta: {x: 371.9, y: 60.4186}
+  m_AnchoredPosition: {x: 158.08998, y: -435.03098}
+  m_SizeDelta: {x: 400, y: 63.7832}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1933038798
 MonoBehaviour:
@@ -26358,10 +26368,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b844508c15972034cac7cfff5f9f53c0, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -26369,7 +26379,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lorenzo Monge, 40045872
+  m_Text: 'Lorenzo Monge (40045872)
+
+    UI Design, shop menu'
 --- !u!222 &1933038799
 CanvasRenderer:
   m_ObjectHideFlags: 0
