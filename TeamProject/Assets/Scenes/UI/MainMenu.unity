@@ -759,7 +759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &55576093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4046,10 +4046,10 @@ RectTransform:
   m_Father: {fileID: 2062459962}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -401.4475}
+  m_SizeDelta: {x: 453.68, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &342029293
 MonoBehaviour:
@@ -9746,10 +9746,10 @@ RectTransform:
   m_Father: {fileID: 2062459962}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -272.4625}
+  m_SizeDelta: {x: 453.68, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &731515245
 MonoBehaviour:
@@ -11306,10 +11306,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Description:     Ranged weapon that damages anything that the flames touch
+  m_Text: 'FlameThrower
 
-    Stats:                  
-    Damage: 4   -   Fire Rate: N/A   -   Range: N/A   -   Ammo: 2000 | 0'
+    Description:     Ranged weapon that damages anything
+    that the flames touch
+
+    Stats:                   Damage: 4   -   Fire Rate:
+    N/A   -   Range: N/A   -   Ammo: 2000 | 0'
 --- !u!222 &855205897
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13114,7 +13117,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Description:     Melee weapon used to kills flies
+  m_Text: 'Swatter
+
+    Description:     Melee weapon used to kills flies
 
     Stats:                  
     Damage: 2   -   Fire Rate: 1.5   -   Range: 6'
@@ -13786,10 +13791,10 @@ RectTransform:
   m_Father: {fileID: 2062459962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -14.4925}
+  m_SizeDelta: {x: 453.68, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1017181571
 MonoBehaviour:
@@ -14508,11 +14513,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Description:     Close Range debuff weapon that slows down enemy flies
-    in range
+  m_Text: 'Spray
 
-    Stats:                   Damage: 0   -   Fire Rate: 2   -   Range:
-    N/A   -   Ammo: 60 | 0'
+    Description:     Close Range debuff weapon that slows down
+    enemy flies in range
+
+    Stats:                   Damage: 0   -   Fire Rate:
+    2   -   Range: N/A   -   Ammo: 60 | 0'
 --- !u!222 &1039480112
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16405,7 +16412,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Description:     Ranged weapon used to kills flies
+  m_Text: 'Pistol
+
+    Description:     Ranged weapon used to kills flies
 
     Stats:                  
     Damage: 6   -   Fire Rate: 2.8   -   Range: 100   -   Ammo: 6 | 48'
@@ -18560,7 +18569,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Description:     Ranged weapon used to kills flies
+  m_Text: 'Rifle
+
+    Description:     Ranged weapon used to kills flies
 
     Stats:                  
     Damage: 4   -   Fire Rate: 5.5   -   Range: 100   -   Ammo: 20 | 80'
@@ -21140,10 +21151,10 @@ RectTransform:
   m_Father: {fileID: 2062459962}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -143.47751}
+  m_SizeDelta: {x: 453.68, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1543137027
 MonoBehaviour:
@@ -22673,7 +22684,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Description:     Melee weapon used to kills flies
+  m_Text: 'Bat
+
+    Description:     Melee weapon used to kills flies
 
     Stats:                  
     Damage: 4   -   Fire Rate: 2.5   -   Range: 7'
@@ -22722,7 +22735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1636814653
 MonoBehaviour:
   m_ObjectHideFlags: 0
