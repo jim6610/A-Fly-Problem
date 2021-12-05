@@ -16400,7 +16400,7 @@ MonoBehaviour:
   contractValueNormal: 400
   levelTimerNormal: 240
   totalNumberOfFliesNormal: 40
-  flyCapacityNormal: 12
+  flyCapacityNormal: 10
   flySpawnRateNormal: 5
   maxNumberOfSpecialsNormal: 3
   specialSpawnRateNormal: 25
@@ -16409,10 +16409,10 @@ MonoBehaviour:
   spawnChanceModifierNormal: 1
   moneyPenaltyModifierNormal: 1
   ceilingHeightNormal: 0
-  contractValueHard: 600
+  contractValueHard: 700
   levelTimerHard: 300
   totalNumberOfFliesHard: 50
-  flyCapacityHard: 12
+  flyCapacityHard: 10
   flySpawnRateHard: 5
   maxNumberOfSpecialsHard: 4
   specialSpawnRateHard: 20
