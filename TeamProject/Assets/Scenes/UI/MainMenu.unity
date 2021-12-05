@@ -12292,7 +12292,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Xavier Knoll, 40132134
+  m_Text: 'Xavier Knoll (40132134)
 
     AI design, Enemy design'
 --- !u!222 &923295863
@@ -19351,7 +19351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Kevin Brousseau, 4006054
+  m_Text: 'Kevin Brousseau (4006054)
 
     Sound design, weapon design'
 --- !u!222 &1441625616
