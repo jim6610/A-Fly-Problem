@@ -9,11 +9,23 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject shopMenu;
     [SerializeField] private GameObject creditsMenu;
     [SerializeField] private GameObject splash;
+    [SerializeField] private GameObject hiddenDevButton;
 
+    private bool active;
 
     public void Start()
     {
         Invoke("removeArt", 1);
+        active = false;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.BackQuote))
+        {
+            active = !active;
+        }
+        hiddenDevButton.SetActive(active);
     }
 
     public void removeArt()
@@ -71,5 +83,11 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetFloat("money", 0);
         PlayerPrefs.SetString("inventory", "");
+    }
+
+    public void AddMoney()
+    {
+        PlayerPrefs.SetFloat("money", 5000);
+        active = false;
     }
 }

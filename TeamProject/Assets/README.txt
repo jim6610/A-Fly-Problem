@@ -50,6 +50,7 @@ By:
 - Attack                           LMB
 - Switch weapons                   mouse wheel or number keys [1-4]
 - Pause Menu                       esc
+- Secret dev button                `
 
 
 ----- Sources -----
