@@ -1,96 +1,71 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
-/// FlySwatter melee weapon
-/// TODO Code not DRY, shares almost all game variables/logic with Pistol, can probably use inheritance here
-public class FlySwatter : MonoBehaviour
+public class FlySwatter : MeleeWeapon
 {
-    [Header("Weapon Parameters")]
-    [SerializeField] private float damage = 2f;
-    [SerializeField] private float impactForce = 30f;
-    [SerializeField] private float fireRate = 2f;
-    [SerializeField] private float range = 5f;
-
-    [Header("Effects")]
-    [SerializeField] private GameObject impactEffectParticle;
-
-    [Header("Animation")]
-    [SerializeField] private Animator animator;
-
-    private AudioManager audioManager;
-    private Text ammoDisplay;
-
-    private Camera fpsCam;
-    private float nextTimeToFire;
-    
     private static readonly int Attack = Animator.StringToHash("Attack");
     
-    private bool CanFire => Input.GetButton("Fire1") && Time.time >= nextTimeToFire;
-
-    private void Start()
-    {
-        audioManager = FindObjectOfType<AudioManager>();
-        ammoDisplay = GameObject.Find("Ammo").GetComponent<Text>();
-
-        fpsCam = Camera.main;
-    }
+    protected override string fireSoundTag => "Swat";
+    protected override string hitSoundTag => "Smack";
     
-    void Update()
+    protected void Update()
     {
         if (CanFire)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
-            Swat();
+            Fire();
         }
-
-        // Update ammo display on HUD
-        ammoDisplay.text = "-- | --";
     }
 
-    /// Weapon firing logic
-    void Swat()
+    public override void Equipped()
     {
-        audioManager.Play("Swat");
-        
-        animator.SetTrigger(Attack); //trigger our animation
+        ammoDisplay.text = UnlimitedAmmoText;
+    }
 
-        Debug.DrawLine(fpsCam.transform.position, fpsCam.transform.position + (fpsCam.transform.forward.normalized * range), Color.green, 2);
+    protected override void Fire()
+    {
+        audioManager.Play(fireSoundTag);
         
-        if (Physics.SphereCast(fpsCam.transform.position, 0.1f, fpsCam.transform.forward, out var hit, range))
+        animator.SetTrigger(Attack);
+
+        (bool didHit, RaycastHit hit) = HandleSphereCast();
+        
+        if (didHit)
         {
-            audioManager.Play("Smack");
+            audioManager.Play(hitSoundTag);
             
-            // Damage destructible objects
             if (hit.transform.CompareTag("Destructible"))
-            {
-                Destructible target = hit.transform.GetComponent<Destructible>();
+                // Damage destructible objects
+                HandleDestructibleCollision(hit);
+            
+            if (hit.transform.CompareTag("Enemy"))
+                // Damage enemy
+                HandleEnemyCollision(hit);
+            
+            // Apply force to the object if it has a rigidbody attached
+            HandleImpactForce(hit);
+            // Instantiate Impact particle effect
+            HandleImpactEffect(hit);
+        }
+    }
+    
+    private void HandleDestructibleCollision(RaycastHit hit)
+    {
+        Destructible target = hit.transform.GetComponent<Destructible>();
 
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                }
-            }
-            // Damage enemy
-            else if (hit.transform.CompareTag("Enemy"))
-            {
-                EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                }
-            }
-
-
-            Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
-
-            if (rb != null)
-            {
-                rb.AddForce(-hit.normal * impactForce);
-            }
-
-            // Impact effect
-            GameObject impactEffect = Instantiate(impactEffectParticle, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactEffect, 1);
+        if (target != null)
+        {
+            target.TakeDamage(damage);
+        }
+    }
+    
+    private void HandleEnemyCollision(RaycastHit hit)
+    {
+        EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
+        
+        if (target != null)
+        {
+            target.TakeDamage(damage);
         }
     }
 }

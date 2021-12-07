@@ -83,6 +83,13 @@ public class WeaponSwitching : MonoBehaviour
         {
             if (i == selectedWeapon)
             {
+                // This check is temporary, once all weapons use inheritance this will work properly
+                var weaponScript = weapon.GetComponent<Weapon>();
+                if (weaponScript != null)
+                {
+                    weapon.GetComponent<Weapon>().Equipped();
+                }
+                
                 weapon.gameObject.SetActive(true);
 
                 if (transform.childCount > 0)
