@@ -3,83 +3,69 @@ using System.Collections;
 using UnityEngine.UI;
 
 
-public class SprayBottle : MonoBehaviour
+public class SprayBottle : Weapon
 {
     [Header("Weapon Parameters")]
-    [SerializeField] private float fireRate = 2f;
     [SerializeField] private int totalAmmo = 20;
 
     [Header("Effects")]
     [SerializeField] private ParticleSystem particles;
+    
+    private CapsuleCollider _areaOfEffect;
+    private int _currentAmmoClip;
+    
+    protected override string fireSoundTag => "Spray";
+    private string emptyClipSoundTag => "RifleClipEmpty";
 
-    [Header("Animation")]
-    public Animator animator;
-
-    private AudioManager audioManager;
-    private GameObject weaponManager;
-    private GameObject selectionManager;
-    private Text ammoDisplay;
-    private CapsuleCollider areaOfEffect;
-
-    private Camera fpsCam;
-    private float nextTimeToFire;
-    private int currentAmmoClip;
-    private bool isReloading = false;
-
-    private bool CanFire => Input.GetButton("Fire1") && Time.time >= nextTimeToFire;
+    private static readonly int ShootTrigger = Animator.StringToHash("Shoot");
+    private static readonly int Reloading = Animator.StringToHash("Reloading");
 
     private void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
-        weaponManager = GameObject.Find("WeaponHolder");
-        selectionManager = GameObject.Find("SelectionManager");
-        ammoDisplay = GameObject.Find("Ammo").GetComponent<Text>();
-        fpsCam = Camera.main;
-        currentAmmoClip = totalAmmo;
-        areaOfEffect = gameObject.GetComponent<CapsuleCollider>();
+        _currentAmmoClip = totalAmmo;
+        _areaOfEffect = gameObject.GetComponent<CapsuleCollider>();
     }
-
+    
     void OnEnable()
     {
-        isReloading = false;
-        animator.SetBool("Reloading", false);
+        animator.SetBool(Reloading, false);
     }
+    
+    public override void Equipped() {}
 
     void Update()
     {
         // If able to fire and ammo clip is not empty, fire weapon
-        if (CanFire && currentAmmoClip != 0)
+        if (CanFire && _currentAmmoClip != 0)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
-            Shoot();
+            Fire();
         }
 
         // If player tries to fire an empty weapon, empty clip sound effect will play
-        if (CanFire && currentAmmoClip == 0)
+        if (CanFire && _currentAmmoClip == 0)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
-            audioManager.Play("RifleClipEmpty");
+            audioManager.Play(emptyClipSoundTag);
         }
 
         // Update ammo display on HUD
-        ammoDisplay.text = currentAmmoClip + " | 0";
+        ammoDisplay.text = _currentAmmoClip + " | 0";
     }
 
-
     /// Weapon firing logic
-    void Shoot()
+    protected override void Fire()
     {
-        audioManager.Play("Spray");
+        audioManager.Play(fireSoundTag);
 
-        currentAmmoClip--;
+        _currentAmmoClip--;
 
-        animator.ResetTrigger("Shoot");
-        animator.SetTrigger("Shoot");
+        animator.ResetTrigger(ShootTrigger);
+        animator.SetTrigger(ShootTrigger);
         particles.Play();
 
-        areaOfEffect.enabled = true;
+        _areaOfEffect.enabled = true;
         StartCoroutine(ShootCoroutine());
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -93,6 +79,6 @@ public class SprayBottle : MonoBehaviour
     IEnumerator ShootCoroutine()
     {
         yield return new WaitForSeconds(0.25f);
-        areaOfEffect.enabled = false;
+        _areaOfEffect.enabled = false;
     }
 }
