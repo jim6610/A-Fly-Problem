@@ -91,13 +91,7 @@ public class GameManager : MonoBehaviour
     {
         Reset(); // reset certain values back to 0 at start of level
 
-        difficulty = PlayerPrefs.GetString("difficulty");
-
-        // null check on difficulty. default to normal
-        if (difficulty == null)
-        {
-            difficulty = "normal";
-        }
+        difficulty = PlayerPrefs.GetString("difficulty", "normal");
 
         if (difficulty == "normal")
             NormalMode();
@@ -219,7 +213,7 @@ public class GameManager : MonoBehaviour
 
 
         // Add money to player
-        float money = PlayerPrefs.GetFloat("money");
+        float money = PlayerPrefs.GetFloat("money", 0);
         if (profit > 0)
         {
             money += profit;

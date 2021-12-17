@@ -190,8 +190,8 @@ public class WeaponShop : MonoBehaviour
     {
         loadout = "";
         loadoutCounter = 0;
-        money = PlayerPrefs.GetFloat("money");
-        inventory = PlayerPrefs.GetString("inventory");
+        money = PlayerPrefs.GetFloat("money", 0);
+        inventory = PlayerPrefs.GetString("inventory", "");
 
         this.gameObject.SetActive(false);
         levelSelect.SetActive(true);

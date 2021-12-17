@@ -1105,9 +1105,9 @@ RectTransform:
   - {fileID: 3121057204374610759}
   - {fileID: 3121057203909628007}
   - {fileID: 3121057205102531882}
+  - {fileID: 4226223592055292935}
   - {fileID: 6690090983336921234}
   - {fileID: 6945792447240706814}
-  - {fileID: 4226223592055292935}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1907,7 +1907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6281902742523024185, guid: d0b26cdf803bfe441b56652925f05ff7, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6281902742523024185, guid: d0b26cdf803bfe441b56652925f05ff7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2014,7 +2014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1443319262873973489, guid: 1df954dbc9dfe0540a3b249f5178be65, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1443319262873973489, guid: 1df954dbc9dfe0540a3b249f5178be65, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2116,7 +2116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1001828160148439040, guid: 6b0565991e121134a8b9534779c13aea, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1001828160148439040, guid: 6b0565991e121134a8b9534779c13aea, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2197,6 +2197,10 @@ PrefabInstance:
     - target: {fileID: 3299992382214550960, guid: 6b0565991e121134a8b9534779c13aea, type: 3}
       propertyPath: m_Name
       value: Level Complete
+      objectReference: {fileID: 0}
+    - target: {fileID: 3299992382214550960, guid: 6b0565991e121134a8b9534779c13aea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b0565991e121134a8b9534779c13aea, type: 3}

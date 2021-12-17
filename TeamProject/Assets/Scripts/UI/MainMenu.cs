@@ -81,8 +81,7 @@ public class MainMenu : MonoBehaviour
 
     public void ResetStats()
     {
-        PlayerPrefs.SetFloat("money", 0);
-        PlayerPrefs.SetString("inventory", "");
+        PlayerPrefs.DeleteAll();
     }
 
     public void AddMoney()
