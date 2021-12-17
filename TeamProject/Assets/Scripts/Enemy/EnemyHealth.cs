@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-        health *= GameManager.enemyHealthModifier; // Depending on difficulty, health will be adjusted
+        health *= FindObjectOfType<GameManager>() ? GameManager.enemyHealthModifier : 100; // Depending on difficulty, health will be adjusted
         dead = false;
 
         if (GameObject.Find("FlyCounterPosition").GetComponent<RectTransform>() != null)

@@ -43,8 +43,7 @@ public class FlyNavigator : MonoBehaviour
         Random.InitState(System.DateTime.Now.Millisecond);
         agent = GetComponent<NavMeshAgent>();
         flyRelativeMovement = GetComponentInChildren<FlyRelativeMovmement>();
-        //GetNewDestination(currentTargetIndex);
-        player = (GameObject.FindObjectOfType<PlayerMovement>()).gameObject;
+        player = FindObjectOfType<PlayerMovement>()?.gameObject;
         GetTargetAimlessly();
         agent.stoppingDistance = 1.0f;
         safePositions.Add(transform.position);
@@ -147,7 +146,7 @@ public class FlyNavigator : MonoBehaviour
         }
 
         //If the players withtin the awareness distance we want to override this behavior
-        if (PlayerInRange(transform))
+        if (player != null && PlayerInRange(transform))
         {
             RaycastHit avoidHit;
             Vector3 playerDir = (transform.position - player.transform.position).normalized;
@@ -223,6 +222,8 @@ public class FlyNavigator : MonoBehaviour
     
     public bool PlayerInRange(Transform otherTransform)
     {
+        if (player == null) return false;
+        
         PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
         
         var detectionDistance = playerMovement.IsSprinting ? playerSprintAwarenenessDistance : 
