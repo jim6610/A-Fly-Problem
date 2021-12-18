@@ -11,10 +11,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject splash;
     [SerializeField] private GameObject hiddenDevButton;
 
+    private SettingsMenu _settingsMenu;
+
     private bool active;
 
     public void Start()
     {
+        _settingsMenu = FindObjectOfType<SettingsMenu>();
+        
         Invoke("removeArt", 1);
         active = false;
     }
@@ -82,6 +86,8 @@ public class MainMenu : MonoBehaviour
     public void ResetStats()
     {
         PlayerPrefs.DeleteAll();
+        
+        _settingsMenu.UpdateState();
     }
 
     public void AddMoney()
