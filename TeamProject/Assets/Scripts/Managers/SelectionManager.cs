@@ -9,6 +9,7 @@ public class SelectionManager : MonoBehaviour
     [SerializeField] private float throwForce = 1f;
     
     [SerializeField] private Transform hand;
+    [SerializeField] private Transform throwPosition;
     [SerializeField] private Camera fpsCam;
     [SerializeField] private WeaponSwitching weaponManager;
     
@@ -82,7 +83,8 @@ public class SelectionManager : MonoBehaviour
             return;
         
         ToggleObject(heldObjectRef, true);
-        
+
+        heldObjectRef.transform.position = throwPosition.transform.position;
         heldObjectRef.GetComponent<Rigidbody>().AddForce(fpsCam.transform.forward * throwForce, ForceMode.Impulse);
 
         heldObjectRef.parent = null;

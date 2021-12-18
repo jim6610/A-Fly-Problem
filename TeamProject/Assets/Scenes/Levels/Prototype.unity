@@ -675,7 +675,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeDisplay: {fileID: 2118120684}
-  levelTime: 300
   startImmediately: 1
 --- !u!1 &59453382
 GameObject:
@@ -2279,6 +2278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  decrementFlyCounterAnimation: {fileID: 0}
 --- !u!1001 &281381740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2605,7 +2605,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 315189624}
-  walkSoundEffect: {fileID: 315189625}
   gravity: -19.62
   jumpHeight: 2
   walkSpeed: 6
@@ -2626,6 +2625,12 @@ MonoBehaviour:
   crouchBobSpeed: 4
   walkBobSpeed: 9
   sprintBobSpeed: 14
+  webDebuffDuration: 3
+  reducedWalkSpeed: 3
+  reducedCrouchSpeed: 1
+  reducedLookSpeed: 40
+  poisonDebuffDuration: 4
+  poisonOverlay: {fileID: 0}
 --- !u!143 &315189624
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4006,6 +4011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  decrementFlyCounterAnimation: {fileID: 0}
 --- !u!1 &582450412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4214,6 +4220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  decrementFlyCounterAnimation: {fileID: 0}
 --- !u!1 &616164645
 GameObject:
   m_ObjectHideFlags: 0
@@ -5459,6 +5466,7 @@ Transform:
   m_Children:
   - {fileID: 1663483264}
   - {fileID: 59453383}
+  - {fileID: 851392197}
   m_Father: {fileID: 315189622}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5859,6 +5867,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f66555a19fbb34bb801178aa3ca469, type: 3}
+--- !u!1 &851392196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 851392197}
+  m_Layer: 10
+  m_Name: ObjectThrow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &851392197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851392196}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.456, z: 0.777}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 787295750}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &853354846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4364833404483905876, guid: a9f66555a19fbb34bb801178aa3ca469, type: 3}
@@ -7030,6 +7068,7 @@ MonoBehaviour:
   grabDistance: 5
   throwForce: 25
   hand: {fileID: 59453383}
+  throwPosition: {fileID: 851392197}
   fpsCam: {fileID: 787295753}
   weaponManager: {fileID: 1663483263}
   isReloading: 0
@@ -7271,6 +7310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  decrementFlyCounterAnimation: {fileID: 0}
 --- !u!1 &1191627270
 GameObject:
   m_ObjectHideFlags: 0
@@ -7644,6 +7684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  decrementFlyCounterAnimation: {fileID: 0}
 --- !u!4 &1256870531 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1223799788972486244, guid: dab798041a2cb964e81ca9e6fe4a1153, type: 3}
@@ -7979,6 +8020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  decrementFlyCounterAnimation: {fileID: 0}
 --- !u!1 &1372333988
 GameObject:
   m_ObjectHideFlags: 0
@@ -9044,6 +9086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  decrementFlyCounterAnimation: {fileID: 0}
 --- !u!1001 &1582357783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11468,7 +11511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7988349420b95be42995ee78bb4e9214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hardMode: 0
   contractValueNormal: 1000
   levelTimerNormal: 300
   totalNumberOfFliesNormal: 40
@@ -11480,6 +11522,7 @@ MonoBehaviour:
   enemySpeedModifierNormal: 1
   spawnChanceModifierNormal: 1
   moneyPenaltyModifierNormal: 1
+  ceilingHeightNormal: 0
   contractValueHard: 1200
   levelTimerHard: 360
   totalNumberOfFliesHard: 60
@@ -11491,6 +11534,7 @@ MonoBehaviour:
   enemySpeedModifierHard: 1.5
   spawnChanceModifierHard: 1.5
   moneyPenaltyModifierHard: 1.5
+  ceilingHeightHard: 0
   moneyDisplay: {fileID: 690971275}
   flyCounterDisplay: {fileID: 1861836776}
 --- !u!1 &1930883872
@@ -12286,6 +12330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 4
+  decrementFlyCounterAnimation: {fileID: 0}
 --- !u!4 &2078285127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 792412749518951389, guid: 519f4447e57a05b4593c3c2f899d4b1d, type: 3}

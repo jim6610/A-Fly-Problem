@@ -21112,6 +21112,7 @@ MonoBehaviour:
   grabDistance: 5
   throwForce: 25
   hand: {fileID: 2596194363364990186}
+  throwPosition: {fileID: 3449564742650354261}
   fpsCam: {fileID: 2596194363809792912}
   weaponManager: {fileID: 2596194362890547619}
   isReloading: 0
@@ -25593,6 +25594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5db9a86ed4e49c641ba8ea0196f366e0, type: 3}
+--- !u!4 &3449564742650354261 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7076595824585400759, guid: 5db9a86ed4e49c641ba8ea0196f366e0, type: 3}
+  m_PrefabInstance: {fileID: 3449564742650354260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3458134899162996060
 PrefabInstance:
   m_ObjectHideFlags: 0
