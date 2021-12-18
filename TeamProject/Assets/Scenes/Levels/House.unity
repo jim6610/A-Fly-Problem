@@ -25548,6 +25548,10 @@ PrefabInstance:
       propertyPath: poisonOverlay
       value: 
       objectReference: {fileID: 1149177737}
+    - target: {fileID: 7076595824585400759, guid: 5db9a86ed4e49c641ba8ea0196f366e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7554634852007753436, guid: 5db9a86ed4e49c641ba8ea0196f366e0, type: 3}
       propertyPath: m_RootOrder
       value: 3
