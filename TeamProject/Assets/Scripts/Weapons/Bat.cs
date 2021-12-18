@@ -49,23 +49,5 @@ public class Bat : MeleeWeapon
         }
     }
     
-    private void HandleDestructibleCollision(RaycastHit hit)
-    {
-        Destructible target = hit.transform.GetComponent<Destructible>();
 
-        if (target != null)
-        {
-            target.TakeDamage(damage);
-        }
-    }
-    
-    private void HandleEnemyCollision(RaycastHit hit)
-    {
-        EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
-        
-        if (target != null)
-        {
-            target.TakeDamage(damage);
-        }
-    }
 }

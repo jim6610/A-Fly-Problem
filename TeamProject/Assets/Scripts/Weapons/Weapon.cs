@@ -10,9 +10,6 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected float fireRate = 2f;
     [SerializeField] protected float range = 5f;
     
-    [Header("Effects")]
-    [SerializeField] protected GameObject impactEffectParticle;
-    
     [Header("Animation")]
     [SerializeField] protected Animator animator;
 
@@ -37,7 +34,6 @@ public abstract class Weapon : MonoBehaviour
     {
         audioManager = FindObjectOfType<AudioManager>();
         ammoDisplay = GameObject.Find("Ammo").GetComponent<Text>();
-
         fpsCam = Camera.main;
     }
 }

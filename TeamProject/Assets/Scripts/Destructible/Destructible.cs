@@ -85,6 +85,7 @@ public class Destructible : MonoBehaviour {
         }
         GetComponent<Renderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
+        GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         GetComponent<Rigidbody>().isKinematic = true;
         foreach (GameObject chunk in destroyedPieces)
         {
