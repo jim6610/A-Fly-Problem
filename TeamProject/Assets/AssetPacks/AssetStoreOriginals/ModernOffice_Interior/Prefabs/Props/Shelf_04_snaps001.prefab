@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4481777221271996}
   - component: {fileID: 33469017394205494}
   - component: {fileID: 23234275690290280}
-  - component: {fileID: 3458181502029012968}
   - component: {fileID: 208142461857442426}
+  - component: {fileID: 8853559342794585656}
   m_Layer: 6
   m_Name: Shelf_04_snaps001
   m_TagString: Untagged
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3458181502029012968
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844781713210790}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.50000113, y: 1.875, z: 1.6250006}
-  m_Center: {x: -0.24999997, y: 0.9375, z: -0.8125002}
 --- !u!208 &208142461857442426
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -115,3 +102,17 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.25, y: 0.93700004, z: -0.813}
   m_TimeToStationary: 0.5
+--- !u!64 &8853559342794585656
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844781713210790}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 9786876565e55b344a734f0176b7c5ed, type: 2}
