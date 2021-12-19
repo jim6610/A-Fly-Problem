@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3046519720464548631}
   - component: {fileID: 3046519720468657015}
   - component: {fileID: 3046519720471854775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 3046519720466842091}
   - component: {fileID: 3046519720448492731}
   - component: {fileID: 3046519720448605467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fx02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4864,9 +4864,9 @@ GameObject:
   - component: {fileID: 3046519720464548617}
   - component: {fileID: 3046519720468657001}
   - component: {fileID: 3046519720471854761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4977,9 +4977,9 @@ GameObject:
   - component: {fileID: 3046519720464548619}
   - component: {fileID: 3046519720468657003}
   - component: {fileID: 3046519720471854763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5090,9 +5090,9 @@ GameObject:
   - component: {fileID: 3046519720464548625}
   - component: {fileID: 3046519720468657009}
   - component: {fileID: 3046519720471854769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt08
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5201,7 +5201,7 @@ GameObject:
   - component: {fileID: 3046519720466842099}
   - component: {fileID: 3046519720448492729}
   - component: {fileID: 3046519720448605465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9942,9 +9942,9 @@ GameObject:
   - component: {fileID: 3046519720464548627}
   - component: {fileID: 3046519720468657011}
   - component: {fileID: 3046519720471854771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt09
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10055,9 +10055,9 @@ GameObject:
   - component: {fileID: 3046519720464548633}
   - component: {fileID: 3046519720468657017}
   - component: {fileID: 3046519720471854777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt06
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10168,9 +10168,9 @@ GameObject:
   - component: {fileID: 3046519720464548635}
   - component: {fileID: 3046519720468657019}
   - component: {fileID: 3046519720471854779}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10281,9 +10281,9 @@ GameObject:
   - component: {fileID: 3046519720464548637}
   - component: {fileID: 3046519720468657021}
   - component: {fileID: 3046519720471854781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10394,9 +10394,9 @@ GameObject:
   - component: {fileID: 3046519720464548639}
   - component: {fileID: 3046519720468657023}
   - component: {fileID: 3046519720471854783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt07
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10510,7 +10510,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826884}
   - component: {fileID: 1532995169342826886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_plant02
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -10734,7 +10734,7 @@ MonoBehaviour:
   breakForce: 3
   explosionForce: 120
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 3046519720466554333}

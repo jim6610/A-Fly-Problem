@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826886}
   - component: {fileID: 1532995169342826884}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_melon02
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ MonoBehaviour:
   breakForce: 4
   explosionForce: 20
   destroyedPiecesRotation: 5
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 3878049128098703797}
@@ -276,9 +276,9 @@ GameObject:
   - component: {fileID: 3878049128100706161}
   - component: {fileID: 3878049128096597783}
   - component: {fileID: 3878049128093436629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Melon_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,9 +389,9 @@ GameObject:
   - component: {fileID: 3878049128100706163}
   - component: {fileID: 3878049128096597777}
   - component: {fileID: 3878049128093436631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Melon_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -502,9 +502,9 @@ GameObject:
   - component: {fileID: 3878049128100706165}
   - component: {fileID: 3878049128096597787}
   - component: {fileID: 3878049128093436625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Melon_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -615,9 +615,9 @@ GameObject:
   - component: {fileID: 3878049128100706167}
   - component: {fileID: 3878049128096597781}
   - component: {fileID: 3878049128093436627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Melon_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 3878049128098411929}
   - component: {fileID: 3878049128084254931}
   - component: {fileID: 3878049128084146547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fx02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5446,7 +5446,7 @@ GameObject:
   - component: {fileID: 3878049128098411935}
   - component: {fileID: 3878049128084254929}
   - component: {fileID: 3878049128084146545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Melon_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}

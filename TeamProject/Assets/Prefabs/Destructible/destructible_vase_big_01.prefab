@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2771010796478541829}
   - component: {fileID: 352883891720832049}
   - component: {fileID: 5562279325127058922}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_vase_big_01
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ MonoBehaviour:
   breakForce: 4
   explosionForce: 120
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 2771010796474116599}
@@ -286,9 +286,9 @@ GameObject:
   - component: {fileID: 2771010796476315425}
   - component: {fileID: 2771010796480399175}
   - component: {fileID: 2771010796477434497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase_pt08
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -399,9 +399,9 @@ GameObject:
   - component: {fileID: 2771010796476315427}
   - component: {fileID: 2771010796480399169}
   - component: {fileID: 2771010796477434507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase_pt07
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -512,9 +512,9 @@ GameObject:
   - component: {fileID: 2771010796476315431}
   - component: {fileID: 2771010796480399173}
   - component: {fileID: 2771010796477434517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase_pt09
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -625,9 +625,9 @@ GameObject:
   - component: {fileID: 2771010796476315433}
   - component: {fileID: 2771010796480399183}
   - component: {fileID: 2771010796477434511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -738,9 +738,9 @@ GameObject:
   - component: {fileID: 2771010796476315435}
   - component: {fileID: 2771010796480399177}
   - component: {fileID: 2771010796477434501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,9 +851,9 @@ GameObject:
   - component: {fileID: 2771010796476315437}
   - component: {fileID: 2771010796480399171}
   - component: {fileID: 2771010796477434499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase_pt06
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -964,9 +964,9 @@ GameObject:
   - component: {fileID: 2771010796476315439}
   - component: {fileID: 2771010796480399181}
   - component: {fileID: 2771010796477434505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase_pt05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1075,7 +1075,7 @@ GameObject:
   - component: {fileID: 2771010796474021329}
   - component: {fileID: 2771010796492370053}
   - component: {fileID: 2771010796492327205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fx02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5813,7 +5813,7 @@ GameObject:
   - component: {fileID: 2771010796474021331}
   - component: {fileID: 2771010796492370055}
   - component: {fileID: 2771010796492327207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10554,9 +10554,9 @@ GameObject:
   - component: {fileID: 2771010796476315445}
   - component: {fileID: 2771010796480399179}
   - component: {fileID: 2771010796477434509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10667,9 +10667,9 @@ GameObject:
   - component: {fileID: 2771010796476315447}
   - component: {fileID: 2771010796480399189}
   - component: {fileID: 2771010796477434503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

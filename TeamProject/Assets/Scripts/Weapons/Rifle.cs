@@ -1,58 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-
 
 /// Rifle ranged weapon
-/// TODO Code not DRY, shares almost all game variables/logic with FlySwatter, can probably use inheritance here
-public class Rifle : MonoBehaviour
+public class Rifle : ReloadableProjectileWeapon
 {
-    [Header("Weapon Parameters")]
-    [SerializeField] private float damage = 4f;
-    [SerializeField] private float impactForce = 75f;
-    [SerializeField] private float fireRate = 15f;
-    [SerializeField] private float range = 100f;
-    [SerializeField] private float reloadTime = 6;
-    [SerializeField] private int clipSize = 20;
-    [SerializeField] private int ammoRemaining = 60;
+    protected override string fireSoundTag => "RifleShot";
+    protected override string reloadSoundTag => "RifleReload";
+    public override void Equipped() { }
 
-    [Header("Effects")]
-    [SerializeField] private ParticleSystem muzzleFlash;
-    [SerializeField] private GameObject impactEffectParticle;
-    [SerializeField] private GameObject emitter;
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private GameObject bulletHole;
-
-    [Header("Animation")]
-    public Animator animator;
-
-    private AudioManager audioManager;
-    private GameObject weaponManager;
-    private GameObject selectionManager;
-    private Text ammoDisplay;
-
-    private Camera fpsCam;
-    private float nextTimeToFire;
-    private int currentAmmoClip;
-    private bool isReloading = false;
-
-    private bool CanFire => Input.GetButton("Fire1") && Time.time >= nextTimeToFire;
-
-    private void Start()
-    {
-        audioManager = FindObjectOfType<AudioManager>();
-        weaponManager = GameObject.Find("WeaponHolder");
-        selectionManager = GameObject.Find("SelectionManager");
-        ammoDisplay = GameObject.Find("Ammo").GetComponent<Text>();
-        fpsCam = Camera.main;
-        currentAmmoClip = clipSize;
-    }
-
-    void OnEnable()
-    {
-        isReloading = false;
-        animator.SetBool("Reloading", false);
-    }
 
     void Update()
     {
@@ -73,7 +28,7 @@ public class Rifle : MonoBehaviour
         if (CanFire && currentAmmoClip != 0)
         {
             nextTimeToFire = Time.time + 1 / fireRate;
-            Shoot();
+            Fire();
         }
 
         // If player tries to fire an empty weapon, empty clip sound effect will play
@@ -87,84 +42,34 @@ public class Rifle : MonoBehaviour
         ammoDisplay.text = currentAmmoClip + " | " + ammoRemaining;
     }
 
-    ///  Weapon reload logic
-    IEnumerator Reload()
-    {
-        // Reload Started
-        audioManager.Play("RifleReload");
-        isReloading = true;
-        animator.SetBool("Reloading", true);
-        weaponManager.GetComponent<WeaponSwitching>().ToggleWeaponSwitching();
-        selectionManager.GetComponent<SelectionManager>().ToggleIsReloading();
-        yield return new WaitForSeconds(reloadTime - 0.25f);
-
-        // Reload completed
-        animator.SetBool("Reloading", false);
-        yield return new WaitForSeconds(0.25f); // this wait is to prevent weapon from firing before the animation is complete
-        isReloading = false;
-        weaponManager.GetComponent<WeaponSwitching>().ToggleWeaponSwitching();
-        selectionManager.GetComponent<SelectionManager>().ToggleIsReloading();
-        ammoRemaining -= clipSize;
-        currentAmmoClip = clipSize;
-    }
-
     /// Weapon firing logic
-    void Shoot()
+    protected override void Fire()
     {
-        var hitObject = false;
-        
-        audioManager.Play("RifleShot");
+        audioManager.Play(fireSoundTag);
         muzzleFlash.Play();
 
         currentAmmoClip--;
 
-        // Bullet logic
-        GameObject bulletObj = Instantiate(bulletPrefab, emitter.transform.position, emitter.transform.rotation);
-
-        Bullet bullet = bulletObj.GetComponent<Bullet>();
-        bullet.SetDirection(fpsCam.transform.forward);
+        SpawnBullet();
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out var hit, range))
         {
-            // Damage destructible objects
             if (hit.transform.CompareTag("Destructible"))
-            {
-                Destructible target = hit.transform.GetComponent<Destructible>();
+                // Damage destructible objects
+                HandleDestructibleCollision(hit);
 
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                    hitObject = true;
-                }
-            }
-            // Damage enemy
-            else if (hit.transform.CompareTag("Enemy"))
-            {
-                EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
+            if (hit.transform.CompareTag("Enemy"))
+                // Damage enemy
+                HandleEnemyCollision(hit);
 
-                if (target != null)
-                {
-                    target.TakeDamage(damage);
-                    hitObject = true;
-                }
-            }
+            // Apply force to the object if it has a rigidbody attached
+            HandleImpactForce(hit);
+            // Instantiate Impact particle effect
+            HandleImpactEffect(hit);
 
-            Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
-
-            if (rb != null)
-            {
-                rb.AddForce(-hit.normal * impactForce);
-            }
-
-            // Impact effect
-            GameObject impactEffect = Instantiate(impactEffectParticle, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactEffect, 1);
-
-            if (!hitObject && !hit.transform.CompareTag("Web"))
-            {
-                GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal)); 
-                Destroy(bulletDecal, 5f); 
-            }
+            if (!hit.transform.CompareTag("Web") && !hit.transform.CompareTag("Enemy") && !hit.transform.CompareTag("Destructible") && !hit.transform.CompareTag("BrokenPiece"))
+                // Instantiate bullet decal effect
+                HandleBulletDecal(hit);
         }
     }
 }

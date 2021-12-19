@@ -22257,24 +22257,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4346904993883318, guid: 4231048744ce2ba41a406957740cf383, type: 3}
   m_PrefabInstance: {fileID: 2040662910}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2040818012 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7984678556812366686, guid: e358ad231a68cf7499c4cf12bd33677b, type: 3}
-  m_PrefabInstance: {fileID: 1503224748}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &2040818017
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2040818012}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.35, y: 0.71999997, z: 0.84999996}
-  m_Center: {x: 0, y: 0.35956162, z: 0}
 --- !u!4 &2041347290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4364833404483905876, guid: 391f29a4e168ee94db1044ff00453af1, type: 3}
@@ -27649,7 +27631,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300010, guid: 5a1710e01a2c88242a4499f68198d1f7, type: 3}
 --- !u!1 &5484704678864851077
@@ -27836,7 +27818,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 5a1710e01a2c88242a4499f68198d1f7, type: 3}
 --- !u!1 &5484704678864851091
@@ -27987,7 +27969,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300014, guid: 5a1710e01a2c88242a4499f68198d1f7, type: 3}
 --- !u!1 &5484704678864851101
@@ -29367,6 +29349,10 @@ PrefabInstance:
     - target: {fileID: 4836093174739976, guid: 247e5b33a1b1dba43a82e14ad7191756, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2306616994445362703, guid: 247e5b33a1b1dba43a82e14ad7191756, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 247e5b33a1b1dba43a82e14ad7191756, type: 3}

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826884}
   - component: {fileID: 1532995169342826886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_plant03
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ MonoBehaviour:
   breakForce: 3
   explosionForce: 120
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 5034564016946145802}
@@ -276,9 +276,9 @@ GameObject:
   - component: {fileID: 5034564016948344000}
   - component: {fileID: 5034564016951396706}
   - component: {fileID: 5034564016952427690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant03_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,9 +390,9 @@ GameObject:
   - component: {fileID: 5034564016948344004}
   - component: {fileID: 5034564016951396710}
   - component: {fileID: 5034564016952427680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant03_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -503,9 +503,9 @@ GameObject:
   - component: {fileID: 5034564016948344006}
   - component: {fileID: 5034564016951396704}
   - component: {fileID: 5034564016952427682}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant03_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 5034564016946443816}
   - component: {fileID: 5034564016931238754}
   - component: {fileID: 5034564016931326658}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -886,7 +886,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -939,7 +939,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -992,7 +992,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -1045,7 +1045,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -5355,9 +5355,9 @@ GameObject:
   - component: {fileID: 5034564016948344010}
   - component: {fileID: 5034564016951396708}
   - component: {fileID: 5034564016952427686}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant03_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5466,7 +5466,7 @@ GameObject:
   - component: {fileID: 5034564016946443820}
   - component: {fileID: 5034564016931238758}
   - component: {fileID: 5034564016931326662}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fx02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10204,7 +10204,7 @@ GameObject:
   - component: {fileID: 5034564016946443822}
   - component: {fileID: 5034564016931238752}
   - component: {fileID: 5034564016931326656}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fx03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10475,7 +10475,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -10528,7 +10528,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -10581,7 +10581,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -10634,7 +10634,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:

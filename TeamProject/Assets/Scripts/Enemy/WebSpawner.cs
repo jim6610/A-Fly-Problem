@@ -7,7 +7,6 @@ public class WebSpawner : MonoBehaviour
     public GameObject web;
     public Transform spawnPos;
     public float spawnInterval = 5.0f;
-    private bool onFloor = true;
 
     void Start()
     {

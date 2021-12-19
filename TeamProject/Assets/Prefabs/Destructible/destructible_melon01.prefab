@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826884}
   - component: {fileID: 1532995169342826886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_melon01
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ MonoBehaviour:
   breakForce: 6
   explosionForce: 20
   destroyedPiecesRotation: 5
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 8240414569708834550}
@@ -276,9 +276,9 @@ GameObject:
   - component: {fileID: 8240414569706573872}
   - component: {fileID: 8240414569702547536}
   - component: {fileID: 8240414569703484822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Watermelon_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,9 +389,9 @@ GameObject:
   - component: {fileID: 8240414569706573874}
   - component: {fileID: 8240414569702547538}
   - component: {fileID: 8240414569703484818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Watermelon_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -502,9 +502,9 @@ GameObject:
   - component: {fileID: 8240414569706573876}
   - component: {fileID: 8240414569702547540}
   - component: {fileID: 8240414569703484820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Watermelon_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -615,9 +615,9 @@ GameObject:
   - component: {fileID: 8240414569706573878}
   - component: {fileID: 8240414569702547542}
   - component: {fileID: 8240414569703484824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Watermelon_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 8240414569708999386}
   - component: {fileID: 8240414569690650512}
   - component: {fileID: 8240414569690623536}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fx02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5446,7 +5446,7 @@ GameObject:
   - component: {fileID: 8240414569708999388}
   - component: {fileID: 8240414569690650516}
   - component: {fileID: 8240414569690623540}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Watermelon_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}

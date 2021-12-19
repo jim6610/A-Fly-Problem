@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826884}
   - component: {fileID: 1532995169342826886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_mug02
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ MonoBehaviour:
   breakForce: 3
   explosionForce: 100
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 3461725947155679469}
@@ -273,9 +273,9 @@ GameObject:
   - component: {fileID: 3461725947153421865}
   - component: {fileID: 3461725947149395529}
   - component: {fileID: 3461725947150232461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cup_broken_pt03
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -386,9 +386,9 @@ GameObject:
   - component: {fileID: 3461725947153421867}
   - component: {fileID: 3461725947149395531}
   - component: {fileID: 3461725947150232457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cup_broken_pt02
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,9 +499,9 @@ GameObject:
   - component: {fileID: 3461725947153421869}
   - component: {fileID: 3461725947149395533}
   - component: {fileID: 3461725947150232459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cup_broken_pt01
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

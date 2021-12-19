@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826884}
   - component: {fileID: 1532995169342826886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_plate01
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ MonoBehaviour:
   breakForce: 3
   explosionForce: 100
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 4085413675391605869}
@@ -279,9 +279,9 @@ GameObject:
   - component: {fileID: 4085413675389665955}
   - component: {fileID: 4085413675393708739}
   - component: {fileID: 4085413675394842373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate01_pt06
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -392,9 +392,9 @@ GameObject:
   - component: {fileID: 4085413675389665957}
   - component: {fileID: 4085413675393708741}
   - component: {fileID: 4085413675394842377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate01_pt05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,9 +505,9 @@ GameObject:
   - component: {fileID: 4085413675389665959}
   - component: {fileID: 4085413675393708743}
   - component: {fileID: 4085413675394842379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate01_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -618,9 +618,9 @@ GameObject:
   - component: {fileID: 4085413675389665961}
   - component: {fileID: 4085413675393708745}
   - component: {fileID: 4085413675394842375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate01_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -731,9 +731,9 @@ GameObject:
   - component: {fileID: 4085413675389665963}
   - component: {fileID: 4085413675393708747}
   - component: {fileID: 4085413675394842371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate01_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -844,9 +844,9 @@ GameObject:
   - component: {fileID: 4085413675389665965}
   - component: {fileID: 4085413675393708749}
   - component: {fileID: 4085413675394842369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate01_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

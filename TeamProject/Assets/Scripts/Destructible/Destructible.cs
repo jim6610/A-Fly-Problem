@@ -85,6 +85,7 @@ public class Destructible : MonoBehaviour {
         }
         GetComponent<Renderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
+        GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         GetComponent<Rigidbody>().isKinematic = true;
         foreach (GameObject chunk in destroyedPieces)
         {
@@ -92,16 +93,18 @@ public class Destructible : MonoBehaviour {
             chunk.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * -explosionForce);
             chunk.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.forward * -destroyedPiecesRotation * Random.Range(-5f, 5f));
             chunk.GetComponent<Rigidbody>().AddRelativeTorque(Vector3.right * -destroyedPiecesRotation * Random.Range(-5f, 5f));
+            //DestructRigidBody(chunk.GetComponent<Rigidbody>());
+
             if (destroyAftertime)
             {
-                Invoke("DestructObject", time);
+                Destroy(gameObject, time);
             }
         }
     }
 
-    void DestructObject()
+    void DestructRigidBody(Rigidbody rb)
     {
-        Destroy(gameObject);
+        Destroy(rb, 2f);
     }
 
     private void OnCollisionEnter(Collision other)

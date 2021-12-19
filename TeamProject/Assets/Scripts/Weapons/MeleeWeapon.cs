@@ -5,10 +5,33 @@ public abstract class MeleeWeapon : Weapon
 {
     [Header("Weapon Parameters")]
     [SerializeField] protected float sphereCastRadius = 0.1f;
-    
+
+    [Header("Effects")]
+    [SerializeField] protected GameObject impactEffectParticle;
+
     protected abstract string hitSoundTag { get; }
     
     protected const string UnlimitedAmmoText = "-- | --";
+
+    protected virtual void HandleDestructibleCollision(RaycastHit hit)
+    {
+        Destructible target = hit.transform.GetComponent<Destructible>();
+
+        if (target != null)
+        {
+            target.TakeDamage(damage);
+        }
+    }
+
+    protected virtual void HandleEnemyCollision(RaycastHit hit)
+    {
+        EnemyHealth target = hit.transform.GetComponentInChildren<EnemyHealth>();
+
+        if (target != null)
+        {
+            target.TakeDamage(damage);
+        }
+    }
 
     protected virtual void HandleImpactForce(RaycastHit hit)
     {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2078584233717523178}
   - component: {fileID: 2078584233732627998}
   - component: {fileID: 2078584233732728766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4731,7 +4731,7 @@ GameObject:
   - component: {fileID: 2078584233717523180}
   - component: {fileID: 2078584233712000432}
   - component: {fileID: 2078584233710900958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4793,7 +4793,7 @@ GameObject:
   - component: {fileID: 2078584233717523182}
   - component: {fileID: 2078584233720476638}
   - component: {fileID: 2078584233712000434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Laptop_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4897,9 +4897,9 @@ GameObject:
   - component: {fileID: 2078584233715097618}
   - component: {fileID: 2078584233710997618}
   - component: {fileID: 2078584233712000436}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: laptop_part01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5010,9 +5010,9 @@ GameObject:
   - component: {fileID: 2078584233715097620}
   - component: {fileID: 2078584233710997620}
   - component: {fileID: 2078584233712000438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: laptop_part02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5123,9 +5123,9 @@ GameObject:
   - component: {fileID: 2078584233715097622}
   - component: {fileID: 2078584233710997622}
   - component: {fileID: 2078584233712000440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: laptop_part03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5236,9 +5236,9 @@ GameObject:
   - component: {fileID: 2078584233715097624}
   - component: {fileID: 2078584233710997624}
   - component: {fileID: 2078584233712000442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: laptop_part04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5349,9 +5349,9 @@ GameObject:
   - component: {fileID: 2078584233715097626}
   - component: {fileID: 2078584233710997626}
   - component: {fileID: 2078584233712000444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: laptop_part05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5462,9 +5462,9 @@ GameObject:
   - component: {fileID: 2078584233715097628}
   - component: {fileID: 2078584233710997628}
   - component: {fileID: 2078584233712000446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: laptop_part06
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5574,7 +5574,7 @@ GameObject:
   - component: {fileID: 2078584233712000430}
   - component: {fileID: 2078584233712549534}
   - component: {fileID: 2078584233710900956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Axis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5676,7 +5676,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826886}
   - component: {fileID: 1532995169342826884}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_laptop01
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -5917,7 +5917,7 @@ MonoBehaviour:
   breakForce: 6
   explosionForce: -100
   destroyedPiecesRotation: -20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 2078584233717300940}

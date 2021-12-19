@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 785634809023846222}
   - component: {fileID: 209886608139396506}
   - component: {fileID: 209886608139396485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wine Glass_cell
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,9 +126,9 @@ GameObject:
   - component: {fileID: 3515315678972060583}
   - component: {fileID: 231793956831498308}
   - component: {fileID: 231793956831498311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wine Glass_cell.004
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,9 +239,9 @@ GameObject:
   - component: {fileID: 3796613468464817584}
   - component: {fileID: 445568627642919199}
   - component: {fileID: 445568627642919198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wine Glass_cell.002
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,9 +352,9 @@ GameObject:
   - component: {fileID: 8338786062169009042}
   - component: {fileID: 533705644918726381}
   - component: {fileID: 533705644918726380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wine Glass_cell.003
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 4313042616240510739}
   - component: {fileID: 4313042616240510738}
   - component: {fileID: 4313042616240510742}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_wineGlass
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ MonoBehaviour:
   breakForce: 1
   explosionForce: 150
   destroyedPiecesRotation: 25
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 15
   destroyedPieces:
   - {fileID: 209886608139396484}
@@ -731,9 +731,9 @@ GameObject:
   - component: {fileID: 4132802012134638408}
   - component: {fileID: 3204281218939986857}
   - component: {fileID: 3204281218939986856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wine Glass_cell.005
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -844,9 +844,9 @@ GameObject:
   - component: {fileID: 289443150625654462}
   - component: {fileID: 4661041421444093159}
   - component: {fileID: 4661041421444093158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wine Glass_cell.001
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

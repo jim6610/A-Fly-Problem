@@ -23,9 +23,6 @@ public class Flamethrower : Weapon
 
     private void Start()
     {
-        audioManager = FindObjectOfType<AudioManager>();
-        ammoDisplay = GameObject.Find("Ammo").GetComponent<Text>();
-        fpsCam = Camera.main;
         currentAmmoClip = totalAmmo;
     }
 
