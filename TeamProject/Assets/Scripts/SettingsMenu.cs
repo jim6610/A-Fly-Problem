@@ -101,7 +101,10 @@ public class SettingsMenu : MonoBehaviour
         HashSet<Tuple<int, int>> uniqResolutions = new HashSet<Tuple<int, int>>();
         Dictionary<Tuple<int, int>, int> maxRefreshRates = new Dictionary<Tuple<int, int>, int>();
         
-        for (int i = 0; i < resolutions.GetLength(0); i++) {
+        for (int i = 0; i < resolutions.GetLength(0); i++)
+        {
+            if (resolutions[i].width < 1024) continue;
+            
             //Add resolutions (if they are not already contained)
             Tuple<int, int> resolution = new Tuple<int, int>(resolutions[i].width, resolutions[i].height);
             uniqResolutions.Add(resolution);
