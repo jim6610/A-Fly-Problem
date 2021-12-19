@@ -44,8 +44,6 @@ public class Pistol : ReloadableProjectileWeapon
     /// Weapon firing logic
     protected override void Fire()
     {
-        hitObject = false;
-        
         audioManager.Play(fireSoundTag);
         muzzleFlash.Play();
 
@@ -68,7 +66,7 @@ public class Pistol : ReloadableProjectileWeapon
             // Instantiate Impact particle effect
             HandleImpactEffect(hit);
 
-            if (!hitObject && !hit.transform.CompareTag("Web"))
+            if (!hit.transform.CompareTag("Web") && !hit.transform.CompareTag("Enemy") && !hit.transform.CompareTag("Destructible") && !hit.transform.CompareTag("BrokenPiece"))
                 // Instantiate bullet decal effect
                 HandleBulletDecal(hit);
         }

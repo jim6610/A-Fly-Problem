@@ -9510,7 +9510,7 @@ GameObject:
   - component: {fileID: 477751124972168713}
   m_Layer: 6
   m_Name: WoodenBarrel_pt14
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9623,7 +9623,7 @@ GameObject:
   - component: {fileID: 477751124972168755}
   m_Layer: 6
   m_Name: WoodenBarrel_pt13
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9736,7 +9736,7 @@ GameObject:
   - component: {fileID: 477751124972168757}
   m_Layer: 6
   m_Name: WoodenBarrel_pt16
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9849,7 +9849,7 @@ GameObject:
   - component: {fileID: 477751124972168763}
   m_Layer: 6
   m_Name: WoodenBarrel_pt15
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9962,7 +9962,7 @@ GameObject:
   - component: {fileID: 477751124972168719}
   m_Layer: 6
   m_Name: WoodenBarrel_pt10
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10075,7 +10075,7 @@ GameObject:
   - component: {fileID: 477751124972168759}
   m_Layer: 6
   m_Name: WoodenBarrel_pt09
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10188,7 +10188,7 @@ GameObject:
   - component: {fileID: 477751124972168711}
   m_Layer: 6
   m_Name: WoodenBarrel_pt12
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10301,7 +10301,7 @@ GameObject:
   - component: {fileID: 477751124972168715}
   m_Layer: 6
   m_Name: WoodenBarrel_pt11
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10414,7 +10414,7 @@ GameObject:
   - component: {fileID: 477751124972168745}
   m_Layer: 6
   m_Name: WoodenBarrel_pt06
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10527,7 +10527,7 @@ GameObject:
   - component: {fileID: 477751124972168747}
   m_Layer: 6
   m_Name: WoodenBarrel_pt05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10640,7 +10640,7 @@ GameObject:
   - component: {fileID: 477751124972168749}
   m_Layer: 6
   m_Name: WoodenBarrel_pt08
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10753,7 +10753,7 @@ GameObject:
   - component: {fileID: 477751124972168751}
   m_Layer: 6
   m_Name: WoodenBarrel_pt07
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10866,7 +10866,7 @@ GameObject:
   - component: {fileID: 477751124972168721}
   m_Layer: 6
   m_Name: WoodenBarrel_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10979,7 +10979,7 @@ GameObject:
   - component: {fileID: 477751124972168731}
   m_Layer: 6
   m_Name: WoodenBarrel_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11092,7 +11092,7 @@ GameObject:
   - component: {fileID: 477751124972168709}
   m_Layer: 6
   m_Name: WoodenBarrel_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11205,7 +11205,7 @@ GameObject:
   - component: {fileID: 477751124972168733}
   m_Layer: 6
   m_Name: WoodenBarrel_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11318,7 +11318,7 @@ GameObject:
   - component: {fileID: 477751124972168707}
   m_Layer: 6
   m_Name: WoodenBarrel_pt30
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11431,7 +11431,7 @@ GameObject:
   - component: {fileID: 477751124972168743}
   m_Layer: 6
   m_Name: WoodenBarrel_pt29
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11544,7 +11544,7 @@ GameObject:
   - component: {fileID: 477751124972168727}
   m_Layer: 6
   m_Name: WoodenBarrel_pt32
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11657,7 +11657,7 @@ GameObject:
   - component: {fileID: 477751124972168765}
   m_Layer: 6
   m_Name: WoodenBarrel_pt31
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11770,7 +11770,7 @@ GameObject:
   - component: {fileID: 477751124972168741}
   m_Layer: 6
   m_Name: WoodenBarrel_pt26
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11883,7 +11883,7 @@ GameObject:
   - component: {fileID: 477751124972168723}
   m_Layer: 6
   m_Name: WoodenBarrel_pt25
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11996,7 +11996,7 @@ GameObject:
   - component: {fileID: 477751124972168739}
   m_Layer: 6
   m_Name: WoodenBarrel_pt28
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12109,7 +12109,7 @@ GameObject:
   - component: {fileID: 477751124972168729}
   m_Layer: 6
   m_Name: WoodenBarrel_pt27
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12222,7 +12222,7 @@ GameObject:
   - component: {fileID: 477751124972168725}
   m_Layer: 6
   m_Name: WoodenBarrel_pt22
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12335,7 +12335,7 @@ GameObject:
   - component: {fileID: 477751124972168767}
   m_Layer: 6
   m_Name: WoodenBarrel_pt21
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12448,7 +12448,7 @@ GameObject:
   - component: {fileID: 477751124972168735}
   m_Layer: 6
   m_Name: WoodenBarrel_pt24
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12561,7 +12561,7 @@ GameObject:
   - component: {fileID: 477751124972168753}
   m_Layer: 6
   m_Name: WoodenBarrel_pt23
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12674,7 +12674,7 @@ GameObject:
   - component: {fileID: 477751124972168737}
   m_Layer: 6
   m_Name: WoodenBarrel_pt18
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12787,7 +12787,7 @@ GameObject:
   - component: {fileID: 477751124972168761}
   m_Layer: 6
   m_Name: WoodenBarrel_pt17
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12900,7 +12900,7 @@ GameObject:
   - component: {fileID: 477751124972168705}
   m_Layer: 6
   m_Name: WoodenBarrel_pt20
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13013,7 +13013,7 @@ GameObject:
   - component: {fileID: 477751124972168717}
   m_Layer: 6
   m_Name: WoodenBarrel_pt19
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13375,7 +13375,7 @@ MonoBehaviour:
   breakForce: 20
   explosionForce: 60
   destroyedPiecesRotation: 10
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 15
   destroyedPieces:
   - {fileID: 477751124977354043}

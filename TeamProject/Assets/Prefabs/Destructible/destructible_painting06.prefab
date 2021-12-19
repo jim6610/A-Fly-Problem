@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8154429311113682717}
   - component: {fileID: 8185587401827576319}
   - component: {fileID: 32528221478765633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: painting06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 6244183433654467262}
   - component: {fileID: 6244183433655761566}
   - component: {fileID: 6244183433656891486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: glassplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 590068486637002663}
   - component: {fileID: 9073265933140151024}
   - component: {fileID: 8455577783576557984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_painting06
   m_TagString: Destructible
   m_Icon: {fileID: 0}

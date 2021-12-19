@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1878325372527548398}
   - component: {fileID: 1878325372545896622}
   - component: {fileID: 1878325372545469390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fx02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4751,9 +4751,9 @@ GameObject:
   - component: {fileID: 1878325372529477346}
   - component: {fileID: 1878325372534109706}
   - component: {fileID: 1878325372530892602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VaseSmall_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4864,9 +4864,9 @@ GameObject:
   - component: {fileID: 1878325372529477348}
   - component: {fileID: 1878325372534109708}
   - component: {fileID: 1878325372530892604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VaseSmall_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4977,9 +4977,9 @@ GameObject:
   - component: {fileID: 1878325372529477350}
   - component: {fileID: 1878325372534109710}
   - component: {fileID: 1878325372530892578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VaseSmall_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5090,9 +5090,9 @@ GameObject:
   - component: {fileID: 1878325372529477352}
   - component: {fileID: 1878325372534109700}
   - component: {fileID: 1878325372530892606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VaseSmall_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5203,9 +5203,9 @@ GameObject:
   - component: {fileID: 1878325372529477354}
   - component: {fileID: 1878325372534109702}
   - component: {fileID: 1878325372530892580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VaseSmall_pt05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5316,9 +5316,9 @@ GameObject:
   - component: {fileID: 1878325372529477356}
   - component: {fileID: 1878325372534109704}
   - component: {fileID: 1878325372530892600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VaseSmall_pt06
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5429,9 +5429,9 @@ GameObject:
   - component: {fileID: 1878325372529477358}
   - component: {fileID: 1878325372534109698}
   - component: {fileID: 1878325372530892576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VaseSmall_pt07
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5545,7 +5545,7 @@ GameObject:
   - component: {fileID: 1878325372532092388}
   - component: {fileID: 1571040533271258081}
   - component: {fileID: 9067591863016556344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_vase_small_01
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -5767,7 +5767,7 @@ MonoBehaviour:
   breakForce: 4
   explosionForce: 120
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 1878325372527810722}

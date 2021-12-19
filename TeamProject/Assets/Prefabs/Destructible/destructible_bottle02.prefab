@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1532995169345025859}
   - component: {fileID: 1532995169349109539}
   - component: {fileID: 1331631275310266024}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_chunk03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,9 +126,9 @@ GameObject:
   - component: {fileID: 1532995169345025861}
   - component: {fileID: 1532995169349109541}
   - component: {fileID: 1421054573324498945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_chunk01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,9 +239,9 @@ GameObject:
   - component: {fileID: 1532995169345025863}
   - component: {fileID: 1532995169349109543}
   - component: {fileID: 3627531182555589360}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_chunk05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,9 +352,9 @@ GameObject:
   - component: {fileID: 1532995169345025865}
   - component: {fileID: 1532995169349109545}
   - component: {fileID: 648719394932380414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_chunk02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,9 +465,9 @@ GameObject:
   - component: {fileID: 1532995169345025867}
   - component: {fileID: 1532995169349109547}
   - component: {fileID: 8976228219654282063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_chunk04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826886}
   - component: {fileID: 1532995169342826884}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_bottle02
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ MonoBehaviour:
   breakForce: 3
   explosionForce: 100
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 1532995169342826885}

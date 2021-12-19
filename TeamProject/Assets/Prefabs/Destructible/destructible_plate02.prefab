@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826884}
   - component: {fileID: 1532995169342826886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_plate02
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ MonoBehaviour:
   breakForce: 3
   explosionForce: 100
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 8467258724157534411}
@@ -275,9 +275,9 @@ GameObject:
   - component: {fileID: 8467258724155534857}
   - component: {fileID: 8467258724159626849}
   - component: {fileID: 8467258724160852911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate02_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -388,9 +388,9 @@ GameObject:
   - component: {fileID: 8467258724155534859}
   - component: {fileID: 8467258724159626851}
   - component: {fileID: 8467258724160852901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate02_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,9 +501,9 @@ GameObject:
   - component: {fileID: 8467258724155534861}
   - component: {fileID: 8467258724159626853}
   - component: {fileID: 8467258724160852907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate02_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,9 +614,9 @@ GameObject:
   - component: {fileID: 8467258724155534863}
   - component: {fileID: 8467258724159626855}
   - component: {fileID: 8467258724160852905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plate02_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

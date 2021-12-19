@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 297562790667986656}
   - component: {fileID: 297562790672012928}
   - component: {fileID: 297562790671080262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt06
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,9 +126,9 @@ GameObject:
   - component: {fileID: 297562790667986658}
   - component: {fileID: 297562790672012930}
   - component: {fileID: 297562790671080256}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt07
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,9 +239,9 @@ GameObject:
   - component: {fileID: 297562790667986660}
   - component: {fileID: 297562790672012932}
   - component: {fileID: 297562790671080270}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,9 +352,9 @@ GameObject:
   - component: {fileID: 297562790667986662}
   - component: {fileID: 297562790672012934}
   - component: {fileID: 297562790671080264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,9 +465,9 @@ GameObject:
   - component: {fileID: 297562790667986664}
   - component: {fileID: 297562790672012936}
   - component: {fileID: 297562790671080260}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -578,9 +578,9 @@ GameObject:
   - component: {fileID: 297562790667986666}
   - component: {fileID: 297562790672012938}
   - component: {fileID: 297562790671080266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -691,9 +691,9 @@ GameObject:
   - component: {fileID: 297562790667986670}
   - component: {fileID: 297562790672012942}
   - component: {fileID: 297562790671080268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 297562790666085400}
   - component: {fileID: 297562790685483340}
   - component: {fileID: 297562790685513964}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5541,7 +5541,7 @@ GameObject:
   - component: {fileID: 297562790666085402}
   - component: {fileID: 297562790685483342}
   - component: {fileID: 297562790685513966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fx02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10281,9 +10281,9 @@ GameObject:
   - component: {fileID: 297562790667986684}
   - component: {fileID: 297562790672012956}
   - component: {fileID: 297562790671080258}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt08
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10394,9 +10394,9 @@ GameObject:
   - component: {fileID: 297562790667986686}
   - component: {fileID: 297562790672012958}
   - component: {fileID: 297562790671080284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_pt09
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10510,7 +10510,7 @@ GameObject:
   - component: {fileID: 1532995169348825185}
   - component: {fileID: 1532995169342826884}
   - component: {fileID: 1532995169342826886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_plant01
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -10734,7 +10734,7 @@ MonoBehaviour:
   breakForce: 3
   explosionForce: 120
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 297562790665730084}

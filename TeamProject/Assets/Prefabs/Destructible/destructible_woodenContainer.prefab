@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1776971886879989185}
   - component: {fileID: 1776971886875700641}
   - component: {fileID: 1776971886876893293}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WoodenBox02_part04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,9 +126,9 @@ GameObject:
   - component: {fileID: 1776971886879989187}
   - component: {fileID: 1776971886875700643}
   - component: {fileID: 1776971886876893295}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WoodenBox02_part05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,9 +239,9 @@ GameObject:
   - component: {fileID: 1776971886879989189}
   - component: {fileID: 1776971886875700645}
   - component: {fileID: 1776971886876893285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WoodenBox02_part06
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -352,9 +352,9 @@ GameObject:
   - component: {fileID: 1776971886879989195}
   - component: {fileID: 1776971886875700651}
   - component: {fileID: 1776971886876893283}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WoodenBox02_part01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,9 +465,9 @@ GameObject:
   - component: {fileID: 1776971886879989197}
   - component: {fileID: 1776971886875700653}
   - component: {fileID: 1776971886876893281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WoodenBox02_part02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -578,9 +578,9 @@ GameObject:
   - component: {fileID: 1776971886879989199}
   - component: {fileID: 1776971886875700655}
   - component: {fileID: 1776971886876893287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WoodenBox02_part03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 1776971886876893291}
   - component: {fileID: 1776971886881981193}
   - component: {fileID: 1776971886881981190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_woodenContainer
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -914,7 +914,7 @@ MonoBehaviour:
   breakForce: 6
   explosionForce: 100
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 15
   destroyedPieces:
   - {fileID: 1776971886881981195}

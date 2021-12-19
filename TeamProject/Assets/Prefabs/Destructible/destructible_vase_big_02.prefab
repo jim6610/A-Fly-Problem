@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4841130382827484183}
   - component: {fileID: 1156204936293750107}
   - component: {fileID: 6367652939395840416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_vase_big_02
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ MonoBehaviour:
   breakForce: 4
   explosionForce: 120
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 10
   destroyedPieces:
   - {fileID: 4841130382826204643}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 4841130382826107329}
   - component: {fileID: 4841130382807757975}
   - component: {fileID: 4841130382807715127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plant01_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5029,9 +5029,9 @@ GameObject:
   - component: {fileID: 4841130382824207139}
   - component: {fileID: 4841130382828290883}
   - component: {fileID: 4841130382829489811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt01
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5142,9 +5142,9 @@ GameObject:
   - component: {fileID: 4841130382824207141}
   - component: {fileID: 4841130382828290885}
   - component: {fileID: 4841130382829489813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt02
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5255,9 +5255,9 @@ GameObject:
   - component: {fileID: 4841130382824207143}
   - component: {fileID: 4841130382828290887}
   - component: {fileID: 4841130382829489795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt03
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5366,7 +5366,7 @@ GameObject:
   - component: {fileID: 4841130382826107341}
   - component: {fileID: 4841130382807757973}
   - component: {fileID: 4841130382807715125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fx02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10106,9 +10106,9 @@ GameObject:
   - component: {fileID: 4841130382824207153}
   - component: {fileID: 4841130382828290897}
   - component: {fileID: 4841130382829489819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt08
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10219,9 +10219,9 @@ GameObject:
   - component: {fileID: 4841130382824207155}
   - component: {fileID: 4841130382828290899}
   - component: {fileID: 4841130382829489821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt09
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10332,9 +10332,9 @@ GameObject:
   - component: {fileID: 4841130382824207157}
   - component: {fileID: 4841130382828290901}
   - component: {fileID: 4841130382829489823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt10
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10445,9 +10445,9 @@ GameObject:
   - component: {fileID: 4841130382824207159}
   - component: {fileID: 4841130382828290903}
   - component: {fileID: 4841130382829489809}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt11
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10558,9 +10558,9 @@ GameObject:
   - component: {fileID: 4841130382824207161}
   - component: {fileID: 4841130382828290905}
   - component: {fileID: 4841130382829489797}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt04
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10671,9 +10671,9 @@ GameObject:
   - component: {fileID: 4841130382824207163}
   - component: {fileID: 4841130382828290907}
   - component: {fileID: 4841130382829489815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt05
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10784,9 +10784,9 @@ GameObject:
   - component: {fileID: 4841130382824207165}
   - component: {fileID: 4841130382828290909}
   - component: {fileID: 4841130382829489799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt06
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10897,9 +10897,9 @@ GameObject:
   - component: {fileID: 4841130382824207167}
   - component: {fileID: 4841130382828290911}
   - component: {fileID: 4841130382829489817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vase02_pt07
-  m_TagString: Pickup
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

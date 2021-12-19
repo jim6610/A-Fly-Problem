@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 994880033129314481}
   - component: {fileID: 994880033147618391}
   - component: {fileID: 994880033147665911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TV_FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4734,9 +4734,9 @@ GameObject:
   - component: {fileID: 994880033131084373}
   - component: {fileID: 994880033127041589}
   - component: {fileID: 994880033125910517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TV02_broken
-  m_TagString: Pickup
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4845,7 +4845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 994880033129314485}
   - component: {fileID: 994880033123199415}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TVLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4939,7 +4939,7 @@ GameObject:
   - component: {fileID: 994880033129314495}
   - component: {fileID: 994880033147665909}
   - component: {fileID: 994880033147618389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TV_Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9682,7 +9682,7 @@ GameObject:
   - component: {fileID: 994880033127808375}
   - component: {fileID: 994880033129145488}
   - component: {fileID: 994880033129145490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_tv01
   m_TagString: Destructible
   m_Icon: {fileID: 0}

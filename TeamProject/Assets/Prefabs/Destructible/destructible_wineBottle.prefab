@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7391175149647364352}
   - component: {fileID: 2519766616500730821}
   - component: {fileID: 2526907872154049063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,9 +94,9 @@ GameObject:
   - component: {fileID: 3977758914215655278}
   - component: {fileID: 1945278894142926148}
   - component: {fileID: 1945278894142926151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_cell.005
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,9 +207,9 @@ GameObject:
   - component: {fileID: 606469400900148061}
   - component: {fileID: 2367342526235507094}
   - component: {fileID: 2367342526235507113}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_cell.001
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,9 +320,9 @@ GameObject:
   - component: {fileID: 9039128074120964856}
   - component: {fileID: 2797587581444543050}
   - component: {fileID: 2797587581444543053}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_cell.003
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -433,9 +433,9 @@ GameObject:
   - component: {fileID: 3796875422677903410}
   - component: {fileID: 4001808255439115432}
   - component: {fileID: 4001808255439115435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_cell.002
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,9 +546,9 @@ GameObject:
   - component: {fileID: 1617193211716184715}
   - component: {fileID: 6601445578961462790}
   - component: {fileID: 6601445578961462809}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_cell
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -659,9 +659,9 @@ GameObject:
   - component: {fileID: 6263824769349091044}
   - component: {fileID: 7946592860656155342}
   - component: {fileID: 7946592860656155329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bottle_cell.004
-  m_TagString: Untagged
+  m_TagString: BrokenPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 3977899250792485629}
   - component: {fileID: 2998789800377039556}
   - component: {fileID: 603996400281503821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 6066445547076732422}
   - component: {fileID: 6066445547076732441}
   - component: {fileID: 6066445547076732440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: destructible_wineBottle
   m_TagString: Destructible
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ MonoBehaviour:
   breakForce: 3
   explosionForce: 100
   destroyedPiecesRotation: 20
-  destroyAftertime: 1
+  destroyAftertime: 0
   time: 15
   destroyedPieces:
   - {fileID: 6601445578961462808}

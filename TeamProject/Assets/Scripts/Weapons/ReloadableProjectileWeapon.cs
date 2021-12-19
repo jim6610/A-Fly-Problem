@@ -24,7 +24,6 @@ public abstract class ReloadableProjectileWeapon : Weapon
 
     protected int currentAmmoClip;
     protected bool isReloading;
-    protected bool hitObject;
 
     void Start()
     {
@@ -55,7 +54,6 @@ public abstract class ReloadableProjectileWeapon : Weapon
         if (target != null)
         {
             target.TakeDamage(damage);
-            hitObject = true;
         }
     }
 
@@ -66,7 +64,6 @@ public abstract class ReloadableProjectileWeapon : Weapon
         if (target != null)
         {
             target.TakeDamage(damage);
-            hitObject = true;
         }
     }
 
