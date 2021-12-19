@@ -24,7 +24,7 @@ public abstract class ReloadableProjectileWeapon : Weapon
 
     protected int currentAmmoClip;
     protected bool isReloading;
-    protected bool hitEnemy;
+    protected bool hitObject;
 
     void Start()
     {
@@ -55,6 +55,7 @@ public abstract class ReloadableProjectileWeapon : Weapon
         if (target != null)
         {
             target.TakeDamage(damage);
+            hitObject = true;
         }
     }
 
@@ -65,7 +66,7 @@ public abstract class ReloadableProjectileWeapon : Weapon
         if (target != null)
         {
             target.TakeDamage(damage);
-            hitEnemy = true;
+            hitObject = true;
         }
     }
 
@@ -87,7 +88,7 @@ public abstract class ReloadableProjectileWeapon : Weapon
 
     protected virtual void HandleBulletDecal(RaycastHit hit)
     {
-        GameObject bulletDecal = Instantiate(bulletHole, hit.point, Quaternion.LookRotation(hit.normal));
+        GameObject bulletDecal = Instantiate(bulletHole, hit.point + (0.01f * hit.normal), Quaternion.LookRotation(hit.normal));
         Destroy(bulletDecal, 5f);
     }
 

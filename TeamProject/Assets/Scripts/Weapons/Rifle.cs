@@ -45,7 +45,7 @@ public class Rifle : ReloadableProjectileWeapon
     /// Weapon firing logic
     protected override void Fire()
     {
-        hitEnemy = false;
+        hitObject = false;
         
         audioManager.Play(fireSoundTag);
         muzzleFlash.Play();
@@ -69,7 +69,7 @@ public class Rifle : ReloadableProjectileWeapon
             // Instantiate Impact particle effect
             HandleImpactEffect(hit);
 
-            if (!hitEnemy && !hit.transform.CompareTag("Web"))
+            if (!hitObject && !hit.transform.CompareTag("Web"))
                 // Instantiate bullet decal effect
                 HandleBulletDecal(hit);
         }
