@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,7 +11,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject shopMenu;
     [SerializeField] private GameObject creditsMenu;
     [SerializeField] private GameObject splash;
-    [SerializeField] private GameObject hiddenDevButton;
+
+    private AudioSource codeSuccessfulSound;
+
+    private List<KeyCode> moneyCode = new List<KeyCode>() { KeyCode.D, KeyCode.O, KeyCode.S, KeyCode.H };
+    private int keyIndex = 0;
 
     private SettingsMenu _settingsMenu;
 
@@ -17,19 +23,47 @@ public class MainMenu : MonoBehaviour
 
     public void Start()
     {
+        codeSuccessfulSound = GetComponent<AudioSource>();
         _settingsMenu = FindObjectOfType<SettingsMenu>();
         
         Invoke("removeArt", 1);
-        active = false;
+    }
+
+    private void MoneyCheatListener(KeyCode key)
+    {
+        Debug.Log(key.ToString());
+        if (key == moneyCode[keyIndex]) {
+            keyIndex++;
+
+            if (keyIndex >= moneyCode.Count)
+            {
+                keyIndex = 0;
+                codeSuccessfulSound.Play();
+                
+                PlayerPrefs.SetFloat("money", PlayerPrefs.GetFloat("money", 0) + 5000);
+            }
+        }
+        else
+        {
+            keyIndex = 0;
+        }
+    }
+    
+    private KeyCode DetectKeyPressed() {
+        
+        foreach(KeyCode key in Enum.GetValues(typeof(KeyCode))) {
+            if(Input.GetKeyDown(key)) {
+                return key;
+            }
+        }
+        
+        return KeyCode.None;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.BackQuote))
-        {
-            active = !active;
-        }
-        hiddenDevButton.SetActive(active);
+        if (Input.anyKeyDown)
+            MoneyCheatListener(DetectKeyPressed());
     }
 
     public void removeArt()
@@ -85,14 +119,7 @@ public class MainMenu : MonoBehaviour
 
     public void ResetStats()
     {
-        PlayerPrefs.DeleteAll();
-        
-        _settingsMenu.UpdateState();
-    }
-
-    public void AddMoney()
-    {
-        PlayerPrefs.SetFloat("money", 5000);
-        active = false;
+        PlayerPrefs.DeleteKey("money");
+        PlayerPrefs.DeleteKey("inventory");
     }
 }

@@ -91,6 +91,7 @@ public class WeaponShop : MonoBehaviour
 
     private void Update()
     {
+        money = PlayerPrefs.GetFloat("money", 0);
         ammount.text = money.ToString();
 
         if (equipWarn.enabled && (Time.time >= timeWhenDisappearEquip))
