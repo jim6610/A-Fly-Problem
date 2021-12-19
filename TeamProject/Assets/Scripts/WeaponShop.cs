@@ -122,6 +122,7 @@ public class WeaponShop : MonoBehaviour
         {
             inventory += item + ',';
             money -= price;
+            PlayerPrefs.SetFloat("money", money);
 
             if (item == "swatter")
             {
