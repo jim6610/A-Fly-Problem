@@ -31,7 +31,6 @@ public class MainMenu : MonoBehaviour
 
     private void MoneyCheatListener(KeyCode key)
     {
-        Debug.Log(key.ToString());
         if (key == moneyCode[keyIndex]) {
             keyIndex++;
 
